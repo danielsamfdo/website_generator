@@ -74,12 +74,49 @@ def entry_type(Ent_type):
     hash_values = {"inproceedings": "conference", "techreport": "techreport", "phdthesis":"phdthesis", "mastersthesis": "ugthesis", "article": "journal", "proceedings":  "workshop", "inbook" : "bookchapter", "misc" : "misc", "book":"book"}
     return hash_values[Ent_type]
 
+def check_word_containment(title1, title2):
+  title1 = re.sub("[.)(]","",title1)
+  title2 = re.sub("[.)(]","",title2)
+  tokens1 = title1.lower().split()
+  tokens2 = title2.lower().split()
+
+  if "best" in tokens2:
+    tokens2.remove("best") 
+
+  if "awarded" in tokens2:
+    tokens2.remove("awarded") 
+  if "student" in tokens2:
+    tokens2.remove("student")
+  if "paper" in tokens2:
+    tokens2.remove("paper")
+  tcnt=0
+  cnt=0
+  for token in tokens2:
+    if token in tokens1:
+      cnt+=1
+    tcnt+=1
+  if(tcnt-cnt<=1):
+    print title1, title2
+    if(len(tokens2)>4):
+      return True
+    else:
+      return False
+  else:
+    return False
+
 def check_if_unique(list_of_pubs, check_pub):
     for pub in list_of_pubs:
         if(pub.title.lower() == check_pub.title.lower()):
-            if(pub.year==check_pub.year):
-                return False
+          if(pub.year==check_pub.year):
+            return False
+        elif(check_word_containment(pub.title, check_pub.title)):
+          if(pub.year==check_pub.year):
+            return False
+
     return True
+
+def list_months_rev():
+  return ["December", "November", "October", "September", "August", "July", "June", "May", "April", "March", "February", "January"]
 
 def month_hash():
     return {"Jan":"January", "Feb": "February", "Mar": "March", "Apr":"April", "May":"May", "Jun":"June", "Jul":"July", "Aug":"August","Sep":"September","Oct":"October", "Nov":"November", "Dec":"December"}
@@ -175,6 +212,8 @@ for i in my_pubs_bib_database.entries + dblp_bib_database.entries:
                     books.append(x)
                     entries.append(x)
 years_entries =[]
+for m in (list_months_rev()):
+  print m
 for i in reversed(range(min_year,max_year+1)) :
     pubs = []
     year_entry = []
@@ -182,7 +221,7 @@ for i in reversed(range(min_year,max_year+1)) :
         if(entry.year == i):
             pubs.append(entry)
     no_month_entries = []
-    for month in reversed(month_hash().values()):
+    for month in list_months_rev():
             for pub in pubs:
                 if(hasattr(pub, 'month')):
                     if(month==pub.month):

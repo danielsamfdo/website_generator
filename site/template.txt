@@ -1,0 +1,25 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>%{TITLE}%</title>
+
+</head>
+
+<body>
+
+<div class="box">
+
+%{TOP_CONTENT}%
+
+<div id="navigation">
+%{NAV_CONTENT}%
+</div>
+
+<div class="innerbox">
+
+%{INNER_CONTENT}%
+
+</div>
+</div>
+
+
+</body></html>

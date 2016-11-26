@@ -1,0 +1,25 @@
+<img style="float:left;padding:28px 50px 10px 50px" src="images/franzi.jpg" width="150px">
+
+<div style="margin:30px">
+<h1>Franziska Roesner</h1>
+<p><b>Assistant Professor</b> 
+<br>Computer Science &amp; Engineering
+<br>University of Washington
+<br>Paul G. Allen Center, Box 352350
+<br>Seattle, WA 98195-2350 </p>
+<p><b>franzi (at) cs.washington.edu</b></p>
+<p><a href="http://seclab.cs.washington.edu/">Security and Privacy Research Lab</a></p>
+</div>,<html><head><link rel='stylesheet' type='text/css' href='style.css'><title>TITLE</title></head><body><div class='box'><img style="float:left;padding:28px 50px 10px 50px" src="images/franzi.jpg" width="150px">
+
+<div style="margin:30px">
+<h1>Franziska Roesner</h1>
+<p><b>Assistant Professor</b> 
+<br>Computer Science &amp; Engineering
+<br>University of Washington
+<br>Paul G. Allen Center, Box 352350
+<br>Seattle, WA 98195-2350 </p>
+<p><b>franzi (at) cs.washington.edu</b></p>
+<p><a href="http://seclab.cs.washington.edu/">Security and Privacy Research Lab</a></p>
+</div>,<div id='navigation'><a href="./">About</a>
+<a href="./students">Student</a>
+<a href="./teaching.shtml">Teaching</a>, </div><div class='innerbox'>Ff,</div></div></body></html>

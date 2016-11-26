@@ -1,0 +1,18 @@
+#cat phead.html|sed s/\\[$1\\]/\<b\>\\[$1\\]\<\\/b\>/g phead.html
+
+for ((i=2011; i>=1999; i-- ));
+do
+./parse $1 |grep $i| awk '{a[i++]=$0;}END{for(j=i-1;j>=0;j--)print a[j];}' > tmp.html; cp tmp.html $i.html
+
+if [ -n "`cat tmp.html`" ]; then
+  echo -n "<a name="$i"></a><table border=\"0\" width=100%><tr> <td bgcolor=\"#FFFFFF\"> <font size=\"2\" color=\"#333333\" >&nbsp;"$i" </td></tr></table> <ul> <font size=\"2\">"
+  #echo -n "<a name="$i">""$i"
+  
+  # the awk removes the last <br> as that is jarring
+  cat tmp.html |awk '{print s; s=$0;}END{gsub("<br><br>","<br>",s); print s;}'
+
+  echo "</font> </ul>"
+fi
+done
+
+#cat ptail.html

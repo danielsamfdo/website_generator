@@ -1,0 +1,17 @@
+pip install gscholar
+
+https://scholar.google.com/citations?user=9v2UD2QAAAAJ&hl=en&oi=ao&cstart=0&pagesize=1000
+
+
+Requires gawk
+brew install gawk
+brew install html2text
+pip install bibtexparser
+
+STUFF TO DO 
+1) Click for Abstract
+2) Click for ACM BibTex
+3) SuperSet of DBLP & Google Scholar
+4) No duplications of same paper and venue
+5) Chronological Order, Category Order, By Year, By Author, By Conference ; http://listjs.com/
+6) 

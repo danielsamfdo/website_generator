@@ -1,0 +1,216 @@
+gawk --re-interval -v ptype=$1 '
+function getfield(str) {
+  for(i=1; i<=NF; i++) {
+    if($i == str) {
+	  field = gensub("{|}|\"|\n","","g",$(i+1));
+	  return field;
+	}
+  }
+}
+
+function getpdf() {
+  str = split($1,a,"{");
+  return a[2];
+}
+
+function selected() {
+  for(i=1; i<=NF; i++) {
+    if($i == "catteggory") {
+	  return (index($(i+1),"SELECT")>0);
+	}
+  }
+}
+function author() {
+  str = getfield("author");
+  n = split(str,arr,"[ \t]");
+
+  str = gensub("[ \t]+and",", ","g",str);
+  return str"<br>";
+}
+function title() {
+  if(geturl()=="")
+    return "<li>"getfield("title")"<br>";
+  else
+    return "<li> <a href="geturl()">"getfield("title")"</a> <a href="geturl()"></a><br>";
+}
+function booktitle() {
+  return getfield("booktitle");
+}
+function journalname() {
+  return getfield("journal");
+}
+function month() {
+  return getfield("month");
+}
+function year() {
+  str = getfield("year");
+  return gensub(",",".","g",str);
+}
+function note() {
+  str = getfield("note");
+  if(str) return "<br>"gensub("::","=","g",str);
+  else return str;
+}
+function volume() {
+  return getfield("volume");
+}
+function pages() {
+  str = getfield("pages");
+  if(str!="") return "p. "str;
+}
+function number() {
+  return getfield("number");
+}
+function institution() {
+  return getfield("institution");
+}
+function geturl() {
+  str = getfield("url");
+  return gensub(",","","g",str);
+}
+
+function type() {
+  if(index($1,"inproceedings")>0) {
+    return "conference";
+  }
+  else if(index($1,"techreport")>0) {
+    return "techreport";
+  }
+  else if(index($1,"phdthesis")>0) {
+    return "phdthesis";
+  }
+  else if(index($1,"ugthesis")>0) {
+    return "ugthesis";
+  }
+  else if(index($1,"article")>0) {
+    return "journal";
+  }
+  else if(index($1,"proceedings")>0) {
+    return "workshop";
+  }
+  else if(index($1,"inbook")>0) {
+    return "bookchapter";
+  }
+  else if(index($1,"misc")>0) {
+    return "misc";
+  }
+}
+
+function conference() {
+  return sprintf("%s %s %s, %s %s. %s", title(), author(), booktitle(), month(), year(), note());
+}
+function techreport() {
+  return sprintf("%s %s %s %s, %s %s.", title(), author(), institution(), number(), month(), year());
+}
+function phdthesis() {
+  return sprintf("%s %s %s, %s, %s, %s %s.", title(), author(), "Phd Thesis,", institution(), number(), month(), year());
+}
+function ugthesis() {
+  return sprintf("%s %s %s, %s, %s %s.", title(), author(), "Undergraduate Thesis,", institution(), month(), year());
+}
+function journal() {
+  return sprintf("%s %s %s, %s, %s, %s %s.%s", title(), author(), journalname(), volume(), pages(), month(), year(), note());
+}
+function workshop() {
+  return sprintf("%s %s %s, %s %s.", title(), author(), booktitle(), month(), year());
+}
+function bookchapter() {
+  return sprintf("%s %s %s, %s %s.", title(), author(), booktitle(), month(), year());
+}
+function book() {
+  return sprintf("%s %s %s, %s %s.", title(), author(), booktitle(), month(), year());
+}
+function misc() {
+  return sprintf("%s %s %s, %s, %s, %s %s.", title(), author(), booktitle(), institution(), number(), month(), year());
+}
+
+function printconference() {
+  if(type()=="conference") {
+    printf("%s<br><br>\n\n", conference());
+  }
+}
+function printjournal() {
+  if(type()=="journal") {
+    printf("%s<br><br>\n\n", journal());
+  }
+}
+function printworkshop() {
+  if(type()=="workshop") {
+    printf("%s<br><br>\n\n", workshop());
+  }
+}
+function printtechreport() {
+  if(type()=="techreport") {
+    printf("%s<br><br>\n\n", techreport());
+  }
+}
+
+function printphdthesis() {
+  if(type()=="phdthesis") {
+    printf("%s<br><br>\n\n", phdthesis());
+  }
+}
+function printugthesis() {
+  if(type()=="ugthesis") {
+    printf("%s<br><br>\n\n", ugthesis());
+  }
+}
+function printbookchapter() {
+  if(type()=="bookchapter") {
+    printf("%s<br><br>\n\n", bookchapter());
+  }
+}
+function printbook() {
+  if(type()=="book") {
+    printf("%s<br><br>\n\n", book());
+  }
+}
+function printmisc() {
+  if(type()=="misc") {
+    printf("%s<br><br>\n\n", misc());
+  }
+}
+function printselect() {
+  if(selected()) {
+    printpub();
+  }
+}
+function printp(str) {
+  if(str=="all") printpub();
+  if(str=="select") printselect();
+  if(str=="conference") printconference();
+  if(str=="journal") printjournal();
+  if(str=="workshop") printworkshop();
+  if(str=="techreport") printtechreport();
+  if(str=="bookchapter") printbookchapter();
+  if(str=="book") printbook();
+  if(str=="misc") printmisc();
+  if(str=="kindall") { printkindall();}
+}
+function printpub() {
+  printconference();
+  printjournal();
+  printworkshop();
+  printtechreport();
+  printbookchapter();
+  printbook();
+  printmisc();
+  printphdthesis();
+  printugthesis();
+}
+
+function printkindall() {
+  printconference();
+  printjournal();
+  printworkshop();
+  printbookchapter();
+  printbook();
+  printmisc(); 
+  printphdthesis();
+  printugthesis();
+}
+
+BEGIN{RS="@"; FS="[ \t]*=[ \t]*|,[ \t]*\n[ \t]*"; IGNORECASE=0;} {
+  printp(ptype);
+}' dblp.bib
+

@@ -1,0 +1,6 @@
+for i in select all conference journal workshop techreport kindall
+do
+
+gen select > select.html
+
+done

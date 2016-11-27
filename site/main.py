@@ -77,6 +77,8 @@ def entry_type(Ent_type):
 def check_word_containment(title1, title2):
   title1 = re.sub("[.)(]","",title1)
   title2 = re.sub("[.)(]","",title2)
+  title2 = re.sub("[-]"," ",title2)
+  title1 = re.sub("[-]"," ",title1)
   tokens1 = title1.lower().split()
   tokens2 = title2.lower().split()
 
@@ -176,7 +178,7 @@ for i in my_pubs_bib_database.entries + dblp_bib_database.entries:
             if(x.year > max_year):
                 max_year = x.year
             if(x.pub_type == "conference"):
-                if(check_if_unique(conferences, x)):
+                if(check_if_unique(conferences+journals, x)):
                     conferences.append(x)
                     entries.append(x)
             if(x.pub_type == "techreport"):
@@ -192,7 +194,7 @@ for i in my_pubs_bib_database.entries + dblp_bib_database.entries:
                     ugthesis.append(x)
                     entries.append(x)
             if(x.pub_type == "journal"):
-                if(check_if_unique(journals, x)):
+                if(check_if_unique(journals+conferences, x)):
                     journals.append(x)
                     entries.append(x)
             if(x.pub_type == "workshop"):

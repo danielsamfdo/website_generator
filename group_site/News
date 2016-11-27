@@ -1,0 +1,11 @@
+<html><head><link rel='stylesheet' type='text/css' href='style.css'><title>ANSR News</title></head><body><div class='box'>,<div id='navigation'><a href='Home'>Home</a><a href='People'>People</a><a href='Publications'>Publications</a><a href='Projects'>Projects</a><a href='Jobs'>Jobs</a><a href='News'>News</a>
+</div><div class='innerbox'><div class="publications">
+  <ul> <font size="2" face="Verdana">
+  <li> <a href="http://www.cs.umass.edu/~arun/papers/R3.pdf">R3: Robust Replication Routing in Wireless Networks with Diverse Connectivity Characteristics</a> <a href="http://www.cs.umass.edu/~arun/papers/R3.pdf"></a><br> Xiaozheng Tie, Arun Venkataramani, Aruna Balasubramanian<br> ACM MOBICOM, September 2011. <br><br>
+  </li><li> <a href="http://www.cs.umass.edu/~arun/papers/diverseTE.pdf">Beyond MLU: An Application-Centric Comparison of Traffic Engineering Schemes</a> <a href="http://www.cs.umass.edu/~arun/papers/diverseTE.pdf"></a><br> Abhigyan, Aditya Mishra, Vikas Kumar, Arun Venkataramani<br> IEEE INFOCOM, April 2011. <br>A related <a href="http://www.cs.umass.edu/~arun/papers/diverseTE-poster"> poster</a> appeared previously at NSDI'09.<br><br>
+  </li><li> <a href="http://www.cs.umass.edu/~arun/papers/ZZ.pdf">ZZ and the Art of Practical BFT Execution</a> <a href="http://www.cs.umass.edu/~arun/papers/ZZ.pdf"></a><br> Tim Wood, Rahul Singh, Arun Venkataramani, Emmanuel Cecchet, Prashant Shenoy<br> ACM SIGOPS EuroSys, April 2011. <br><br>
+  </li></font><li><font size="2" face="Verdana">Anticipatory Wireless Bitrate Control for Blocks<br> Xiaozheng Tie, Anand Seetharam, Arun Venkataramani, Deepak Ganesan, Dennis Goeckel<br> ACM SIGCOMM Conference on Emerging Networking Experiments and Technologies (CoNEXT), December 2011. <br>A related <a href="http://www.cs.umass.edu/~arun/papers/blockrate-poster.pdf"> poster </a> paper previously appeared at USENIX NSDI 2011.,<br>
+  </font> </li>
+  </ul>
+</div>
+</div></div></body></html>

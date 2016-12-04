@@ -1,15 +1,79 @@
 import os
 import re
 import bibtexparser
+import scholarly
+from bibtexparser.bwriter import BibTexWriter
+from bibtexparser.bibdatabase import BibDatabase
+import pickle
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+def striphtml(data):
+    p = re.compile(r'<.*?>')
+    return p.sub('', data)
+
 class Publications:
     """A simple example class"""
-    def __init__(self, pub_type):
+    def __init__(self, pub_type, gs=False):
         self.pub_type = pub_type
-    
+        self.google_scholar = gs
+
+    def print_bibtex(self):
+      if(hasattr(self, "bibtex_string")):
+        bibtex_str = re.sub("\n","<br>",self.bibtex_string)
+        # bibtex_str = re.sub(".*catteggory.*={.*},?","<br>",self.bibtex_string)
+        return "<div class='bib_tex_show_hide'>[+]Show Bib</div><div class='bibentry'><div class='bibtexentry'>%s</div></div>"  %(bibtex_str)
+      else:
+        return ""
+
+    def gscholar_print_extra_if_present(self):
+      extra = ""
+      volume = ""
+      if 'volume' in self.entry:
+        volume = "Volume: %s, " %self.entry['volume']
+      pages = ""
+      if 'pages' in self.entry:
+        pages = "Pages: %s, " %self.entry['pages']
+      number = ""
+      if 'number' in self.entry:
+        pages = "Number: %s, " %self.entry['number']
+      journal = ""
+      if 'journal' in self.entry:
+        journal = "Journal : %s, " %self.entry['journal']
+        extra+= journal + volume + number + pages 
+      if(len(extra)>0):
+        return "<br>"+extra
+      return ""
+
+    def print_abstract(self):
+      if(hasattr(self, "abstract")):
+        # print self.entry
+        x = str(self.abstract)
+        abst = striphtml(x)
+        # abst = re.sub(r'(<br>)|(<br/>)',"",x)
+        return "<br/><div class='abstract_show_hide'>[+]Show Abstract</div><div class='ab_entry'><div class='abstractentry'>%s</div></div>"  %(abst)
+      else:
+        return ""
+
+    def google_scholar_print(self):
+      title = self.title
+      if('url' in self.entry):
+        title = "<a href='%s'>%s</a>" %(self.entry['url'], self.title)
+      author = ""
+      if(self.author!= None and len(self.author)>0):
+        author = "<br>" + self.author
+      # if('author' in self.entry):
+      #   author = "<br>" + self.entry['author']
+      abstract = ""
+      if(hasattr(self,"abstract")):
+        abstract = self.print_abstract()
+      s = "%s %s %s %s" %(title,author,abstract, self.gscholar_print_extra_if_present())
+      return s
+
+    def abstract_bibtex(self):
+      return self.print_abstract() + self.print_bibtex()
+
     def print_publication(self):
         if(hasattr(self,'month')):
             month = self.month
@@ -27,24 +91,27 @@ class Publications:
         if('link' in self.entry):
           title = "<a href='%s'>%s</a>" %(self.entry['link'], self.title)
           # print  "<a href='%s'>%s</a>" %(self.entry['url'], self.title)        
-        if(self.pub_type == "conference"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s' %(title, self.author, self.entry["booktitle"], month, self.year, note)
+        if(self.google_scholar == True):
+            s = self.google_scholar_print()
+        elif(self.pub_type == "conference"):
+            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %(title, self.author, self.entry["booktitle"], month, self.year, note, self.abstract_bibtex())
         elif(self.pub_type == "techreport"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s' %(title, self.author, self.entry["institution"], self.entry["number"], month, self.year)
+            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %(title, self.author, self.entry["institution"], self.entry["number"], month, self.year, self.abstract_bibtex())
         elif(self.pub_type == "phdthesis"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, "PhD Thesis",self.entry["institution"], month, self.year)
+            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, "PhD Thesis",self.entry["institution"], month, self.year, self.abstract_bibtex())
         elif(self.pub_type == "ugthesis"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, "Undergraduate Thesis",self.entry["institution"], month, self.year)
+            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, "Undergraduate Thesis",self.entry["institution"], month, self.year, self.abstract_bibtex())
         elif(self.pub_type == "journal"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s %s, %s' %( title, self.author, self.entry["journal"], self.entry["volume"], pages, month, self.year, note)
+            s ='%s<br/> %s,<br/> %s, %s %s, %s %s, %s %s' %( title, self.author, self.entry["journal"], self.entry["volume"], pages, month, self.year, note, self.abstract_bibtex())
         elif(self.pub_type == "workshop"):
-            s ='%s<br/> %s,<br/> %s, %s %s' %( title, self.author, self.entry["booktitle"], month, self.year)
+            s ='%s<br/> %s,<br/> %s, %s %s %s' %( title, self.author, self.entry["booktitle"], month, self.year, self.abstract_bibtex())
         elif(self.pub_type == "bookchapter"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s' %( title, self.author, self.entry["booktitle"], month, self.year, note)
+            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %( title, self.author, self.entry["booktitle"], month, self.year, note, self.abstract_bibtex())
         elif(self.pub_type == "book"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s' %( title, self.author, self.entry["booktitle"], month, self.year, note)
+            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %( title, self.author, self.entry["booktitle"], month, self.year, note, self.abstract_bibtex())
         elif(self.pub_type == "misc"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, self.entry["booktitle"], self.entry["institution"], month, self.year)
+            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, self.entry["booktitle"], self.entry["institution"], month, self.year, self.abstract_bibtex())
+        
         return s
 
 def get_bib_entries(file_name):  
@@ -99,7 +166,7 @@ def check_word_containment(title1, title2):
     tcnt+=1
   if(tcnt-cnt<=1):
     print title1, title2
-    if(len(tokens2)>4):
+    if(abs(len(tokens2)-len(tokens1))<=3):
       return True
     else:
       return False
@@ -117,6 +184,24 @@ def check_if_unique(list_of_pubs, check_pub):
 
     return True
 
+def returnSimilarPub(list_of_pubs, check_pub_title, check_pub_year, check_year):
+    for pub in list_of_pubs:
+        if(pub.title.lower() == check_pub_title.lower()):
+          if(check_pub_year!=None):
+            if(pub.year==check_pub_year):
+              return pub
+          else:
+            return pub
+    for pub in list_of_pubs:
+        if(check_word_containment(pub.title, check_pub_title)):
+          if(check_pub_year!=None):
+            if(pub.year==check_pub_year):
+              return pub
+          else:
+            return pub
+
+    return None
+
 def list_months_rev():
   return ["December", "November", "October", "September", "August", "July", "June", "May", "April", "March", "February", "January"]
 
@@ -126,6 +211,82 @@ def month_hash():
 def month(text):
     val = month_hash()
     return val[text]
+
+def add_google_scholar_entries(existing_publications):
+  f = open('gs_entries_prof_arun.dat', 'r')
+  entries = pickle.load(f)
+  bib_entries = []
+  ignore = []
+  ignore = ["Timothy Wood","Publication list","Abstract/Details","Aruna Balasubramanian"]
+  for ent in entries:
+    # if(re.match("venkataramani",ent['author'],re.IGNORECASE)):
+      if(ent['title'] not in ignore):
+        bib_entries.append(ent)
+        print "####******%s******" %ent['title']
+      else:
+        print "******%s******" %ent['title']
+    # else:
+      # print "IGNORED ---------> " + ent['title']
+  f.close()
+  non_entries = []
+  for pub_bib in bib_entries:
+    if('year' in pub_bib):
+      yr = int(pub_bib['year'])
+      check_year = True
+    else:
+      yr = None
+      # print pub_bib['title'] + "has no year associated with it "
+      check_year = False    
+    similar_pub = returnSimilarPub(existing_publications, pub_bib['title'], yr, check_year)
+    if(similar_pub):
+      if('abstract' in pub_bib):
+        # pub_entry_dict =similar_pub.entry
+        similar_pub.abstract = pub_bib['abstract']
+
+        # print "Abstract Added for %s" %(pub_bib['title'])  
+        # similar_pub.entry = pub_entry_dict
+      # else:
+        # print "No abstract present"
+    else:
+      # print "No similar PUB present for %s" %(pub_bib['title'])
+      # print "Adding Publication %s" %(pub_bib['title'])
+
+      new_pub = Publications("google_scholar",True)
+      new_pub.bib = pub_bib
+      # print pub_bib
+      new_pub.title = pub_bib['title']
+      new_pub.author = ""
+      if('author' in pub_bib):#PATENTS DID NOT HAVE AUTHOR NAMES
+        new_pub.author = pub_bib['author']
+
+      if('year' in pub_bib):
+        new_pub.year = pub_bib['year']
+      else:
+        new_pub.year = None
+      new_pub.entry = pub_bib
+      non_entries.append(new_pub)
+      existing_publications.append(new_pub)
+  print len(non_entries)
+  for i in non_entries:
+    print i.title
+  return non_entries
+
+def import_publications_from_google_scholar(existing_publications):
+  author = next(scholarly.search_author('Arun Venkataramani')).fill()
+  entries = []
+  for pub in author.publications:
+    pub.fill()
+  for pub in author.publications:
+    similar_pub = returnSimilarPub(existing_publications, pub.bib['title'], int(pub.bib['year']))
+    if(similar_pub):
+      if('abstract' in pub.bib):
+        print "Abstract Added for %s" %(pub.title)  
+        similar_pub.entry['abstract'] = pub.bib['abstract']
+      else:
+        print "No abstract present"
+    else:
+      print "NO similar PUB present for %s" %(pub.title)
+  return 
 
 def process_text(text):
     text = re.sub("[{}]","",text)
@@ -213,15 +374,32 @@ for i in my_pubs_bib_database.entries + dblp_bib_database.entries:
                 if(check_if_unique(books, x)):
                     books.append(x)
                     entries.append(x)
+
+for entry in entries:
+  db = BibDatabase()
+  db.entries = [entry.entry]
+  writer = BibTexWriter()
+  entry.bibtex_string = writer.write(db)
+
+print "$$$$$$$$$$$$$$$$$$$$$$$$$$"
+
+new_gs_entries = add_google_scholar_entries(entries)
+
+non_year_entries = []
+for gs_entry in new_gs_entries:
+  if(gs_entry.year == None):
+    non_year_entries.append(gs_entry)
+
 years_entries =[]
 for m in (list_months_rev()):
   print m
 for i in reversed(range(min_year,max_year+1)) :
     pubs = []
     year_entry = []
+
     for entry in entries:
         if(entry.year == i):
-            pubs.append(entry)
+          pubs.append(entry)
     no_month_entries = []
     for month in list_months_rev():
             for pub in pubs:
@@ -252,14 +430,19 @@ print "Test"
 target = open("select_new.html", 'w')
 yr = max_year
 for year_entry in years_entries:
-    
     s = ""
     for entry in year_entry:
-        if(re.search("SELECT",entry.entry["catteggory"])):
-            s+= "<li>%s</li><br/>" %((entry.print_publication()))
-            
+      if(entry.google_scholar == True or re.search("SELECT",entry.entry["catteggory"])):
+          s+= "<li>%s</li><br/>" %((entry.print_publication()))
     if(len(year_entry)>0):
         header = "<h5>%s</h5>" %(yr)    
         target.write(header+"<ul>"+s+"</ul>")
     yr-=1
+s=""
+for entry in non_year_entries:
+  if(entry.google_scholar == True or re.search("SELECT",entry.entry["catteggory"])):
+          s+= "<li>%s</li><br/>" %((entry.print_publication()))
+if(len(non_year_entries)>0):
+    header = "<h5>%s</h5>" %("Others")    
+    target.write(header+"<ul>"+s+"</ul>")
 target.close()

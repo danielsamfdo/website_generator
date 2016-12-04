@@ -39,8 +39,8 @@ template2 () {
 
 
 template1 () {
-  printf "<html><head><link rel='stylesheet' type='text/css' href='style.css'><title>"
-  printf "$4"
+  printf "<html><head><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='js/script.js'></script><link rel='stylesheet' type='text/css' href='style.css'><title>"
+  echo "$4"
   printf "</title></head><body><div class='box'>"
   printf "%s", "$1"
   printf "<div id='navigation'>"

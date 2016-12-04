@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from spqr.eecs.umich.edu/publications.php?q=FERNS by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- facebook -->
+    <meta property="og:url" content="index.html" />
+	<meta property="og:site_name" content="SPQR - Security and Privacy Research Group" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="SPQR - Security and Privacy Research Group" />
+	<meta property="og:image" content="http://localhost/spqr/images/SPQR-logo.jpg" />
+	<meta property="og:description" content="" />
+
+    <link rel="shortcut icon" href="images/spqr-favicon.png">
+
+    <title>SPQR &mdash; Michigan EECS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="styles/bootstrap-spqr.css" rel="stylesheet">
+
+	<script src="simile-ajax-api097f.js?bundle=false"></script>
+	<script src="exhibit-api097f.js?bundle=false"></script>
+	<link rel="exhibit/data" href="spqrbib.js" type="application/json" />
+	<link rel="exhibit/data" href="spqr-bibschema.js" type="application/json" />
+
+    <link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300|Tinos:regular,bold" />
+
+	<link rel="stylesheet" type="text/css" href="style/spqr-pubs.css" />
+	<link rel="icon" type="image/png" href="images/spqr-favicon.png" />
+
+	<meta name="description" content="Security and privacy research at the
+	University of Michigan" />
+	<script src="spqr.js"></script>
+  </head>  <body>
+	    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index-2.html">
+              <div class="nav-header-logo">
+                <script src="spqr.js"></script>
+		<span onMouseOver="SPQRlink(this)">
+              	<img src="images/SPQR-logo.jpg" class="nav-header-logo-img">
+		</span>
+              </div>
+              <div class="nav-header-headline">Security and Privacy Research Group</div>
+              <div class="nav-header-text">Computer Science & Engineering | University of Michigan</div> 
+              </a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+               <li ><a href="index-2.html">HOME</a></li>
+                <li ><a href="people.html">PEOPLE</a></li>
+                <li  class="active" ><a href="publications.html">PUBLICATIONS</a></li>
+                <li ><a href="projects.html">PROJECTS</a></li>
+                <li ><a href="news.html">NEWS & EVENTS</a></li>
+                <li ><a href="seminars.html">SEMINARS</a></li>
+                <li ><a href="jobs.html">JOBS</a></li>
+                <li ><a href="https://twitter.com/spqrfridge">SMART FRIDGE</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>    <div class="container marketing">
+      <div class="col-md-12 content-first-col projects">
+      <h2>Publications</h2>
+
+<div id="meat">
+<div id="pub-facets">
+	<div id="search-facet"
+		ex:role="facet" ex:facetClass="TextSearch"
+		ex:queryParamName="q"
+		ex:facetLabel="Search"></div>
+	<div id="keywords-facet"
+		ex:role="facet" ex:expression=".keywords"
+		ex:scroll="false" ex:sortMode="count"
+		ex:facetLabel="Keywords"></div>
+	<div id="author-facet"
+		ex:role="facet" ex:expression=".author"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="People"></div>
+	<div id="venue-facet"
+		ex:role="facet" ex:expression=".venue"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="Venue"></div>
+</div>
+<div id="spqrpubs">
+
+	<div class="calmnotice">
+		<strong>Note:</strong> There is also a <a
+		href="publications-flat.html">flat (no Javascript) version of
+		this page</a>.
+	</div>
+
+	<div ex:role="collection" ex:itemTypes="Publication"></div>
+
+	<div ex:role="exhibit-lens"
+		ex:itemTypes="Publication"
+		class="publication" style="display: none">
+
+		<div>
+			<div class="paperinfo">
+			<span class="pubtitle" ex:select=".pub-type">
+				<span ex:case="inbook" class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .chapter)"></span>
+				<span class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .label)"></span>
+			</span>.<br />
+			<span ex:content=".author"></span><br />
+			<span class="wherepublished" ex:select=".pub-type">
+				<span ex:case="inbook">
+					<span ex:if-exists=".label">
+					Chapter in
+					<em ex:content=".label"></em>,
+					</span>
+				</span>
+				<span ex:case="phdthesis">
+					<span ex:if-exists=".school">
+					Ph.D. thesis, <span ex:content=".school"></span>,
+					</span>
+				</span>
+				<span ex:case="inproceedings">
+					<span ex:if-exists=".booktitle">
+					In <em ex:content=".booktitle"></em><span ex:if-exists=".series">&nbsp;(<em ex:content=".series"></em>)</span>,
+					</span>
+				</span>
+				<span ex:case="techreport">
+					<em>Tech report
+						<span ex:content=".number"></span>,
+						<span ex:content=".institution"></span>,
+					</em>
+				</span>
+				<span ex:case="article">
+					<em ex:content=".journal"></em>
+					<span ex:if-exists=".volume">
+						<span ex:content=".volume"></span>(<span ex:content=".number"></span>),
+					</span>
+				</span>
+			</span>
+			<span ex:if-exists=".address">
+				<span ex:content=".address"></span>,
+			</span>
+			<span ex:content=".month"></span>
+			<span ex:content=".year"></span>.
+			<span ex:if-exists=".note"><span ex:content=".note"></span>.</span>
+			<span ex:if-exists=".award_note"><span ex:content=".award_note"></span>.</span>
+			</div>
+
+			<ul class="links">
+				<li><a ex:href-subcontent="spqrbib_bib.html#{{.key}}">bibtex</a></li>
+				<li ex:if-exists=".url"><a ex:href-content=".url">paper</a></li>
+				<li ex:if-exists=".slides_url"><a ex:href-content=".slides_url">slides</a></li>
+				<li ex:if-exists=".poster_url"><a ex:href-content=".poster_url">poster</a></li>
+				<li ex:if-exists=".poster_url2"><a ex:href-content=".poster_url2">poster</a></li>
+				<li ex:if-exists=".poster_url3"><a ex:href-content=".poster_url3">poster</a></li>
+				<li ex:if-exists=".conference_url"><a ex:href-content=".conference_url">conference</a></li>
+				<li ex:if-exists=".workshop_url"><a ex:href-content=".workshop_url">workshop</a></li>
+				<li ex:if-exists=".techreport_url"><a ex:href-content=".techreport_url">tech report</a></li>
+				<li ex:if-exists=".demo_url"><a ex:href-content=".demo_url">demo</a></li>
+				<li ex:if-exists=".video_demo_url"><a ex:href-content=".video_demo_url">video demo</a></li>
+				<li ex:if-exists=".details_url"><a ex:href-content=".details_url">details</a></li>
+				<li ex:if-exists=".extended_paper_url"><a ex:href-content=".extended_paper_url">extended paper</a></li>
+				<li ex:if-exists=".html_url"><a ex:href-content=".html_url">HTML</a></li>
+				<li ex:if-exists=".ps_url"><a ex:href-content=".ps_url">PS</a></li>
+				<li ex:if-exists=".journal_url"><a ex:href-content=".journal_url">journal</a></li>
+				<li ex:if-exists=".risks_url"><a ex:href-content=".risks_url">RISKS</a></li>
+				<li ex:if-exists=".springer_url"><a ex:href-content=".springer_url">Springer</a></li>
+				<li ex:if-exists=".code_url"><a ex:href-content=".code_url">code</a></li>
+				<li ex:if-exists=".tgz_url"><a ex:href-content=".tgz_url">TGZ</a></li>
+				<li ex:if-exists=".licensing_url"><a ex:href-content=".licensing_url">licensing</a></li>		
+				<li ex:if-exists=".video_url"><a ex:href-content=".video_url">video</a></li>
+				<li ex:if-exists=".video_url2"><a ex:href-content=".video_url2">video</a></li>
+				<li ex:if-exists=".webcast_url"><a ex:href-content=".webcast_url">webcast</a></li>
+				<li ex:if-exists=".photos_url"><a ex:href-content=".photos_url">photos</a></li>
+				<li ex:if-exists=".msr_url"><a ex:href-content=".msr_url">Microsoft Research</a></li>
+				<li ex:if-exists=".nytimes_url"><a ex:href-content=".nytimes_url">New York Times</a></li>
+				<li ex:if-exists=".wsj_url"><a ex:href-content=".wsj_url">Wall Street Journal</a></li>
+				<li ex:if-exists=".npr_url"><a ex:href-content=".npr_url">NPR</a></li>
+				<li ex:if-exists=".ieee_spectrum_url"><a ex:href-content=".ieee_spectrum_url">IEEE Spectrum</a></li>
+				<li ex:if-exists=".boston_globe_url"><a ex:href-content=".boston_globe_url">Boston Globe</a></li>
+				<li ex:if-exists=".medgadget_url"><a ex:href-content=".medgadget_url">Medgadget</a></li>
+				<li ex:if-exists=".new_scientist_url"><a ex:href-content=".new_scientist_url">New Scientist</a></li>
+				<li ex:if-exists=".ap_url"><a ex:href-content=".ap_url">AP</a></li>
+				<li ex:if-exists=".reuters_url"><a ex:href-content=".reuters_url">Reuters</a></li>
+				<li ex:if-exists=".schneier_url"><a ex:href-content=".schneier_url">Schneier</a></li>
+				<li ex:if-exists=".senate_url"><a ex:href-content=".senate_url">Senate</a></li>
+				<li ex:if-exists=".slashdot_url"><a ex:href-content=".slashdot_url">Slashdot</a></li>
+				<li ex:if-exists=".tv_url"><a ex:href-content=".tv_url">TV</a></li>
+				<li ex:if-exists=".us_news_world_report_url"><a ex:href-content=".us_news_world_report_url">U.S. News &amp; World Report</a></li>
+				<li ex:if-exists=".eweek_url"><a ex:href-content=".eweek_url">eWeek</a></li>
+				<li ex:if-exists=".abstract">
+				<a href="javascript:void(0);"
+					ex:onclick-subcontent="$('#{{.key}}').slideToggle('fast');"
+					class="abstractbutton">abstract &raquo;</a>
+				</li>
+			</ul>
+
+			<div ex:if-exists=".abstract">
+				<p class="abstract" ex:content=".abstract" style="display:none"
+					ex:id-content=".key"></p>
+			</div>
+			</div>
+		</div>
+
+	<div ex:role="exhibit-lens" ex:itemTypes="Author" class="author" style="display: none">
+       		<span ex:control="copy-button" style="float: right"></span>
+		<div class="title"><span ex:content=".author"></span></div>
+		<ol class="publications" ex:content="!author">
+			<li ex:content=".label"></li>
+		</ol>
+	</div>
+	<div ex:role="exhibit-view"
+       		ex:viewClass="Exhibit.TileView"
+       		ex:orders=".year, .monthnum"
+       		ex:grouped="true"
+       		ex:directions="descending, descending"
+       		ex:possibleOrders=".pub-type, .author, .year, .label, .monthnum, .venue"></div>
+</div>
+</div> <!-- /meat -->
+
+
+
+      
+      <hr class="featurette-divider">
+      <!--<div class="watermark-title">PUBLICATIONS</div> -->
+      
+         
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2015 Security and Privacy Research Group - University of Michigan</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="docs-assets/js/holder.js"></script>
+  </body>
+
+<!-- Mirrored from spqr.eecs.umich.edu/publications.php?q=FERNS by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:41 GMT -->
+</html>

@@ -1,0 +1,12 @@
+<img class="img-responsive img-rounded" src="assets/img/profilepic.jpg"/>
+<div class="white-text">
+  <h3>V. Arun</h3>
+  <span>Associate Professor</span>
+  <br>
+  <br> 
+  <br>Computer Science &amp; Engineering
+  <br>University of Massachusetts Amherst
+  <br>Room 236 Computer Science Bldg.,<br>140 Governors Dr,
+  Amherst, MA 01003<br>
+  arun@cs.umass.edu<br>(413) 545-3651
+</div>

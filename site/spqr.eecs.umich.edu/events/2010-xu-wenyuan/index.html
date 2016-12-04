@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from spqr.eecs.umich.edu/events/2010-xu-wenyuan/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>Wenyuan Xu, October 25, 2010</title>
+	<!-- script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"
+		type="text/javascript"></script -->
+
+    <link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300|Tinos:regular,bold" />
+	<link rel="stylesheet" type="text/css" href="../../style/spqr-screen.css" />
+
+	<meta name="description" content="Wenyuan Xu of USC speaks at the University of Massachusetts Amherst on October 25, 2010" />
+</head>
+<body>
+<div id="main">
+
+<div id="topmatter">
+	<img src="wenyuan-xu.jpg" width="150" style="float:left; margin-right: 1em" />
+	<h1>Wenyuan Xu</h1>
+	<div id="subtitle">
+	Assistant Professor<br />
+      <a href="http://www.cse.sc.edu/">Department of Computer Science and Engineering, University of South Carolina</a><br />
+	Monday, October 25, 2010<br />
+	12:00pm - 1:00pm<br />
+	Computer Science Building, Room 151<br />
+	Faculty Host: Kevin Fu<br style="clear: both" />
+	</div>
+</div> <!-- /topmatter -->
+
+<div id="breadcrumbs">
+   <h1>	<a href="../../index.html">Home</a> &nbsp; &nbsp;
+	<a href="../../people.html">People</a> &nbsp; &nbsp;
+	<a href="../../publications.html">Publications</a> &nbsp; &nbsp;
+	<a href="../../projects.html">Projects</a> &nbsp; &nbsp;
+        <a href="../../news.html">News &amp; Events</a> &nbsp; &nbsp;
+	<a href="../../seminars.html">Seminars</a> &nbsp; &nbsp;
+	<a href="../../jobs.html">Jobs</a> 
+</h1>
+</div>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->
+
+<div id="meat">
+<h2 id="title">&ldquo;Analyzing the Security and Privacy Vulnerability of 
+Emerging Wireless Networks via Software Defined Radio: 
+A Tire Pressure Monitoring System Case Study&rdquo;<br />
+</h2>
+
+
+<iframe src="http://player.vimeo.com/video/23808028?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0"></iframe>
+
+<img src="drive.png" hspace="15" align="bottom">
+
+<div id="abstract">
+<h3>Abstract</h3>
+<p>
+New wireless network systems continue to emerge and have an increasing
+impact on our lives, and ultimately become an inseparable part of our
+social fabric. Already, we have witnessed medical wireless sensors
+monitoring patients at home and RFID-based keys assisting
+passive-entry. Despite the high penetration rate of wireless
+technologies, the secure precaution of many wireless systems is
+limited to security through obscurity. The advances of
+software-defined radio make it easy to discover details of wireless
+communication protocols, no matter whether they are proprietary or
+not, and to launch various attacks causing security or privacy
+breaches.  In this talk, we present a case study analyzing the first
+mandated in-car sensor networks, the tire pressure monitoring system
+(TPMS), using GNU Radio in conjunction with the Universal Software
+Radio Peripheral (USRP), a low-cost out-of-shelf software radio
+platform.</p>
+
+<p>The security and privacy implications of TPMS are not well understood
+as their transmissions propagate beyond the confines of a car's
+body. Thus, we evaluated the security and privacy risks associated
+with TPMS using both laboratory experiments with isolated tire
+pressure sensor modules and experiments with a complete vehicle
+system.  The first step towards analyzing the TPMS security and
+privacy risks is to reverse-engineer the TPMS communication protocol,
+since it is proprietary. We started our reverse engineering effort by
+searching for coarse physical characteristics of TPMS communication in
+the frequency domain utilizing USRP and vector signal analyzer. Given
+the coarse channel information, we tuned the USRP to the correct
+frequency band and recorded a few packets at the sample rate of
+250Khz.  A post-data-analysis of captured signals by our customized
+software revealed the modulation scheme (ASK or FSK) and the encoding
+scheme (differential Manchester). Manipulating the sensor to transmit
+packets with different readings and spoofing packets using USRP helped
+us to determine the message formats and concluded the reverse
+engineering process.</p>
+
+<p>Once we understood the TPMS communication protocol, we showed that
+eavesdropping is easily possible at a distance of roughly 40m using
+cheap antennas. Furthermore, reverse-engineering of the underlying
+protocols revealed static 32 bit identifiers and that messages can be
+easily triggered remotely, which raises privacy concerns as vehicles
+can be tracked through these identifiers. Current protocols do not
+employ authentication and vehicle implementations do not perform basic
+input validation, thereby allowing for remote spoofing of sensor
+messages. We validated this experimentally by triggering tire pressure
+warning messages in a moving vehicle from our software radio attack
+platform located in a nearby vehicle. Finally, the talk concludes with
+a set of recommendations for improving the privacy and security of
+tire pressure monitoring systems and other forthcoming consumer
+wireless networks.</p>
+
+</div>
+
+<div id="plug">
+<h3>Who Should Attend</h3>
+Everyone!  </div>
+
+<div id="bio">
+<h3>About Wenyuan</h3>
+
+<a href="http://www.cse.sc.edu/~wyxu/">Wenyuan Xu</a> is an assistant professor in the Department of Computer
+Science and Engineering, University of South Carolina. She received
+her Ph.D. degree in electrical and computer engineering from Rutgers
+University in 2007, M.S. degree in computer science and engineering
+from Zhejiang University in 2001, and B.S. degree in electrical
+engineering with the highest honor from Zhejiang University in
+1998. Broadly, her research interests include wireless networking,
+network security and privacy. Her prior research results have led to
+link-layer jamming detection mechanisms, as well as link-layer defense
+strategies to repair networks in the presence of radio
+interference. More recently, she is investigating security
+vulnerabilities in emerging wireless networks, enhancing privacy in
+wireless networks, and developing cross-layer approaches to cope with
+jamming attacks.  She received NSF Career Award in 2009 and serves on
+the Editorial Board of International Journal of Autonomous and
+Adaptive Communications Systems (IJAACS).</div>
+
+</div> 
+<!-- /meat -->
+
+<div id="bottommatter">
+<div id="support">
+<h2>Support</h2>
+This talk is sponsored by a <a
+href="http://www.sloan.org/fellowships">Sloan Research Fellowship</a>.
+</div>
+
+</div> <!-- /bottommatter -->
+
+</div> <!-- /main -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21026882-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+
+</body>
+
+<!-- Mirrored from spqr.eecs.umich.edu/events/2010-xu-wenyuan/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:45 GMT -->
+</html>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->

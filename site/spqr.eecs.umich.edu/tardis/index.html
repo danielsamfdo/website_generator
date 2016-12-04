@@ -1,0 +1,260 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from spqr.eecs.umich.edu/tardis/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:52:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>TARDIS</title>
+	<!-- script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"
+		type="text/javascript"></script -->
+
+    <link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300|Tinos:regular,bold" />
+	<link rel="stylesheet" type="text/css" href="../style/spqr-screen.css" />
+	<link rel="stylesheet" type="text/css" href="half-wits.html" />
+
+	<meta name="description" content="Smarter Storage for Low-Power Devices" />
+	
+	 <!-- for publications -->
+        <script src="../js/simile/simile-ajax-api097f.js?bundle=false"
+                type="text/javascript"></script>
+        <script src="../js/exhibit/exhibit-apicf74.js?bundle=false&amp;autoCreate=false"
+                type="text/javascript"></script>
+        <link rel="exhibit/data" href="../spqrbib.js" type="application/json" />
+        <link rel="exhibit/data" href="../spqr-bibschema.js" type="application/json" />
+        <link rel="stylesheet" type="text/css" href="../style/spqr-pubs.css" />
+        <script type="text/javascript" src="../subpub.js"></script>
+        <!-- /for publications -->
+</head>
+<body>
+<div id="main">
+<div id="topmatter">
+	<h1>TARDIS</h1>
+	<div id="subtitle">
+		Time And Remanence Decay In SRAM
+	</div>
+</div> <!-- /topmatter -->
+
+<div id="breadcrumbs">
+   <h1>	<a href="http://spqr.cs.umass.edu/">Home</a> &nbsp; &nbsp;
+	<a href="../people.html">People</a> &nbsp; &nbsp;
+	<a href="../publications.html">Publications</a> &nbsp; &nbsp;
+	<a href="../projects.html">Projects</a> &nbsp; &nbsp;
+        <a href="../news.html">News &amp; Events</a> &nbsp; &nbsp;
+	<a href="../seminars.html">Seminars</a> &nbsp; &nbsp;
+	<a href="../jobs.html">Jobs</a> 
+</h1>
+</div>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->
+
+<div id="meat">
+<h2>Overview</h2>
+<p>
+TARDIS description goes here
+</p>
+
+<div id="graph">
+</div>
+
+
+<div id="pub" style="clear: both">
+<h2>Publications</h2>
+                <script type="text/javascript">
+                        var selectedKeywords = "TARDIS";
+                </script>
+                <div id="pub-facets">
+	<div id="search-facet"
+		ex:role="facet" ex:facetClass="TextSearch"
+		ex:queryParamName="q"
+		ex:facetLabel="Search"></div>
+	<div id="keywords-facet"
+		ex:role="facet" ex:expression=".keywords"
+		ex:scroll="false" ex:sortMode="count"
+		ex:facetLabel="Keywords"></div>
+	<div id="author-facet"
+		ex:role="facet" ex:expression=".author" ex:height="20em"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="People"></div>
+</div>
+<div id="spqrpubs">
+
+	<div class="calmnotice">
+		<strong>Note:</strong> There is also a <a
+		href="publications-flat.html">flat (no Javascript) version of
+		this page</a>.
+	</div>
+
+	<div ex:role="collection" ex:itemTypes="Publication"></div>
+
+	<div ex:role="exhibit-lens"
+		ex:itemTypes="Publication"
+		class="publication" style="display: none">
+
+		<div>
+			<span ex:content=".label" class="pubtitle"></span>.<br />
+			<span ex:content=".author"></span><br />
+			<span class="wherepublished" ex:select=".pub-type">
+				<span ex:case="inproceedings">
+					<span ex:if-exists=".booktitle">
+						In <em ex:content=".booktitle"></em>.
+					</span>
+				</span>
+				<span ex:case="techreport">
+					<em>Tech report
+						<span ex:content=".number"></span>,
+						<span ex:content=".institution"></span>.
+					</em>
+				</span>
+				<span ex:case="article">
+					<em ex:content=".journal"></em>
+					<span ex:if-exists=".volume">
+						<span ex:content=".volume"></span>(<span ex:content=".number"></span>),
+					</span>
+				</span>
+			</span>
+			<span ex:if-exists=".address">
+				<span ex:content=".address"></span>,
+			</span>
+			<span ex:content=".month"></span>
+			<span ex:content=".year"></span>.
+			<span ex:if-exists=".note"><span ex:content=".note"></span>.</span>
+			<ul class="links">
+				<li ex:if-exists=".url"><a ex:href-content=".url">paper</a></li>
+				<li ex:if-exists=".slides_url"><a ex:href-content=".slides_url">slides</a></li>
+				<li ex:if-exists=".poster_url"><a ex:href-content=".poster_url">poster</a></li>
+				<li ex:if-exists=".poster_url2"><a ex:href-content=".poster_url2">poster</a></li>
+				<li ex:if-exists=".poster_url3"><a ex:href-content=".poster_url3">poster</a></li>
+				<li ex:if-exists=".conference_url"><a ex:href-content=".conference_url">conference</a></li>
+				<li ex:if-exists=".workshop_url"><a ex:href-content=".workshop_url">workshop</a></li>
+				<li ex:if-exists=".techreport_url"><a ex:href-content=".techreport_url">tech report</a></li>
+				<li ex:if-exists=".demo_url"><a ex:href-content=".demo_url">demo</a></li>
+				<li ex:if-exists=".video_demo_url"><a ex:href-content=".video_demo_url">video demo</a></li>
+				<li ex:if-exists=".details_url"><a ex:href-content=".details_url">details</a></li>
+				<li ex:if-exists=".extended_paper_url"><a ex:href-content=".extended_paper_url">extended paper</a></li>
+				<li ex:if-exists=".html_url"><a ex:href-content=".html_url">HTML</a></li>
+				<li ex:if-exists=".ps_url"><a ex:href-content=".ps_url">PS</a></li>
+				<li ex:if-exists=".journal_url"><a ex:href-content=".journal_url">journal</a></li>
+				<li ex:if-exists=".risks_url"><a ex:href-content=".risks_url">RISKS</a></li>
+				<li ex:if-exists=".springer_url"><a ex:href-content=".springer_url">Springer</a></li>
+				<li ex:if-exists=".code_url"><a ex:href-content=".code_url">code</a></li>
+				<li ex:if-exists=".tgz_url"><a ex:href-content=".tgz_url">TGZ</a></li>
+				<li ex:if-exists=".licensing_url"><a ex:href-content=".licensing_url">licensing</a></li>				
+				<li ex:if-exists=".video_url"><a ex:href-content=".video_url">video</a></li>
+				<li ex:if-exists=".webcast_url"><a ex:href-content=".webcast_url">webcast</a></li>
+				<li ex:if-exists=".photos_url"><a ex:href-content=".photos_url">photos</a></li>
+
+				<li ex:if-exists=".nytimes_url"><a ex:href-content=".nytimes_url">New York Times</a></li>
+				<li ex:if-exists=".wsj_url"><a ex:href-content=".wsj_url">Wall Street Journal</a></li>
+				<li ex:if-exists=".npr_url"><a ex:href-content=".npr_url">NPR</a></li>
+				<li ex:if-exists=".ieee_spectrum_url"><a ex:href-content=".ieee_spectrum_url">IEEE Spectrum</a></li>
+				<li ex:if-exists=".boston_globe_url"><a ex:href-content=".boston_globe_url">Boston Globe</a></li>
+				<li ex:if-exists=".medgadget_url"><a ex:href-content=".medgadget_url">Medgadget</a></li>
+				<li ex:if-exists=".new_scientist_url"><a ex:href-content=".new_scientist_url">New Scientist</a></li>
+				<li ex:if-exists=".ap_url"><a ex:href-content=".ap_url">AP</a></li>
+				<li ex:if-exists=".reuters_url"><a ex:href-content=".reuters_url">Reuters</a></li>
+				<li ex:if-exists=".schneier_url"><a ex:href-content=".schneier_url">Schneier</a></li>
+				<li ex:if-exists=".senate_url"><a ex:href-content=".senate_url">Senate</a></li>
+				<li ex:if-exists=".slashdot_url"><a ex:href-content=".slashdot_url">Slashdot</a></li>
+				<li ex:if-exists=".tv_url"><a ex:href-content=".tv_url">TV</a></li>
+				<li ex:if-exists=".us_news_world_report_url"><a ex:href-content=".us_news_world_report_url">U.S. News &amp; World Report</a></li>
+				<li ex:if-exists=".eweek_url"><a ex:href-content=".eweek_url">eWeek</a></li>
+			</ul>
+
+			<div ex:if-exists=".abstract">
+				<a href="javascript:void(0);"
+					ex:onclick-subcontent="$('#{{.key}}').slideToggle('fast');"
+					class="abstractbutton">abstract &raquo;</a>
+				<p class="abstract" ex:content=".abstract" style="display:none"
+					ex:id-content=".key"></p>
+			</div>
+			</div>
+		</div>
+
+	<div ex:role="exhibit-lens" ex:itemTypes="Author" class="author" style="display: none">
+       		<span ex:control="copy-button" style="float: right"></span>
+		<div class="title"><span ex:content=".author"></span></div>
+		<ol class="publications" ex:content="!author">
+			<li ex:content=".label"></li>
+		</ol>
+	</div>
+	<div ex:role="exhibit-view"
+       		ex:viewClass="Exhibit.TileView"
+       		ex:orders=".year, .monthnum"
+       		ex:grouped="true"
+       		ex:directions="descending, descending"
+       		ex:possibleOrders=".pub-type, .author, .year, .label, .monthnum"></div>
+</div>
+</div>
+
+<div id="people">
+<h2>People</h2>
+<p>
+<ul>
+<li>
+Faculty members: 
+
+<a href="http://www.cs.umass.edu/~kevinfu">Kevin Fu</a>,
+<a href="http://vcsg.ecs.umass.edu/burleson.html">Wayne P. Burleson</a>
+</li>
+<li>Post Docs: <a href="http://www.cs.dartmouth.edu/~sorber/">Jacob Sorber</a><a></a></li>
+<li> Graduate Students:
+
+<a href="http://www.cs.umass.edu/~rahmati">Amir Rahmati</a>,
+<a href="http://www.cs.umass.edu/~negin">Mastooreh (Negin) Salajegheh</a>,
+<a href="http://www.eecs.berkeley.edu/~holcomb/">Dan Holcomb</a>
+</li>
+
+</ul>
+</p>
+</div>
+
+<div id="related">
+<h2>Related Projects</h2>
+
+<p>
+  <ul>
+    <li>Get the related RFID-scale hardware platform, the <a href="http://spqr.cs.umass.edu/moo/">UMass Moo</a>.</li>
+<li>
+Store data in embedded on-chip flash memory at low voltage and with half the energy
+  using <a href="http://spqr.cs.umass.edu/half-wits/">Half-Wits</a>.
+</li>
+ </ul>
+</p>
+
+</div>
+
+
+
+
+</div> <!-- /meat -->
+
+<div id="bottommatter">
+<div id="support">
+<h2>Support</h2>
+<p>Any opinions, findings, and conclusions or recommendations expressed in these
+materials are those of the author(s) and do not necessarily reflect the views of
+the sponsors.</p>
+<ul>
+	<li>NSF: grants CNS-0831244, CNS-0923313. </li>
+	<li>Sloan Research Fellowship.</li>
+</ul>
+</div>
+
+</div> <!-- /bottommatter -->
+
+</div> <!-- /main -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21026882-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+</body>
+
+<!-- Mirrored from spqr.eecs.umich.edu/tardis/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:52:57 GMT -->
+</html>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->

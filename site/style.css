@@ -100,3 +100,20 @@ pre {
   background-color: gray;
   padding-bottom: 8px;
 }
+
+.hide{
+  display: none;
+}
+
+.abstract_show_hide,.bib_tex_show_hide{
+  font-size: 11px;
+}
+
+.bibtexentry,.ab_entry{
+  font-size: 11px;
+  margin-left: 20px;
+}
+
+.m-b-10{
+  margin-bottom: 10px;
+}

@@ -1,4 +1,4 @@
-.navbar-brand .nav-header-text {
+/*.navbar-brand .nav-header-text {
     font-size: 11px;
     color: #cccccc;
 }
@@ -15,8 +15,8 @@
 }
 
 .nav-header-logo {
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     float: left;
 }
 
@@ -51,16 +51,16 @@
   margin-right:35px;
   }
   /* Remove the edge padding needed for mobile */
-  .marketing {
+/*  .marketing {
     padding-left: 0;
     padding-right: 0;
-  }
+  }*/
 
   /* Navbar positioning foo */
-  .navbar-wrapper {
+  /*.navbar-wrapper {*/
     /*margin-top: 20px;*/
-  }
-  .navbar-wrapper .container {
+  /*}*/
+/*  .navbar-wrapper .container {
     padding-left:  15px;
     padding-right: 15px;
   }
@@ -69,18 +69,18 @@
     padding-right: 0;
   }
 
-  /* The navbar becomes detached from the top, so we round the corners */
-  .navbar-wrapper .navbar {
+*/  /* The navbar becomes detached from the top, so we round the corners */
+/*  .navbar-wrapper .navbar {
     border-radius: 4px;
   }
-
+*/
   
-.nav .caret {
+/*.nav .caret {
   border-top-color: #428bca;
   border-bottom-color: #428bca;
 }
-
-.nav a:hover .caret {
+*/
+/*.nav a:hover .caret {
   border-top-color: #2a6496;
   border-bottom-color: #2a6496;
 }
@@ -90,21 +90,21 @@
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-
+*/
 .navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
+  /*position: relative;*/
+  /*min-height: 50px;*/
+  /*margin-bottom: 20px;*/
   /* border: 1px solid transparent; */
 }
 
 .navbar:before,
 .navbar:after {
-  display: table;
-  content: " ";
+  /*display: table;*/
+  /*content: " ";*/
 }
 
-.navbar:after {
+/*.navbar:after {
   clear: both;
 }
 
@@ -165,8 +165,8 @@
   display: table;
   content: " ";
 }
-
-.navbar-collapse:after {
+*/
+/*.navbar-collapse:after {
   clear: both;
 }
 
@@ -183,14 +183,14 @@
 .navbar-collapse.in {
   overflow-y: auto;
 }
-
+*/
 @media (min-width: 768px) {
   .navbar-collapse {
     /* width: auto; */
     /* border-top: 0; */
     /* box-shadow: none; */
   }
-  .navbar-collapse.collapse {
+/*  .navbar-collapse.collapse {
     display: block !important;
     height: auto !important;
     padding-bottom: 0;
@@ -208,9 +208,9 @@
   .navbar-collapse .navbar-text:last-child {
     margin-right: 0;
   }
-}
+*/}
 
-.container > .navbar-header,
+/*.container > .navbar-header,
 .container > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
@@ -223,7 +223,7 @@
     margin-left: 0;
     clear:both;
   }
-}
+}*/
 .m-b-10{
   margin-bottom: 10px;
 }
@@ -232,3 +232,106 @@
   vertical-align: middle;
   margin-bottom: 0.75em;
 }
+.disp_table{
+  display: table;
+}
+
+
+
+/**/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Roboto+Slab:400,100,300,700);
+
+.navbar-brand {
+  font-family: "Roboto Slab", Open Sans;
+}
+
+.masthead {
+  background-color: #246B80;
+  padding-bottom: 10px;
+}
+
+.navbar-default {
+  background-color: #3397B2;
+  border: none;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  color: #FFFFFF;
+  background-color: #246B80;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: #FFFFFF;
+  background-color: #246B80;
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #FFFFFF;
+  background-color: #246B80;
+}
+
+.main-logo {
+  width: 150px;
+  height: 50px;
+  margin-top: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url('https://placeholdit.imgix.net/~text?txtsize=13&txt=Logo&w=150&h=50') no-repeat;
+  background-size: 100%;
+}
+
+.main-logo-header {
+  margin-left: 160px;
+  margin-top: 22px;
+  font-size: 22px;
+}
+.main-logo-tagline{
+  margin-left: 160px;
+  font-size: 11px;
+}
+.white-text{
+  color: white;
+}
+/* bootstrap 3 helpers */
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10;
+}
+
+#sidebar.affix-top {
+    position: static;
+}
+
+#sidebar.affix {
+    position: fixed;
+    top: 80px;
+}
+
+body{
+  margin-top: 170px;
+}
+
+.well{
+  background-color: white;
+}
+
+.abstract_show_hide,.bib_tex_show_hide{
+  font-size: 11px;
+}
+
+.bibtexentry,.ab_entry{
+  font-size: 11px;
+  margin-left: 20px;
+}
+
+
+
+

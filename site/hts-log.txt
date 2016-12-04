@@ -1,0 +1,36 @@
+HTTrack3.48-21 launched on Tue, 29 Nov 2016 01:51:16 at https://spqr.eecs.umich.edu/publications.php
+(httrack https://spqr.eecs.umich.edu/publications.php )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+01:51:17	Warning: 	Found for https://spqr.eecs.umich.edu/robots.txt
+01:51:17	Warning: 	File has moved from https://spqr.eecs.umich.edu/robots.txt to http://vhosts.eecs.umich.edu/robots.txt/
+01:51:58	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://spqr.eecs.umich.edu/style/spqr-screen.css
+01:52:51	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/fonts/glyphicons-halflings-regular.eot (from https://spqr.eecs.umich.edu/styles/bootstrap-spqr.css)
+01:52:51	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/fonts/glyphicons-halflings-regular.eot? (from https://spqr.eecs.umich.edu/styles/bootstrap-spqr.css)
+01:52:51	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/fonts/glyphicons-halflings-regular.woff (from https://spqr.eecs.umich.edu/styles/bootstrap-spqr.css)
+01:52:51	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/fonts/glyphicons-halflings-regular.ttf (from https://spqr.eecs.umich.edu/styles/bootstrap-spqr.css)
+01:52:51	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/fonts/glyphicons-halflings-regular.svg (from https://spqr.eecs.umich.edu/styles/bootstrap-spqr.css)
+01:53:31	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): https://spqr.eecs.umich.edu/payg/payg.css
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/emi/publications-flat.php (from https://spqr.eecs.umich.edu/emi/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/emi/spqrbib_bib.html (from https://spqr.eecs.umich.edu/emi/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/ekho/publications-flat.php (from https://spqr.eecs.umich.edu/ekho/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/ekho/spqrbib_bib.html (from https://spqr.eecs.umich.edu/ekho/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/tardis/half-wits.css (from https://spqr.eecs.umich.edu/tardis/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/tardis/publications-flat.php (from https://spqr.eecs.umich.edu/tardis/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/half-wits/publications-flat.php (from https://spqr.eecs.umich.edu/half-wits/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/half-wits/spqrbib_bib.html (from https://spqr.eecs.umich.edu/half-wits/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/mementos/publications-flat.php (from https://spqr.eecs.umich.edu/mementos/)
+01:53:46	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/mementos/spqrbib_bib.html (from https://spqr.eecs.umich.edu/mementos/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/moo/publications-flat.php (from https://spqr.eecs.umich.edu/moo/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/moo/spqrbib_bib.html (from https://spqr.eecs.umich.edu/moo/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/pmeters/publications-flat.php (from https://spqr.eecs.umich.edu/pmeters/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/pmeters/spqrbib_bib.html (from https://spqr.eecs.umich.edu/pmeters/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/slpa/publications-flat.php (from https://spqr.eecs.umich.edu/slpa/)
+01:54:12	Error: 	"Not Found" (404) at link https://spqr.eecs.umich.edu/slpa/spqrbib_bib.html (from https://spqr.eecs.umich.edu/slpa/)
+
+HTTrack Website Copier/3.48-21 mirror complete in 2 minutes 58 seconds : 241 links scanned, 219 files written (159550572 bytes overall) [159626828 bytes received at 896779 bytes/sec]
+(21 errors, 4 warnings, 0 messages)

@@ -1,0 +1,11 @@
+#graph {
+	float: right;
+	border: 1px solid #ccf;
+	background-color: #ccf;
+	margin: 0 0 10px 10px;
+	width: 400px;
+	text-align: center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.exhibit-collectionView-header { display: none; }

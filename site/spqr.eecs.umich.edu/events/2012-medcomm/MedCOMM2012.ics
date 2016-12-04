@@ -1,0 +1,174 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+VERSION:2.0
+X-WR-CALNAME:MedCOMM 2012
+PRODID:-//Apple Inc.//iCal 5.0.3//EN
+X-APPLE-CALENDAR-COLOR:#0E61B9
+X-WR-TIMEZONE:America/New_York
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Helsinki
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0200
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+DTSTART:19830327T030000
+TZNAME:EEST
+TZOFFSETTO:+0300
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0300
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+DTSTART:19961027T040000
+TZNAME:EET
+TZOFFSETTO:+0200
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/Helsinki:20120813T123000
+UID:E4015663-FC9A-4CB0-B361-5C8EC8618A4E
+DTSTAMP:20120731T150143Z
+DESCRIPTION:Prof. Ada Poon\, Stanford: "Emerging Wireless Applications i
+ n Biomedicine"\n\nProf. Brian Otis\, U. Washington: "Electronics on Cont
+ act Lenses and Low-Power Sensor Interfaces / Wireless for Peer-to-Peer M
+ edical Communication"\n\nStewart J. Thomas\, Jordan S. Besnoff\, Matthew
+  S. Reynolds\, Duke: "Modulated Backscatter for Ultra-Low-Power Uplinks 
+ from Wearable and Implantable Devices"
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+STATUS:CONFIRMED
+SEQUENCE:19
+SUMMARY:Technical session: "Wireless Medical Devices: Implanted and Worn
+ "
+DTSTART;TZID=Europe/Helsinki:20120813T110000
+CREATED:20120731T142900Z
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:100E6A12-A15D-4787-ACBF-9215F9634CE1
+DTEND;TZID=Europe/Helsinki:20120813T091500
+TRANSP:OPAQUE
+SUMMARY:Introduction by Kevin Fu\, Program Chair
+DTSTART;TZID=Europe/Helsinki:20120813T090000
+DTSTAMP:20120731T143627Z
+SEQUENCE:2
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:1159866E-E3D6-43F4-A499-2329FF2EE588
+DTEND;TZID=Europe/Helsinki:20120813T100000
+TRANSP:OPAQUE
+SUMMARY:Keynote: Hugo Campos\, "Open access to my heart's data"
+DTSTART;TZID=Europe/Helsinki:20120813T091500
+DTSTAMP:20120731T143449Z
+SEQUENCE:1
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:36BF3DAB-A217-45F2-A0BE-9E49BA54A604
+DTEND;TZID=Europe/Helsinki:20120813T103000
+TRANSP:OPAQUE
+SUMMARY:Invited talk: Prof. Arto Nurmikko\, Brown: "Wireless neural inte
+ rfaces"
+DTSTART;TZID=Europe/Helsinki:20120813T100000
+DTSTAMP:20120731T143710Z
+SEQUENCE:5
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:C0E8F2CB-56BF-492A-A424-4D197EEC3620
+DTEND;TZID=Europe/Helsinki:20120813T110000
+TRANSP:OPAQUE
+SUMMARY:Coffee break
+DTSTART;TZID=Europe/Helsinki:20120813T103000
+DTSTAMP:20120731T143736Z
+SEQUENCE:4
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:CF560522-379C-4472-9E59-6B97AA3CBAD3
+DTEND;TZID=Europe/Helsinki:20120813T140000
+TRANSP:OPAQUE
+SUMMARY:Lunch
+DTSTART;TZID=Europe/Helsinki:20120813T123000
+DTSTAMP:20120731T144225Z
+SEQUENCE:8
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/Helsinki:20120813T150000
+UID:7063FB93-2A27-4B2B-A546-F4529507263F
+DTSTAMP:20120731T150129Z
+DESCRIPTION:Robert Farra\, MicroCHIPS: "Microchip-Based Sensors and Drug
+  Delivery Systems"\n\nDenis Foo Kune\, Yongdae Kim\, U. Minnesota\; Kris
+ hna Venkatasubramanian\, Insup Lee\, U. Penn\; Eugene Vasserman\, Kansas
+  State U.: "Towards a Safe Integrated Clinical Environment: A Communicat
+ ion Security Perspective"
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+STATUS:CONFIRMED
+SEQUENCE:9
+SUMMARY:Technical session: "Medical Device Communication: Sensors\, Secu
+ rity"
+DTSTART;TZID=Europe/Helsinki:20120813T140000
+CREATED:20120731T142900Z
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:F329A02B-FF19-4396-A679-2B94D478B51A
+DTEND;TZID=Europe/Helsinki:20120813T153000
+TRANSP:OPAQUE
+SUMMARY:Social engineering event
+DTSTART;TZID=Europe/Helsinki:20120813T150000
+DTSTAMP:20120731T144534Z
+SEQUENCE:5
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+STATUS:CONFIRMED
+CREATED:20120731T142900Z
+UID:321246CE-803B-4B3D-AE32-BEC159FBA18B
+DTEND;TZID=Europe/Helsinki:20120813T160000
+TRANSP:OPAQUE
+SUMMARY:Coffee break
+DTSTART;TZID=Europe/Helsinki:20120813T153000
+DTSTAMP:20120731T144610Z
+SEQUENCE:5
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+END:VEVENT
+BEGIN:VEVENT
+TRANSP:OPAQUE
+DTEND;TZID=Europe/Helsinki:20120813T170000
+UID:9F63AFE1-3681-4F0A-BC6D-E450517CB397
+DTSTAMP:20120731T144734Z
+DESCRIPTION:Don Witters\, FDA: "Wireless Medical Devices and Electromagn
+ etic Compatibility"\n\nDr. Kamran Sayrafian\, NIST: "RF Propagation in B
+ ody Area Networks (BANs)"
+URL;VALUE=URI:http://conferences.sigcomm.org/sigcomm/2012/workshops/MedC
+ OMM-program-draft-2012.pdf
+STATUS:CONFIRMED
+SEQUENCE:7
+SUMMARY:Technical session: "Medical communication: Radio interference an
+ d propagation"
+DTSTART;TZID=Europe/Helsinki:20120813T160000
+CREATED:20120731T142900Z
+END:VEVENT
+END:VCALENDAR

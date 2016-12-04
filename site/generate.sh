@@ -4,22 +4,31 @@ TITLE_PREFIX="Prof.Arun "
 
 # Array pretending to be a Pythonic dictionary
 ARRAY=( "about:1_test.txt"
-        "cv:2_test.txt"
+        "research:research_content.txt"
         "publications:select_new.html"
+        "cv:2_test.txt"
+        "students:students_content.txt"
+        "contact:contact_content.txt"
       )
 
 HEADERFILESNAMES=( "about:Home"
-        "cv:Bio"
+        "research:Research"
         "publications:Publications &amp; Projects"
+        "cv:Bio"
+        "students:Students"
+        "contact:Contact"
       )
 
 HEADERURLS=( "about:index.html"
-        "cv:cv.html"
+        "research:research.html"
         "publications:publications.html"
+        "cv:cv.html"
+        "students:students.html"
+        "contact:contact.html"
       )
 
 template1 () {
-  printf "<html><head><link rel='stylesheet' type='text/css' href='style.css'><title>"
+  printf "<html><head><meta charset='ISO-8859-1'><link rel='stylesheet' type='text/css' href='style.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='script.js'></script><title>"
   printf "$4"
   printf "</title></head><body><div class='box'>"
   printf "%s", "$1"

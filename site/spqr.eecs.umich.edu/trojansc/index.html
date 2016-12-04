@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from spqr.eecs.umich.edu/trojansc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<title>Trojan Side-Channels</title>
+<!-- script
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"
+type="text/javascript"></script -->
+
+<link rel="stylesheet" type="text/css"
+href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300|Tinos:regular,bold" />
+<link rel="stylesheet" type="text/css" href="../style/spqr-screen.css" />
+
+<meta name="description" content="Establishing hidden communication using trojan side channels" />
+
+</head>
+<body>
+<div id="main">
+     <img src="TrojanSideChannel3.png"  align="right"  />
+<div id="topmatter">
+
+   
+
+<h1>Trojan Side-Channels</h1>
+<div id="subtitle">
+Establishing a hidden communication channel using side-channels.
+</div>
+</div> <!-- /topmatter -->
+
+<?php include('../breadcrumbs.inc'); ?>
+
+<div id="meat">
+<h2>Overview</h2>
+
+        <p align="justify">
+        In this project we examine ways to establish hidden communication channels in embedded systems using side-channels. Classic side-channel attacks exploit the fact that during the computation 
+        of an algorithm unintentional side-channels leak out information about the processed data. Typical side-channels are the power consumption of a device, the execution time or electromagnetic radiation. 
+        These side-channels are mostly used by attackers to retrieve a secret key of an encryption algorithm. A lot of research has focused on efficient side-channel attacks as well as on methods how these attacks can be prevented.
+        </p>
+
+        <p align="justify">
+        However, in this project we are looking at side-channels from another perspective. Instead of using <b>unintentional</b> side-channels, we look at how we can build <b>intentional</b> side-channels into embedded systems.
+        By inserting "Trojan" hardware into a system we establish a hidden communication channel that we can use to secretly transmit information. As the name Trojan side-channels suggest, this can be used in a malicious way 
+        to build very small and lightweight hardware Trojans that can be very difficult to detect. However, Trojan side-channels can also be used in a constructive way. 
+        We show that the properties of the Trojan side-channels are very well suited to build robust and lightweight hardware watermarks. Furthermore, the idea of side-channel watermarks can also be extended 
+        from hardware implementation towards software to build side-channel based software watermarks for embedded systems.
+        </p>
+
+
+
+
+<!--
+<div id="graph">
+<img src="ITPS.jpg" vspace="40" align="center" width="875" >
+
+</div>
+-->
+
+
+<div id="professors">
+<h2>Professors</h2>
+<ul>
+<li><a href="http://www.emsec.rub.de/chair/_staff/christof-paar/">Prof. Christof Paar</a></li>
+<li><a href="http://vcsg.ecs.umass.edu/burleson.html">Prof. Wayne Burleson</a></li>
+</ul>
+</div>
+
+
+<div id="students">
+<h2>Students</h2>
+<ul>
+<li><a href="http://people.umass.edu/gbecker/">Georg T. Becker</a></li>
+<li><a href="http://people.umass.edu/lang/">Lang Lin</a></li>
+<li>Ashwin Lakshminarasimhan</li>
+<li>Monissa Mohan</li>
+</ul>
+</div>
+
+
+<div id="publications" style="clear: both">
+<h2>Publications</h2>
+<ul>
+
+          	<li><b>[NEWCAS 2011]</b>
+<a href="http://people.umass.edu/gbecker/">Georg T. Becker</a>,
+<a href="http://vcsg.ecs.umass.edu/burleson.html">Wayne Burleson</a>, and
+<a href="http://www.emsec.rub.de/chair/_staff/christof-paar/">Christof Paar</a>.</br>
+Side-channel Watermarks for Embedded Software.
+<i>9th IEEE NEWCAS Conference (NEWCAS 2011), Bordeaux, France, June 2011. ,</i> <a href="http://vcsg.ecs.umass.edu/publications/BeckerNewcasCameraReady.pdf"> (PDF) </a></br>
+        </li>
+        	
+	     <li><b>[HOST 2010]</b>
+<a href="http://people.umass.edu/gbecker/">Georg T. Becker</a>, 
+<a href="http://www.emsec.rub.de/chair/_staff/Markus_Kasper/">Markus Kasper</a>, 
+<a href="http://www.emsec.rub.de/chair/_staff/amir-moradi/">Amir Moradi</a>, and 
+ <a href="http://www.emsec.rub.de/chair/_staff/christof-paar/">Christof Paar</a>.</br>
+Side-channel based watermarks for integrated circuits.
+<i>IEEE International Symposium on Hardware-Oriented Security and Trust (HOST), 2010. ,</i> <a href="http://www.emsec.rub.de/media/crypto/veroeffentlichungen/2010/09/07/BeckerHost2010.pdf"> (PDF) </a></br>
+Also presented at the Workshop on Secure Component and System Identification, <b>SECSI 2010</b>, and as an extendet abstract (<a href="http://cosade2010.cased.de/files/proceedings/cosade2010_paper_9.pdf">PDF</a>) at the First International Workshop on Constructive Side-Channel Analysis and Secure Design, <b>COSADE 2010</b>. 
+        </li>
+        
+        <li><b>[CHES 2009]</b>
+<a href="http://people.umass.edu/lang/">Lang Lin</a>, 
+<a href="http://www.emsec.rub.de/chair/_staff/Markus_Kasper/">Markus Kasper</a>, 
+<a href="http://www.emsec.rub.de/chair/_staff/81/">T. Güneysu</a>, 
+<a href="http://www.emsec.rub.de/chair/_staff/christof-paar/">Christof Paar</a>, and 
+<a href="http://vcsg.ecs.umass.edu/burleson.html">Wayne Burleson</a>. </br>
+Trojan Side-Channels: Lightweight Hardware Trojans through Side-Channel Engineering. <i> International Workshop on Cryptographic Hardware and Embedded Systems (CHES) 2009</i>. (<a href="http://www.emsec.rub.de/media/crypto/veroeffentlichungen/2010/09/07/ches2009_trojan_side_channels_slides.pdf">PDF</a>)
+        </li>
+
+        
+
+</ul>
+
+</div>
+
+
+
+
+</div> <!-- /meat -->
+
+<div id="bottommatter">
+<div id="support">
+<h2>Support</h2>
+<p>Any opinions, findings, and conclusions or recommendations expressed in these
+materials are those of the author(s) and do not necessarily reflect the views of
+the sponsors.</p>
+<ul>
+<li><a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0916854">NSF: grant #0916854</a></li>
+</ul>
+</div>
+
+</div> <!-- /bottommatter -->
+
+</div> <!-- /main -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21026882-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+</body>
+
+<!-- Mirrored from spqr.eecs.umich.edu/trojansc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:34 GMT -->
+</html>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->

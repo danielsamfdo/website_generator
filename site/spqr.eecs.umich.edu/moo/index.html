@@ -1,0 +1,373 @@
+<html>
+<!-- Mirrored from spqr.eecs.umich.edu/moo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>UMich Moo: A Programmable RFID-Scale Sensor Device</title>
+	<!-- for publications -->
+	<script src="../js/simile/simile-ajax-api097f.js?bundle=false"
+		type="text/javascript"></script>
+	<script src="../js/exhibit/exhibit-apicf74.js?bundle=false&amp;autoCreate=false"
+		type="text/javascript"></script>
+	<link rel="exhibit/data" href="../spqrbib.js" type="application/json" />
+        <link rel="exhibit/data" href="../spqr-bibschema.js" type="application/json" />
+	<link rel="stylesheet" type="text/css" href="../style/spqr-screen.css" />
+	<link rel="stylesheet" type="text/css" href="../style/spqr-pubs.css" />
+	<link rel="stylesheet" type="text/css" href="moo.css" />
+	<script type="text/javascript" src="../subpub.js"></script>
+	<!-- /for publications -->
+</head>
+
+
+<body bgcolor="#CCCCCC">
+  <center>
+    <table cellpadding="10" border="0" width="750" bgcolor="ffffff">
+      <tbody><tr>
+        <td colspan="3" rowspan="1" valign="top">
+	<div align="left" style="padding: 1em">
+	<img src="Moo_files/moo-logo.png" width="152" height="70" alt="UMich Moo"/><br />
+	</div>
+	&nbsp;<i>A Batteryless Programmable RFID-Scale Sensor Device</i>        </td>
+      </tr>
+      <tr>
+        <td colspan="3" align="right" valign="top">        
+          <hr size="5" color="#881c1c">        </td>
+        </tr>
+      <tr>
+        <td colspan="3" align="right" valign="top" id="overview"><div align="left"><a href="../index.html">SPQR</a> <a href="http://www.cs.umich.edu/">Computer Science</a> <a href="http://www.umich.edu/">University of Michigan</a> </div></td>
+        </tr>
+      <tr>
+        <td width="40" align="right" valign="top" id="overview">&nbsp;</td>
+        <td width="101" align="right" valign="top" id="overview">
+          <div align="left"><font color="#000000"><b>Overview</b></font>          </div></td>
+        <td width="541" valign="top">
+
+	  The UMich Moo is a passive <a
+	   href="http://wisp.wikispaces.com/Publications">Computational
+	  RFID</a> that harvests RFID reader energy from the UHF band,
+	  communicates with an RFID reader, and processes data from
+	  its onboard temperature sensor and accelerometer. Its
+	  function can be extended with its general-purpose I/Os,
+	  serial buses, and 12-bit ADC/DAC ports. The Moo provides a
+	  RFID-scale, fully programmable, batteryless sensing
+	  platform.  The programs execute on an MSP430
+	   microcontroller.  The Moo 1.0 derives from the open source <a
+	   href="http://wisp.wikispaces.com/">Intel DL WISP
+	  4.1</a>. Why is it called the Moo? It's the beefiest embedded
+	  platform in its class with the most code space and RAM for the least
+	  energy. The device also resembles a longhorn steer.<br />
+	  <br />
+	  Click here to join in on discussions involving the UMich Moo<br />
+	  <a href="http://groups.google.com/d/forum/umich-moo"><i>UMich Moo Discussion Forum</i></a><br />
+	</td>
+      </tr> <tr> <td valign="top" align="right"
+	  id="videos">&nbsp;</td> <td valign="top" align="right"
+	  id="videos"> <div align="left"><font
+	  color="#000000"><strong>Documents</strong></font>
+	  </div></td> <td valign="top">
+	  <p>
+	  A <a href="https://docs.google.com/document/d/1e1PVkyB6m8gTWLTb3xUzvAxI-aVuz4b3efYd19XbazI/edit?usp=sharing">step-by-step tutorial</a> on getting started with the Moo.
+	  </p>
+	  <p>An Introduction to the
+	  Architecture of Moo 1.0 (<a
+	   href="Documents/Moo_01242011.pdf">PDF</a>, <a
+	   href="Documents/Moo_01242011.ppt">PPT</a>).</p> 
+		 <p>Moo tutorial slides from RFIDSec 2011(<a
+	   href="Documents/moo-tutorial.pdf">PDF</a>).</p>
+	   </td> </tr>
+
+      <tr>
+        <td valign="top" align="right" id="gallery">&nbsp;</td>
+        <td valign="top" align="right" id="gallery">
+          <div align="left"><font color="#000000"><b>Photos</b></font>          </div></td>
+        <td valign="bottom">
+          <table width="100%" border="0" cellspacing="1" cellpadding="1">
+            <tbody><tr>
+	      <td align="center" valign="bottom">
+              <a href="Moo_files/Moo_Quarter.png"><img src="Moo_files/Moo_Quarter.png" width="163" height="100" border="0"></a>                <p>
+                (a) Moo with antenna removed. </p>                </td>
+	      <td align="center" valign="bottom"><p><img name="Moo_Programmer" src="Moo_files/Moo_Programmer.jpg" width="256" height="143" alt=""></p>
+	        <p>(b) Moo 1.0 + USB Programmer (<a href="http://focus.ti.com/graphics/tool/msp-fet430uif.jpg">zoom</a>). </p></td>
+            </tr>
+          </tbody></table>
+          <table width="100%" border="0" cellspacing="1" cellpadding="1">
+            <tbody><tr>
+	      <td align="center" valign="bottom">
+                <p><a href="Moo_files/Moo_Reader_Programmer_Computer.jpg"><img src="Moo_files/Moo_Reader_Programmer_Computer.jpg" alt="" name="MooReaderProgrammer" width="500" height="335" border="0"></a> </p>                
+                <p>(c) Moo + RFID Reader. A USB programmer is not
+        required for wireless operation.</p></td>
+	      </tr>
+           </tbody></table></td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="right" id="apps">&nbsp;</td>
+        <td valign="top" align="right" id="apps"><div align="left"><font color="#000000"><b>Apps</b></font></div></td>
+        <td valign="top"><a href="apps/concrete/index.html">RFID-Scale Devices in Concrete</a></td>
+      </tr>
+      <tr>
+        <td valign="top" align="right" id="videos">&nbsp;</td>
+        <td valign="top" align="right" id="videos">
+          <div align="left"><font color="#000000"><b>Code</b></font>          </div></td>
+        <td valign="top">
+            <p>
+	    The source code, schematics, and design files are available on
+	    GitHub:
+            <a href="https://github.com/spqr/umichmoo">https://github.com/spqr/umichmoo</a></p>            </td>
+      </tr>
+
+      <tr>
+        <td valign="top" align="right" id="pubs">&nbsp;</td>
+        <td valign="top" align="right" id="pubs">
+          <div align="left"><font color="#000000"><b>Publications</b></font>          </div></td>
+        <td valign="top">
+		<script type="text/javascript">
+			var selectedKeywords = "UMich Moo";
+		</script>
+		<div id="pub-facets">
+	<div id="search-facet"
+		ex:role="facet" ex:facetClass="TextSearch"
+		ex:queryParamName="q"
+		ex:facetLabel="Search"></div>
+	<div id="keywords-facet"
+		ex:role="facet" ex:expression=".keywords"
+		ex:scroll="false" ex:sortMode="count"
+		ex:facetLabel="Keywords"></div>
+	<div id="author-facet"
+		ex:role="facet" ex:expression=".author"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="People"></div>
+	<div id="venue-facet"
+		ex:role="facet" ex:expression=".venue"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="Venue"></div>
+</div>
+<div id="spqrpubs">
+
+	<div class="calmnotice">
+		<strong>Note:</strong> There is also a <a
+		href="publications-flat.html">flat (no Javascript) version of
+		this page</a>.
+	</div>
+
+	<div ex:role="collection" ex:itemTypes="Publication"></div>
+
+	<div ex:role="exhibit-lens"
+		ex:itemTypes="Publication"
+		class="publication" style="display: none">
+
+		<div>
+			<div class="paperinfo">
+			<span class="pubtitle" ex:select=".pub-type">
+				<span ex:case="inbook" class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .chapter)"></span>
+				<span class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .label)"></span>
+			</span>.<br />
+			<span ex:content=".author"></span><br />
+			<span class="wherepublished" ex:select=".pub-type">
+				<span ex:case="inbook">
+					<span ex:if-exists=".label">
+					Chapter in
+					<em ex:content=".label"></em>,
+					</span>
+				</span>
+				<span ex:case="phdthesis">
+					<span ex:if-exists=".school">
+					Ph.D. thesis, <span ex:content=".school"></span>,
+					</span>
+				</span>
+				<span ex:case="inproceedings">
+					<span ex:if-exists=".booktitle">
+					In <em ex:content=".booktitle"></em><span ex:if-exists=".series">&nbsp;(<em ex:content=".series"></em>)</span>,
+					</span>
+				</span>
+				<span ex:case="techreport">
+					<em>Tech report
+						<span ex:content=".number"></span>,
+						<span ex:content=".institution"></span>,
+					</em>
+				</span>
+				<span ex:case="article">
+					<em ex:content=".journal"></em>
+					<span ex:if-exists=".volume">
+						<span ex:content=".volume"></span>(<span ex:content=".number"></span>),
+					</span>
+				</span>
+			</span>
+			<span ex:if-exists=".address">
+				<span ex:content=".address"></span>,
+			</span>
+			<span ex:content=".month"></span>
+			<span ex:content=".year"></span>.
+			<span ex:if-exists=".note"><span ex:content=".note"></span>.</span>
+			<span ex:if-exists=".award_note"><span ex:content=".award_note"></span>.</span>
+			</div>
+
+			<ul class="links">
+				<li><a ex:href-subcontent="spqrbib_bib.html#{{.key}}">bibtex</a></li>
+				<li ex:if-exists=".url"><a ex:href-content=".url">paper</a></li>
+				<li ex:if-exists=".slides_url"><a ex:href-content=".slides_url">slides</a></li>
+				<li ex:if-exists=".poster_url"><a ex:href-content=".poster_url">poster</a></li>
+				<li ex:if-exists=".poster_url2"><a ex:href-content=".poster_url2">poster</a></li>
+				<li ex:if-exists=".poster_url3"><a ex:href-content=".poster_url3">poster</a></li>
+				<li ex:if-exists=".conference_url"><a ex:href-content=".conference_url">conference</a></li>
+				<li ex:if-exists=".workshop_url"><a ex:href-content=".workshop_url">workshop</a></li>
+				<li ex:if-exists=".techreport_url"><a ex:href-content=".techreport_url">tech report</a></li>
+				<li ex:if-exists=".demo_url"><a ex:href-content=".demo_url">demo</a></li>
+				<li ex:if-exists=".video_demo_url"><a ex:href-content=".video_demo_url">video demo</a></li>
+				<li ex:if-exists=".details_url"><a ex:href-content=".details_url">details</a></li>
+				<li ex:if-exists=".extended_paper_url"><a ex:href-content=".extended_paper_url">extended paper</a></li>
+				<li ex:if-exists=".html_url"><a ex:href-content=".html_url">HTML</a></li>
+				<li ex:if-exists=".ps_url"><a ex:href-content=".ps_url">PS</a></li>
+				<li ex:if-exists=".journal_url"><a ex:href-content=".journal_url">journal</a></li>
+				<li ex:if-exists=".risks_url"><a ex:href-content=".risks_url">RISKS</a></li>
+				<li ex:if-exists=".springer_url"><a ex:href-content=".springer_url">Springer</a></li>
+				<li ex:if-exists=".code_url"><a ex:href-content=".code_url">code</a></li>
+				<li ex:if-exists=".tgz_url"><a ex:href-content=".tgz_url">TGZ</a></li>
+				<li ex:if-exists=".licensing_url"><a ex:href-content=".licensing_url">licensing</a></li>		
+				<li ex:if-exists=".video_url"><a ex:href-content=".video_url">video</a></li>
+				<li ex:if-exists=".video_url2"><a ex:href-content=".video_url2">video</a></li>
+				<li ex:if-exists=".webcast_url"><a ex:href-content=".webcast_url">webcast</a></li>
+				<li ex:if-exists=".photos_url"><a ex:href-content=".photos_url">photos</a></li>
+				<li ex:if-exists=".msr_url"><a ex:href-content=".msr_url">Microsoft Research</a></li>
+				<li ex:if-exists=".nytimes_url"><a ex:href-content=".nytimes_url">New York Times</a></li>
+				<li ex:if-exists=".wsj_url"><a ex:href-content=".wsj_url">Wall Street Journal</a></li>
+				<li ex:if-exists=".npr_url"><a ex:href-content=".npr_url">NPR</a></li>
+				<li ex:if-exists=".ieee_spectrum_url"><a ex:href-content=".ieee_spectrum_url">IEEE Spectrum</a></li>
+				<li ex:if-exists=".boston_globe_url"><a ex:href-content=".boston_globe_url">Boston Globe</a></li>
+				<li ex:if-exists=".medgadget_url"><a ex:href-content=".medgadget_url">Medgadget</a></li>
+				<li ex:if-exists=".new_scientist_url"><a ex:href-content=".new_scientist_url">New Scientist</a></li>
+				<li ex:if-exists=".ap_url"><a ex:href-content=".ap_url">AP</a></li>
+				<li ex:if-exists=".reuters_url"><a ex:href-content=".reuters_url">Reuters</a></li>
+				<li ex:if-exists=".schneier_url"><a ex:href-content=".schneier_url">Schneier</a></li>
+				<li ex:if-exists=".senate_url"><a ex:href-content=".senate_url">Senate</a></li>
+				<li ex:if-exists=".slashdot_url"><a ex:href-content=".slashdot_url">Slashdot</a></li>
+				<li ex:if-exists=".tv_url"><a ex:href-content=".tv_url">TV</a></li>
+				<li ex:if-exists=".us_news_world_report_url"><a ex:href-content=".us_news_world_report_url">U.S. News &amp; World Report</a></li>
+				<li ex:if-exists=".eweek_url"><a ex:href-content=".eweek_url">eWeek</a></li>
+				<li ex:if-exists=".abstract">
+				<a href="javascript:void(0);"
+					ex:onclick-subcontent="$('#{{.key}}').slideToggle('fast');"
+					class="abstractbutton">abstract &raquo;</a>
+				</li>
+			</ul>
+
+			<div ex:if-exists=".abstract">
+				<p class="abstract" ex:content=".abstract" style="display:none"
+					ex:id-content=".key"></p>
+			</div>
+			</div>
+		</div>
+
+	<div ex:role="exhibit-lens" ex:itemTypes="Author" class="author" style="display: none">
+       		<span ex:control="copy-button" style="float: right"></span>
+		<div class="title"><span ex:content=".author"></span></div>
+		<ol class="publications" ex:content="!author">
+			<li ex:content=".label"></li>
+		</ol>
+	</div>
+	<div ex:role="exhibit-view"
+       		ex:viewClass="Exhibit.TileView"
+       		ex:orders=".year, .monthnum"
+       		ex:grouped="true"
+       		ex:directions="descending, descending"
+       		ex:possibleOrders=".pub-type, .author, .year, .label, .monthnum, .venue"></div>
+</div>
+	</td>
+      </tr>
+      <tr>
+        <td valign="top" align="right" id="videos3">&nbsp;</td>
+        <td valign="top" align="right" id="videos3"><div align="left"><font color="#000000"><b>Video Tutorial</b></font> </div></td>
+        <td valign="top">
+
+	  
+	  <p>We presented an all-day, hands-on tutorial on how to develop programs for the Moo
+        during the        <a href="http://rfid-cusp.org/rfidsec/">RFIDSec'11
+        workshop</a>.  You can't eat the tutorial lunch, but you can
+        watch the video.  We apologize for the lousy audio in the
+        second video, but we'd be happy to answer any specific questions. </p>
+
+		  <br/ >
+	  &nbsp;&nbsp;
+
+
+	  <!-- This version of the embed code is no longer supported. Learn more: https://vimeo.com/s/tnm --> <object width="500" height="331"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="https://vimeo.com/moogaloop.swf?clip_id=26675177&amp;force_embed=vimeo.com&amp;fullscreen=1" /><embed src="https://vimeo.com/moogaloop.swf?clip_id=26675177&amp;force_embed=vimeo.com&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="331"></embed></object> <p><a href="https://vimeo.com/26675177">Hands-on Programming of Batteryless, RFID-Scale Computers with Sensors (Part 1 of 2)</a>.</p>
+	  
+	  <!-- iframe
+		  src="http://player.vimeo.com/video/26675177?title=0&amp;byline=0&amp;portrait=0"
+		  width="400" height="265" frameborder="0"></iframe -->
+
+
+
+	  Part 1
+		  <br />
+
+		  <br/ >
+		  &nbsp;&nbsp;
+
+<!-- This version of the embed code is no longer supported. Learn more: https://vimeo.com/s/tnm --> <object width="500" height="331"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="https://vimeo.com/moogaloop.swf?clip_id=26720253&amp;force_embed=vimeo.com&amp;fullscreen=1" /><embed src="https://vimeo.com/moogaloop.swf?clip_id=26720253&amp;force_embed=vimeo.com&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="331"></embed></object> <p><a href="https://vimeo.com/26720253">Hands-on Programming of Batteryless, RFID-Scale Computers with Sensors (Part 2 of 2)</a>.</p>
+
+		  <!-- iframe
+		  src="http://player.vimeo.com/video/26720253?title=0&amp;byline=0&amp;portrait=0"
+		  width="400" height="265" frameborder="0"></iframe -->
+
+
+	</td>
+      </tr>
+      <tr>
+        <td valign="top" align="right" id="people">&nbsp;</td>
+        <td valign="top" align="right" id="people"> <div align="left"><font color="#000000"><b>People</b></font> </div></td>
+        <td valign="top">          <p><a href="http://web.eecs.umich.edu/~kevinfu/">Kevin Fu (Faculty)</a><br>
+              <a href="http://www.impedimenttoprogress.com/">Matthew Hicks</a><br>
+              <a href="http://miranspqr.wordpress.com/">Miran Alhaideri</a><br>
+              <a href="../index.html">Mark Schulte</a><br>
+              <a href="https://homes.cs.washington.edu/~ransford/">Benjamin Ransford</a><br>
+      </tr>
+      <tr>
+        <td valign="top" align="right" id="videos2">&nbsp;</td>
+        <td valign="top" align="left" id="availability"><b>Availability</b></td>
+	<td valign="top">
+
+	   We have the new Moos!  To purchase a herd of Moos, please
+	  email the staff at archimedes@umich.edu.
+	  <!--
+	  Order a herd of Moos using our <a
+	  href="https://docs.google.com/spreadsheet/viewform?formkey=dDZxc25PSFQxRy1hX2RSaTVxWWEtYVE6MQ#gid=0">order
+	  form</a>.
+	  -->
+	  
+	</td>
+      </tr>
+      <tr>
+        <td valign="top" align="right">&nbsp;</td>
+        <td valign="top" align="left" id="beef"><b>Where's the 0b&nbsp;1011&nbsp;1110&nbsp;1110&nbsp;1111</b></td>
+	<td valign="top">
+	  Find out <a href="wheres-the-beef.txt">what institutions have the Moo</a>.<br>
+	  (It's a binary 1980s joke; either you get it or you don't.)
+	</td>
+      </tr>
+      <tr>
+        <td valign="top" align="right" id="people">&nbsp;</td>
+        <td valign="top" align="right" id="people"> <div align="left"><font color="#000000"><b>Support</b></font> </div></td>
+        <td valign="top">
+          <table border="0" cellpadding="5">
+            <tr>
+              <td valign="top"><img src="Moo_files/nsf.jpg" width="123" height="123"><img src="Moo_files/sharpslogo.png" width="82" height="100"></td> 
+	      <td>This material is based upon work supported by the National Science Foundation and the Office of the National Coordinator for Health Information Technology at the Department of Health and Human Services (HHS).  Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. </td>
+            </tr>
+            <tbody>
+            </tbody>
+        </table></td>
+      </tr>
+      <tr>
+        <td colspan="3" align="right" valign="top">
+          <hr size="5" color="#881c1c">        </td>
+        </tr>
+   </tbody></table>
+</center>
+
+<script type="text/javascript">
+var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21026882-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+</body>
+<!-- Mirrored from spqr.eecs.umich.edu/moo/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:53:30 GMT -->
+</html>

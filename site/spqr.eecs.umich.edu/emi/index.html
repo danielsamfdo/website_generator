@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from spqr.eecs.umich.edu/emi/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:52:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<title>EMI and Signal Injection</title>
+	<!-- script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"
+		type="text/javascript"></script -->
+
+    <link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300|Tinos:regular,bold" />
+	<link rel="stylesheet" type="text/css" href="../style/spqr-screen.css" />
+	<link rel="stylesheet" type="text/css" href="emi.css" />
+
+	<meta name="description" content="System support for long-running programs on RFID-scale devices" />
+
+	<!-- for publications -->
+	<script src="../js/simile/simile-ajax-api097f.js?bundle=false"
+		type="text/javascript"></script>
+	<script src="../js/exhibit/exhibit-apicf74.js?bundle=false&amp;autoCreate=false"
+		type="text/javascript"></script>
+	<link rel="exhibit/data" href="../spqrbib.js" type="application/json" />
+	<link rel="exhibit/data" href="../spqr-bibschema.js" type="application/json" />
+	<link rel="stylesheet" type="text/css" href="../style/spqr-pubs.css" />
+	<script type="text/javascript" src="../subpub.js"></script>
+	<!-- /for publications -->
+</head>
+<body>
+<div id="main">
+
+<div id="topmatter">
+	<h1>Ghost Talk</h1>
+	<div id="subtitle">
+	Mitigating Electromagnetic Interference Signal Injection Attacks against Analog Sensors
+	</div>
+</div> <!-- /topmatter -->
+
+<div id="breadcrumbs">
+   <h1>	<a href="../index.html">Home</a> &nbsp; &nbsp;
+	<a href="../people.html">People</a> &nbsp; &nbsp;
+	<a href="../publications.html">Publications</a> &nbsp; &nbsp;
+	<a href="../projects.html">Projects</a> &nbsp; &nbsp;
+        <a href="../news.html">News &amp; Events</a> &nbsp; &nbsp;
+	<a href="../seminars.html">Seminars</a> &nbsp; &nbsp;
+	<a href="../jobs.html">Jobs</a> 
+</h1>
+</div>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->
+
+<div id="meat">
+<h2>Overview</h2>
+
+<div id="graph">
+<img src="waveforms_emi.png" width="400" height="328" alt="Analog sensors may be vulnerable to baseband or modulated signals that can dominate the actual reading." /><br />
+<div class="caption">
+Analog sensors may be vulnerable to baseband or modulated signals that can dominate the actual reading after automatic gain control and amplification.  Top row: The real signal.  Middle row: Baseband signal injection and result after amplification.  Bottom row: Modulated signal injection and result after amplification.
+</div>
+</div>
+<p> 
+Our <a href="../papers/fookune-emi-oakland13.pdf">2013 Oakland paper on electromagnetic interference appears here</a>.
+</p>
+
+<p>
+Electromagnetic interference (EMI) affects circuits by inducing voltages on conductors. Analog sensing of signals on the order of a few millivolts is particularly sensitive to interference. This project aims at measuring and understanding the susceptibility of analog sensor systems to signal injection attacks by intentional, low-power emission of chosen electromagnetic waveforms.  We are developing defense mechanisms by leveraging actuators in the system to probe for ground truth and reduce the risks.
+</p>
+<p>
+In an EMI signal injection attack, the adversary manipulates the input to the device by emitting chosen electromagnetic waveforms.  On the victim's receiving circuit, it is then hard to determine if a waveform on its conducting traces is due to the real signal or an induced chosen waveform.  As a result, the sensor readings may not reflect the actual physical parameter being measured and this may affect the decision making process.
+</p>
+<p>
+The EMI signal injection attacks can happen in two ways.  First, the chosen signal can be at the same frequency as the physical parameter the sensing circuit is designed to measure, as illustrated in the middle row in the figure.  In the devices we studied, those frequencies are in the Very Low Frequency (VLF) and Extremely Low Frequency (ELF) range of the electromagnetic spectrum, with corresponding wavelengths in the order of several kilometers or more.  The mismatch between the victim’s circuit size and the wavelength can be compensated with increased power.
+</p>
+<p>
+The second way to inject a signal, if low pass filters are not used, is to send the chosen waveform combined with a high frequency carrier as shown in the bottom row of the figure.  The components inside the sensing circuit can demodulate the signal if the carrier is chosen carefully.
+</p>
+<p>
+Our defenses include monitoring the surrounding electromagnetic fields for conditions that could support EMI signal injection, and developing system level probes to determine the trustworthiness of the incoming signal.
+</p>
+<p>
+Videos:<br>
+
+<script>
+  // Load the IFrame Player API code asynchronously. 
+  var tag = document.createElement('script'); 
+  tag.src = "https://www.youtube.com/player_api"; 
+  var firstScriptTag = document.getElementsByTagName('script')[0]; 
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); 
+
+  // Replace the 'ytplayer' element with an <iframe> and 
+  // YouTube player after the API code downloads. 
+    var player1, player2;
+    function onYouTubePlayerAPIReady() { 
+    player1 = new YT.Player('ytplayer1', { 
+    height: '360',                          
+    width: '640', 
+    videoId: 'lLo6g-O9SY4'                                                                                                                                 
+    });                                                                                                                                                   
+ 
+    player2 = new YT.Player('ytplayer2', {                                                                                                                
+    height: '360', 
+    width: '640', 
+    videoId: '6Ev7fS25bek'                                                                                                                                 
+    });                                                                                                                                                    
+    }                                                                                                                                                      
+  </script> 
+
+<p>
+Injection of voice signals.<br>
+
+<div id="ytplayer1"></div> 
+</p> 
+
+<p> 
+Injection of DTMF signals.<br> 
+<div id="ytplayer2"></div>      
+
+</p>
+</p>
+<div id="pub" style="clear: both">
+<h2>Publications</h2>
+		<script type="text/javascript">
+			var selectedKeywords = "EMI";
+		</script>
+		<div id="pub-facets">
+	<div id="search-facet"
+		ex:role="facet" ex:facetClass="TextSearch"
+		ex:queryParamName="q"
+		ex:facetLabel="Search"></div>
+	<div id="keywords-facet"
+		ex:role="facet" ex:expression=".keywords"
+		ex:scroll="false" ex:sortMode="count"
+		ex:facetLabel="Keywords"></div>
+	<div id="author-facet"
+		ex:role="facet" ex:expression=".author"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="People"></div>
+	<div id="venue-facet"
+		ex:role="facet" ex:expression=".venue"
+		ex:scroll="true" ex:sortMode="count"
+		ex:facetLabel="Venue"></div>
+</div>
+<div id="spqrpubs">
+
+	<div class="calmnotice">
+		<strong>Note:</strong> There is also a <a
+		href="publications-flat.html">flat (no Javascript) version of
+		this page</a>.
+	</div>
+
+	<div ex:role="collection" ex:itemTypes="Publication"></div>
+
+	<div ex:role="exhibit-lens"
+		ex:itemTypes="Publication"
+		class="publication" style="display: none">
+
+		<div>
+			<div class="paperinfo">
+			<span class="pubtitle" ex:select=".pub-type">
+				<span ex:case="inbook" class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .chapter)"></span>
+				<span class="pubtitle" ex:content="if(exists(.clean_title), .clean_title, .label)"></span>
+			</span>.<br />
+			<span ex:content=".author"></span><br />
+			<span class="wherepublished" ex:select=".pub-type">
+				<span ex:case="inbook">
+					<span ex:if-exists=".label">
+					Chapter in
+					<em ex:content=".label"></em>,
+					</span>
+				</span>
+				<span ex:case="phdthesis">
+					<span ex:if-exists=".school">
+					Ph.D. thesis, <span ex:content=".school"></span>,
+					</span>
+				</span>
+				<span ex:case="inproceedings">
+					<span ex:if-exists=".booktitle">
+					In <em ex:content=".booktitle"></em><span ex:if-exists=".series">&nbsp;(<em ex:content=".series"></em>)</span>,
+					</span>
+				</span>
+				<span ex:case="techreport">
+					<em>Tech report
+						<span ex:content=".number"></span>,
+						<span ex:content=".institution"></span>,
+					</em>
+				</span>
+				<span ex:case="article">
+					<em ex:content=".journal"></em>
+					<span ex:if-exists=".volume">
+						<span ex:content=".volume"></span>(<span ex:content=".number"></span>),
+					</span>
+				</span>
+			</span>
+			<span ex:if-exists=".address">
+				<span ex:content=".address"></span>,
+			</span>
+			<span ex:content=".month"></span>
+			<span ex:content=".year"></span>.
+			<span ex:if-exists=".note"><span ex:content=".note"></span>.</span>
+			<span ex:if-exists=".award_note"><span ex:content=".award_note"></span>.</span>
+			</div>
+
+			<ul class="links">
+				<li><a ex:href-subcontent="spqrbib_bib.html#{{.key}}">bibtex</a></li>
+				<li ex:if-exists=".url"><a ex:href-content=".url">paper</a></li>
+				<li ex:if-exists=".slides_url"><a ex:href-content=".slides_url">slides</a></li>
+				<li ex:if-exists=".poster_url"><a ex:href-content=".poster_url">poster</a></li>
+				<li ex:if-exists=".poster_url2"><a ex:href-content=".poster_url2">poster</a></li>
+				<li ex:if-exists=".poster_url3"><a ex:href-content=".poster_url3">poster</a></li>
+				<li ex:if-exists=".conference_url"><a ex:href-content=".conference_url">conference</a></li>
+				<li ex:if-exists=".workshop_url"><a ex:href-content=".workshop_url">workshop</a></li>
+				<li ex:if-exists=".techreport_url"><a ex:href-content=".techreport_url">tech report</a></li>
+				<li ex:if-exists=".demo_url"><a ex:href-content=".demo_url">demo</a></li>
+				<li ex:if-exists=".video_demo_url"><a ex:href-content=".video_demo_url">video demo</a></li>
+				<li ex:if-exists=".details_url"><a ex:href-content=".details_url">details</a></li>
+				<li ex:if-exists=".extended_paper_url"><a ex:href-content=".extended_paper_url">extended paper</a></li>
+				<li ex:if-exists=".html_url"><a ex:href-content=".html_url">HTML</a></li>
+				<li ex:if-exists=".ps_url"><a ex:href-content=".ps_url">PS</a></li>
+				<li ex:if-exists=".journal_url"><a ex:href-content=".journal_url">journal</a></li>
+				<li ex:if-exists=".risks_url"><a ex:href-content=".risks_url">RISKS</a></li>
+				<li ex:if-exists=".springer_url"><a ex:href-content=".springer_url">Springer</a></li>
+				<li ex:if-exists=".code_url"><a ex:href-content=".code_url">code</a></li>
+				<li ex:if-exists=".tgz_url"><a ex:href-content=".tgz_url">TGZ</a></li>
+				<li ex:if-exists=".licensing_url"><a ex:href-content=".licensing_url">licensing</a></li>		
+				<li ex:if-exists=".video_url"><a ex:href-content=".video_url">video</a></li>
+				<li ex:if-exists=".video_url2"><a ex:href-content=".video_url2">video</a></li>
+				<li ex:if-exists=".webcast_url"><a ex:href-content=".webcast_url">webcast</a></li>
+				<li ex:if-exists=".photos_url"><a ex:href-content=".photos_url">photos</a></li>
+				<li ex:if-exists=".msr_url"><a ex:href-content=".msr_url">Microsoft Research</a></li>
+				<li ex:if-exists=".nytimes_url"><a ex:href-content=".nytimes_url">New York Times</a></li>
+				<li ex:if-exists=".wsj_url"><a ex:href-content=".wsj_url">Wall Street Journal</a></li>
+				<li ex:if-exists=".npr_url"><a ex:href-content=".npr_url">NPR</a></li>
+				<li ex:if-exists=".ieee_spectrum_url"><a ex:href-content=".ieee_spectrum_url">IEEE Spectrum</a></li>
+				<li ex:if-exists=".boston_globe_url"><a ex:href-content=".boston_globe_url">Boston Globe</a></li>
+				<li ex:if-exists=".medgadget_url"><a ex:href-content=".medgadget_url">Medgadget</a></li>
+				<li ex:if-exists=".new_scientist_url"><a ex:href-content=".new_scientist_url">New Scientist</a></li>
+				<li ex:if-exists=".ap_url"><a ex:href-content=".ap_url">AP</a></li>
+				<li ex:if-exists=".reuters_url"><a ex:href-content=".reuters_url">Reuters</a></li>
+				<li ex:if-exists=".schneier_url"><a ex:href-content=".schneier_url">Schneier</a></li>
+				<li ex:if-exists=".senate_url"><a ex:href-content=".senate_url">Senate</a></li>
+				<li ex:if-exists=".slashdot_url"><a ex:href-content=".slashdot_url">Slashdot</a></li>
+				<li ex:if-exists=".tv_url"><a ex:href-content=".tv_url">TV</a></li>
+				<li ex:if-exists=".us_news_world_report_url"><a ex:href-content=".us_news_world_report_url">U.S. News &amp; World Report</a></li>
+				<li ex:if-exists=".eweek_url"><a ex:href-content=".eweek_url">eWeek</a></li>
+				<li ex:if-exists=".abstract">
+				<a href="javascript:void(0);"
+					ex:onclick-subcontent="$('#{{.key}}').slideToggle('fast');"
+					class="abstractbutton">abstract &raquo;</a>
+				</li>
+			</ul>
+
+			<div ex:if-exists=".abstract">
+				<p class="abstract" ex:content=".abstract" style="display:none"
+					ex:id-content=".key"></p>
+			</div>
+			</div>
+		</div>
+
+	<div ex:role="exhibit-lens" ex:itemTypes="Author" class="author" style="display: none">
+       		<span ex:control="copy-button" style="float: right"></span>
+		<div class="title"><span ex:content=".author"></span></div>
+		<ol class="publications" ex:content="!author">
+			<li ex:content=".label"></li>
+		</ol>
+	</div>
+	<div ex:role="exhibit-view"
+       		ex:viewClass="Exhibit.TileView"
+       		ex:orders=".year, .monthnum"
+       		ex:grouped="true"
+       		ex:directions="descending, descending"
+       		ex:possibleOrders=".pub-type, .author, .year, .label, .monthnum, .venue"></div>
+</div>
+</div>
+
+<!--div id="downloads">
+<h2>Downloads</h2>
+<p>
+Get the source code from <a
+href="http://github.com/spqr/mementos">GitHub</a>.
+</p>
+ 
+</div!-->
+
+<div id="related">
+<h2>Related Projects</h2>
+
+<p>
+<a href="http://groups.csail.mit.edu/netmit/IMDShield/publications.html">IMD Shield: Securing Implantable Medical Devices</a></p>
+
+<p>
+<a href="http://sharps.org/">Strategic Healthcare IT Advanced Research Projects on Security (SHARPS)</a></p>
+
+<p>
+<a href="http://secure-medicine.org/">Ann Arbor Center for Medical Device Security (Archimedes)</a></p>
+
+</div>
+
+<!--div id="media">
+<h2>Media</h2>
+<p>
+<ul>
+<li>IEEE Spectrum: <a
+  href="http://spectrum.ieee.org/computing/it/rfid-chips-gain-computing-skills">RFID Chips Gain Computing Skills</a>
+</li>
+</ul>
+</p>
+</div!-->
+
+
+
+</div> <!-- /meat -->
+
+<div id="bottommatter">
+<div id="support">
+<h2>Support</h2>
+
+This publication was made possible by the following funding sources.
+<ul>
+<li>Cooperative Agreement No. 90TR0003/01 from the Department of Health and Human Services. Its contents are solely the responsibility of the authors and do not necessarily represent the official views of the HHS. </li>
+
+<li>The Sloan Research Fellowship</li>
+<li>The University of Minnesota Doctoral Dissertation fellowship</li>
+<li>The Korean government (MEST) National Research Foundation (NRF) No. 2012-0000979</li>
+<li>The Harvard Catalyst/Harvard Clinical and Translational Science Center MeRIT career development award</li>
+<li>The National Science Foundation awards CNS- 1035715, CNS-0845671, CNS-0923313, GEO-1124657, and
+S121000000211. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation. </li>
+</ul>
+
+</div>
+
+</div> <!-- /bottommatter -->
+
+</div> <!-- /main -->
+
+<script type="text/javascript">
+var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-21026882-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+
+
+</body>
+
+<!-- Mirrored from spqr.eecs.umich.edu/emi/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Nov 2016 06:52:54 GMT -->
+</html>
+
+<!-- vim: set noet ts=4 sw=4 ft=html tw=80: -->

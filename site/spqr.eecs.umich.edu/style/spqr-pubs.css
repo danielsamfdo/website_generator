@@ -1,0 +1,87 @@
+#pub-facets {
+	float: right;
+	background-color: #f0f0f0;
+	width: 20%;
+}
+
+#pub-facets > div {
+	margin-bottom: 1em;
+}
+
+#spqrpubs {
+}
+
+.notice{
+	border: 1px dashed red;
+	padding: 1em;
+	background-color: #f0f0f0;
+}
+
+.calmnotice {
+	border: 1px solid #ccc;
+	padding: 0.5em;
+	color: #666;
+	margin-bottom: 1em;
+	width: 90%;
+}
+
+/**** Exhibit ****/
+div.exhibit-collectionView-body h1 {
+	margin: 1.5em 0 5px 0;
+	padding: 0;
+	font-size: medium;
+}
+div.exhibit-collectionView-body .links {
+	display: block;
+	padding: 0 0 0.5ex 0.75ex;
+	width: 100%;
+}
+div.exhibit-collectionView-body .links li {
+	list-style-type: none;
+	border: 1px solid #ccc;
+	background-color: #f0f0f0;
+	display: inline;
+	margin: 0;
+	border-radius: 6px; -moz-border-radius: 6px;
+	padding: 3px;
+	font-size: smaller;
+}
+
+div.exhibit-collectionView-body li {
+	clear: both;
+	margin-bottom: 0.75em;
+	list-style-type: none;
+	border-style: solid;
+	border-width: 0 0 0 5px;
+	border-color: #ddd;
+}
+
+div.paperinfo {
+	padding: 0.75ex;
+}
+
+p.abstract {
+	padding: 0 1em 0 1em;
+}
+
+div.exhibit-collectionView-group h1 {
+	font-size: 20px;
+}
+
+div.exhibit-collectionView-group ol {
+	list-style-type: square;
+}
+
+/* BEGIN gross hacks to visually "ungroup" by month */
+div.exhibit-collectionView-group h2 { display: none; }
+div.exhibit-collectionView-group div.exhibit-collectionView-group div.exhibit-collectionView-group-content { margin-left: 0; }
+/* END gross hacks to visually "ungroup" by month */
+
+/* hide publications count */
+div.exhibit-collectionView-header div:first-child {
+	display: none !important;
+}
+
+.pubtitle { font-weight: bold; }
+
+/**** Exhibit ****/

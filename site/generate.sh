@@ -28,7 +28,7 @@ HEADERURLS=( "about:index.html"
       )
 
 template1 () {
-  printf "<html><head><meta charset='ISO-8859-1'><link rel='stylesheet' type='text/css' href='style.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='script.js'></script><title>"
+  printf "<html><head><meta charset='ISO-8859-1'><meta charset='utf-8'><meta http-equiv='content-type' content='text/html; charset=UTF-8' /><link rel='stylesheet' type='text/css' href='style.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script src='script.js'></script><title>"
   printf "$4"
   printf "</title></head><body><div class='box'>"
   printf "%s", "$1"

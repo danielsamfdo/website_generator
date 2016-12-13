@@ -15,3 +15,18 @@ STUFF TO DO
 4) No duplications of same paper and venue
 5) Chronological Order, Category Order, By Year, By Author, By Conference ; http://listjs.com/
 6) 
+
+
+TO DO
+\users stuff in the header of the html files - DONE
+Display of Non ascii characters - DONE
+Months to not displayed when not available - NEED TO CHECK WITH PROF
+Check if any month is already mentioned then mention
+Update Content - 
+ORganize Folder structure - 
+Others Duplicate -  DONE
+
+
+
+
+Send mail that month details not available for dblp

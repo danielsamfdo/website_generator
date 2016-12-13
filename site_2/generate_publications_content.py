@@ -6,12 +6,62 @@ from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.bibdatabase import BibDatabase
 import pickle
 import sys
+import htmlentitydefs as entity
 reload(sys)
 sys.setdefaultencoding('utf-8')
+
+def convert_foreign_characters(text):
+    # text = re.sub(r"\\'(.)", r"&\1acute;", text)
+    # text = re.sub(r"\\&apos;(.)", r"&\1acute;", text)
+    text = text.replace("\\&amp;","&")
+    text = text.replace("amp;","") # there were a few inconsistent cases and so i have added this case alone
+    # print text, "------------"
+    text = text.replace("\\&", "&")
+    # text = decode_to_entity(text)
+
+    # SOME UNWANTED CHAR THAT CAME IN BECAUSE OF UTF-8
+    # text = text.replace("&pound;", "")
+    # text = text.replace("&copy;", "")
+    # text = text.replace("Menasch&Atilde;","Menasch&eacute;")
+    # text = text.replace("Arag&Atilde;&pound;o","Arag&atilde;o")
+    # text = text.replace("Le&Atilde;o","Le&atilde;o")
+    return re.sub(r"\\\~(.)", r"&\1tilde;", text)
+    
 
 def striphtml(data):
     p = re.compile(r'<.*?>')
     return p.sub('', data)
+
+
+def decode_to_entity(s):
+    # Does not work quite well for all instances "
+    t = ""
+    for i in s:
+            if ord(i) in entity.codepoint2name:
+                    name = entity.codepoint2name.get(ord(i))
+                    t += "&" + name + ";"
+            else:
+                    t += i
+    return t
+
+def foreign_accents(author):
+    # print author
+
+    author = re.sub(r"\\&apos;(.)", r"&\1acute;", author)
+    # print author,"-------------"
+    return re.sub(r"\\\~(.)", r"&\1tilde;", author)
+
+def remove_unwanted_characters(text):
+    # print text
+    text = text.replace("\\&amp;","&")
+    text = text.replace("amp;","") # there were a few inconsistent cases and so i have added this case alone
+    # print text, "------------"
+    text = text.replace("\\&", "&")
+    return text
+
+def remove_set_brackets(text):
+    return re.sub("[{}]","", text)
+
 
 class Publications:
     """A simple example class"""
@@ -84,41 +134,51 @@ class Publications:
         else:
             note = ""
         if('pages' in self.entry):
-            pages = self.entry['pages']
+            pages = "Pages: %s, " %self.entry['pages']
         else:
             pages = ""
-        if('booktitle' in self.entry):
-          booktitle = re.sub("[{}]","",self.entry['booktitle'])
         if('journal' in self.entry):
-          journal = re.sub("[{}]","",self.entry['journal'])
+            self.entry['journal'] = remove_set_brackets(self.entry['journal'])
+        if("booktitle" in self.entry):
+            self.entry['booktitle'] = remove_set_brackets(self.entry['booktitle'])
+        if("volume" in self.entry):
+            volume = "Volume:" + self.entry["volume"]
 
-        title = self.title
-        title = title.replace("\\","")
-        title = re.sub("&amp;","&", title)
+        title = remove_unwanted_characters(self.title)
+
+
         if('link' in self.entry):
           title = "<a href='%s'>%s</a>" %(self.entry['link'], title)
+          # print  "<a href='%s'>%s</a>" %(self.entry['url'], self.title)        
+
+        # author = self.author
+        self.author = foreign_accents(self.author)
           # print  "<a href='%s'>%s</a>" %(self.entry['url'], self.title)        
         if(self.google_scholar == True):
             s = self.google_scholar_print()
         elif(self.pub_type == "conference"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %(title, self.author, booktitle, month, self.year, note, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s %s, %s' %(title, self.author, self.entry["booktitle"], month, self.year, note)
         elif(self.pub_type == "techreport"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %(title, self.author, self.entry["institution"], self.entry["number"], month, self.year, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s, %s %s' %(title, self.author, self.entry["institution"], self.entry["number"], month, self.year)
         elif(self.pub_type == "phdthesis"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, "PhD Thesis",self.entry["institution"], month, self.year, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, "PhD Thesis",self.entry["institution"], month, self.year)
         elif(self.pub_type == "ugthesis"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, "Undergraduate Thesis",self.entry["institution"], month, self.year, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, "Undergraduate Thesis",self.entry["institution"], month, self.year)
         elif(self.pub_type == "journal"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s %s, %s %s' %( title, self.author, journal, self.entry["volume"], pages, month, self.year, note, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s %s, %s %s, %s' %( title, self.author, self.entry["journal"], volume, pages, month, self.year, note)
         elif(self.pub_type == "workshop"):
-            s ='%s<br/> %s,<br/> %s, %s %s %s' %( title, self.author, booktitle, month, self.year, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s %s' %( title, self.author, self.entry["booktitle"], month, self.year)
         elif(self.pub_type == "bookchapter"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %( title, self.author, booktitle, month, self.year, note, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s %s, %s' %( title, self.author, self.entry["booktitle"], month, self.year, note)
         elif(self.pub_type == "book"):
-            s ='%s<br/> %s,<br/> %s, %s %s, %s %s' %( title, self.author, booktitle, month, self.year, note, self.abstract_bibtex())
+            s ='%s<br/> %s,<br/> %s, %s %s, %s' %( title, self.author, self.entry["booktitle"], month, self.year, note)
         elif(self.pub_type == "misc"):
-            s ='%s<br/> %s,<br/> %s, %s, %s %s %s' %( title, self.author, booktitle, self.entry["institution"], month, self.year, self.abstract_bibtex())
-
+            s ='%s<br/> %s,<br/> %s, %s, %s %s' %( title, self.author, self.entry["booktitle"], self.entry["institution"], month, self.year)
+        s = s.rstrip()# remove empty space if things are empty then remove a comma at the end if present .
+        if(s[-1]==','):
+            s = s[:-1] 
+        if(self.google_scholar == False):
+            s = s + " " + self.abstract_bibtex()
         return s
 
 def get_bib_entries(file_name):  
@@ -234,9 +294,9 @@ def add_google_scholar_entries(existing_publications):
     # if(re.match("venkataramani",ent['author'],re.IGNORECASE)):
       if(ent['title'] not in ignore):
         bib_entries.append(ent)
-        print "####******%s******" %ent['title']
-      else:
-        print "******%s******" %ent['title']
+        # print "####******%s******" %ent['title']
+      # else:
+        # print "******%s******" %ent['title']
     # else:
       # print "IGNORED ---------> " + ent['title']
   f.close()
@@ -283,6 +343,15 @@ def add_google_scholar_entries(existing_publications):
   for i in non_entries:
     print i.title
   return non_entries
+
+def save_publications_from_google_scholar():
+  author = next(scholarly.search_author('Arun Venkataramani')).fill()
+  entries = []
+  for pub in author.publications:
+      pub.fill()
+      entries.append(pub['bib'])
+  pickle.dump(entries, open( "gs_entries_prof_arun.dat", "wb" ) )
+  
 
 def import_publications_from_google_scholar(existing_publications):
   author = next(scholarly.search_author('Arun Venkataramani')).fill()
@@ -410,8 +479,8 @@ for entry in entries:
   writer = BibTexWriter()
   entry.bibtex_string = writer.write(db)
 
-print "$$$$$$$$$$$$$$$$$$$$$$$$$$"
-
+# print "$$$$$$$$$$$$$$$$$$$$$$$$$$"
+# save_publications_from_google_scholar()
 new_gs_entries = add_google_scholar_entries(entries)
 
 non_year_entries = []
@@ -488,6 +557,7 @@ def conference_publications(pub_entries):
         content+="<li>%s</li><br/>" %((pub.print_publication()))
     if(len(content)>0):
       header =  "<h5>%s</h5>" %(acceptable_conference.upper())
+      content = convert_foreign_characters(content)
       target.write(header+"<ul>"+content+"</ul>")
   target.close()
 
@@ -512,6 +582,7 @@ def categories_publications(pub_entries):
         content+="<li>%s</li><br/>" %((pub.print_publication()))
     if(len(content)>0):
       header =  "<h5>%s</h5>" %(category.upper())
+      content = convert_foreign_characters(content)
       target.write(header+"<ul>"+content+"</ul>")
   target.close()
 

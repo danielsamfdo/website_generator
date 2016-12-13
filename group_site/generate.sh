@@ -4,25 +4,25 @@ TITLE_PREFIX="ANSR "
 
 # Array pretending to be a Pythonic dictionary
 ARRAY=( "home:home_content.html"
-        "people:people_content.html"
         "publications:publications_content.html"
         "projects:projects_content.html"
+        "people:people_content.html"
         "jobs:jobs_content.html"
         "news:news_content.html"
       )
 
 HEADERFILESNAMES=( "home:Home"
-        "people:People"
         "publications:Publications"
         "projects:Projects"
+        "people:People"
         "jobs:Jobs"
         "news:News"
       )
 
 HEADERURLS=( "home:index.html"
-        "people:people.html"
         "publications:publications.html"
         "projects:projects.html"
+        "people:people.html"
         "jobs:jobs.html"
         "news:news.html"
       )

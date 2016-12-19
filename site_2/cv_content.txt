@@ -1,4 +1,4 @@
-<h4><i class="fa fa-book fa-fw"></i> Research Interests </h4>
+<h4> Research Interests </h4>
 <p align="justify">My research interests lie  broadly in networked systems. I have conducted research on several topics including mobile and wireless networking, content distribution, peer-to-peer systems, Internet architecture,  protocol design and analysis, datacenter systems, and network measurement. Some of my recent  research efforts are:</p>
 <div align="justify">
   <ul>

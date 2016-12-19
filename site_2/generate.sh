@@ -1,14 +1,20 @@
 #!/bin/bash
+ 
 
 TITLE_PREFIX="Prof.Arun " 
-
+STUDENTS_CONTENT="students_content.txt"
+CV_CONTENT="bio_content.txt"
+PUB_CONTENT="publications_content.html"
+RES_CONTENT="research_content.txt"
+ABOUT_CONTENT="about_content.txt"
+CONTACT_CONTENT="contact_content.txt"
 # Array pretending to be a Pythonic dictionary
-ARRAY=( "about:about_content.txt"
-        "research:research_content.txt"
-        "publications:publications_content.html"
-        "cv:cv_content.txt"
-        "students:students_content.txt"
-        "contact:contact_content.txt"
+ARRAY=( "about:$ABOUT_CONTENT"
+        "research:$RES_CONTENT"
+        "publications:$PUB_CONTENT"
+        "cv:$CV_CONTENT"
+        "students:$STUDENTS_CONTENT"
+        "contact:$CONTACT_CONTENT"
       )
 
 HEADERFILESNAMES=( "about:Home"
@@ -53,7 +59,7 @@ template1 () {
 }
 
 
-side_content=$(cat side_content.txt)
+
 
 
 navigation_content () {
@@ -65,23 +71,81 @@ navigation_content () {
     printf "<li><a href='$URL_LOCATION'>$URL_NAME</a></li>"
   done
 }
-template="temp3.html"
 
-nav_content=$(navigation_content)
-echo $nav_content
-for i in "${!ARRAY[@]}" ; do
+generate_inner_content () {
+  case $1 in
+    $STUDENTS_CONTENT)
+      echo "STUD CONT"
+      ;;
+  esac
+}
+
+generate_entire_website (){
+  template="temp3.html"
+  side_content=$(cat side_content.txt)
+  nav_content=$(navigation_content)
+  # echo $nav_content
+  for i in "${!ARRAY[@]}" ; do
+      header="${ARRAY[$i]}"
+      title_value=$TITLE_PREFIX
+      title="${HEADERFILESNAMES[$i]}"
+      title="${title##*:}"
+      title_value+=$title
+      echo $title_value
+      url_file="${HEADERURLS[$i]}"
+      URL_FILE_NAME="${url_file##*:}"
+      INNER_CONTENT="${header##*:}"
+      # sed -e "s/{{NAV_CONTENT}}/$nav_content/g" $template > tmp.html
+      # r=$(printf "%q", $(cat $INNER_CONTENT))
+      # sed -e "s/{{INNER_CONTENT}}/$r/g" tmp.html > tmp2.html
+      # sed -e "s/{{TITLE}}/$title_value/g" tmp2.html > $URL_FILE_NAME
+      template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
+  done
+}
+
+generate_single_webpage (){
+  template="temp3.html"
+  side_content=$(cat side_content.txt)
+  nav_content=$(navigation_content)
+  for i in "${!ARRAY[@]}" ; do
     header="${ARRAY[$i]}"
     title_value=$TITLE_PREFIX
     title="${HEADERFILESNAMES[$i]}"
     title="${title##*:}"
     title_value+=$title
-    echo $title_value
     url_file="${HEADERURLS[$i]}"
     URL_FILE_NAME="${url_file##*:}"
     INNER_CONTENT="${header##*:}"
-    # sed -e "s/{{NAV_CONTENT}}/$nav_content/g" $template > tmp.html
-    # r=$(printf "%q", $(cat $INNER_CONTENT))
-    # sed -e "s/{{INNER_CONTENT}}/$r/g" tmp.html > tmp2.html
-    # sed -e "s/{{TITLE}}/$title_value/g" tmp2.html > $URL_FILE_NAME
-    template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
+    # echo $INNER_CONTENT
+    if [ "$INNER_CONTENT" == "$1" ]; then
+      echo "GENERATING CONTENT using $INNER_CONTENT"
+      # inner_content=$(generate_inner_content $1)
+      # sed -e "s/{{NAV_CONTENT}}/$nav_content/g" $template > tmp.html
+      # r=$(printf "%q", $(cat $INNER_CONTENT))
+      # sed -e "s/{{INNER_CONTENT}}/$r/g" tmp.html > tmp2.html
+      # sed -e "s/{{TITLE}}/$title_value/g" tmp2.html > $URL_FILE_NAME
+      template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
+    fi
+  done 
+}
+
+
+while getopts ":a:b:" opt; do
+  case $opt in
+    a)
+      echo "-a was triggered, Parameter: $OPTARG $3 $4" >&2
+      generate_single_webpage $3
+      ;;
+    b)
+      generate_entire_website
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
 done

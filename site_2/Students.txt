@@ -1,0 +1,6 @@
+Ph D Students, John DOE, assets/img/profpic_man.jpg, "http://www.google.com"
+Ph D Students, Test DOE, assets/img/placeholder1.jpg, "http://www.google.com"
+Graduate Students, Hickins, assets/img/profpic_man.jpg, "http://www.google.com"
+Ph D Students, John DOE, assets/img/profpic_man.jpg, 
+Graduate Students, Test DOE, assets/img/placeholder1.jpg, 
+Graduate Students, Hickins Test, ,

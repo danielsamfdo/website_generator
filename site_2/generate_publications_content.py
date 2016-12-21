@@ -292,7 +292,7 @@ def pub_similar_year(pub, check_year,check_pub_year):
 
 # THIS FUNCITON IS USED FOR CHECKING FOR GOOGLE SCHOLAR ENTRIES, IF THERE ALREADY EXISTS AN ENTRY IN THE OTHER PUBLICATIONS.
 def returnSimilarPub(list_of_pubs, check_pub_title, check_pub_year, check_year):
-    IGNORE_PUBS = {"mechanisms and algorithms for aggressive replication systems": "Mechanisms and Algorithms for Large-Scale Replication Systems"}
+    IGNORE_PUBS = {"mechanisms and algorithms for aggressive replication systems": "Mechanisms and Algorithms for Large-Scale Replication Systems", "towards a quantitative comparison of location-independent network architectures" : "Towards a quantitative comparison of location-independent network architectures"}
     if(check_pub_title.lower() in IGNORE_PUBS.keys()):
         for pub in list_of_pubs:
           if(pub.title == IGNORE_PUBS[check_pub_title.lower()]):
@@ -328,7 +328,9 @@ def populate_abstract(pubs):
   pubs_abstracts = json_information('abstract_publications.json')
   for item in pubs_abstracts:
     for pub_item in pubs:
-      if('ID' in pub_item.entry and item['ID'] == pub_item.entry['ID']):
+      if('ID' in item and 'ID' in pub_item.entry and item['ID'] == pub_item.entry['ID']):
+        pub_item.abstract = item['abstract']
+      elif(not 'ID' in item and item['title'] == pub_item.title and pub_item.google_scholar):
         pub_item.abstract = item['abstract']
 
 def populate_information_for_patent(pub, patents):
@@ -517,7 +519,7 @@ def generate_publications_content(target_file):
 
 def assert_years_entries(yr, year_entry):
   check_entries = { 2016: ['msocket: System support for mobile, multipath, and middlebox-agnostic applications','Identifying and Addressing Reachability and Policy Attacks in \"Secure\" BGP'],
-                    2015: ['Measurement and modeling of user transitioning among networks','Towards a quantitative comparison of location-independent network architectures'],
+                    2015: ['Measurement and modeling of user transitioning among networks'],
                     2014: ['MobilityFirst: a mobility-centric and trustworthy internet architecture','Pros \\&amp; cons of model-based bandwidth control for client- assisted content delivery','VMShadow: optimizing the performance of latency-sensitive virtual desktops in distributed clouds','A global name service for a highly mobile internetwork','Towards a quantitative comparison of location-independent network architectures','CDN Pricing and Investment Strategies under Competition'],
                     2013: ['Content Availability and Bundling in Swarming Systems','VMShadow: optimizing the performance of virtual desktops in distributed clouds','Design requirements of a global name service for a mobility- centric, trustworthy internetwork','Identifying and Addressing Protocol Manipulation Attacks in "Secure" BGP','On the CDN pricing game','Distributing content simplifies ISP traffic engineering'],
                     2012: ['MobilityFirst: a robust and trustworthy mobility-centric architecture for the future internet','Pros \\&amp;amp; Cons of Model-based Bandwidth Control for Client-assisted Content Delivery', 'Distributing Content Simplifies ISP Traffic Engineering'],

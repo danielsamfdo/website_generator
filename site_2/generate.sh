@@ -72,19 +72,10 @@ navigation_content () {
   done
 }
 
-generate_inner_content () {
-  case $1 in
-    $STUDENTS_CONTENT)
-      echo "STUD CONT"
-      ;;
-  esac
-}
-
 generate_entire_website (){
   template="temp3.html"
   side_content=$(cat side_content.txt)
   nav_content=$(navigation_content)
-  # echo $nav_content
   for i in "${!ARRAY[@]}" ; do
       header="${ARRAY[$i]}"
       title_value=$TITLE_PREFIX
@@ -95,10 +86,6 @@ generate_entire_website (){
       url_file="${HEADERURLS[$i]}"
       URL_FILE_NAME="${url_file##*:}"
       INNER_CONTENT="${header##*:}"
-      # sed -e "s/{{NAV_CONTENT}}/$nav_content/g" $template > tmp.html
-      # r=$(printf "%q", $(cat $INNER_CONTENT))
-      # sed -e "s/{{INNER_CONTENT}}/$r/g" tmp.html > tmp2.html
-      # sed -e "s/{{TITLE}}/$title_value/g" tmp2.html > $URL_FILE_NAME
       template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
   done
 }
@@ -116,14 +103,8 @@ generate_single_webpage (){
     url_file="${HEADERURLS[$i]}"
     URL_FILE_NAME="${url_file##*:}"
     INNER_CONTENT="${header##*:}"
-    # echo $INNER_CONTENT
     if [ "$INNER_CONTENT" == "$1" ]; then
       echo "GENERATING CONTENT using $INNER_CONTENT"
-      # inner_content=$(generate_inner_content $1)
-      # sed -e "s/{{NAV_CONTENT}}/$nav_content/g" $template > tmp.html
-      # r=$(printf "%q", $(cat $INNER_CONTENT))
-      # sed -e "s/{{INNER_CONTENT}}/$r/g" tmp.html > tmp2.html
-      # sed -e "s/{{TITLE}}/$title_value/g" tmp2.html > $URL_FILE_NAME
       template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
     fi
   done 

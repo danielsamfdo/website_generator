@@ -1,0 +1,7 @@
+Faculty, Prof. Arun Venkataramani, images/profilepic.jpg, https://www.cics.umass.edu/~arun
+Ph D Students, John DOE, images/profpic_man.jpg, "http://www.google.com"
+Ph D Students, Test DOE, images/placeholder1.jpg, "http://www.google.com"
+Graduate Students, Hickins, images/profpic_man.jpg, "http://www.google.com"
+Ph D Students, John DOE, images/profpic_man.jpg, 
+Graduate Students, Test DOE, images/placeholder1.jpg, 
+Graduate Students, Hickins Test, ,

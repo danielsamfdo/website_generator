@@ -1,5 +1,5 @@
 import csv
-from collections import defaultdict
+from collections import OrderedDict
 import sys
 import re
 
@@ -10,10 +10,13 @@ def change_to_html_characters(string_content):
 
 def generate_students_page(file_name):
   studentReader = csv.reader(open('Students.txt', 'rb'), delimiter=',', skipinitialspace=True)
-  data = defaultdict(list)
+  data = OrderedDict()
   keys = []
   for row in studentReader:
-    data[row[0]].append(row[1:])
+    if(row[0] in data):
+      data[row[0]].append(row[1:])
+    else:
+      data.update({row[0]: [row[1:]]})
 
   target = open(file_name, 'w')
   for key in data:

@@ -332,6 +332,13 @@ body{
   margin-left: 20px;
 }
 
+.student_image{
+    vertical-align:middle;
+    width:50px;
+    height:50px;
+    margin-right: 10px;
+}
+
 
 
 

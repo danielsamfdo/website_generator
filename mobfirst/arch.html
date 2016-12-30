@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mobility First</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse nav-custom-styles">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Mobility First</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./project.html">Project</a></li>
+        <li><a href="./arch.html">Architecture</a></li>
+        <li><a href="https://github.com/MobilityFirst/">CodeBase</a></li>
+        <li><a href="./publications.html">Publications</a></li>
+        <li><a href="./prototype.html">Prototype</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discussion</a>
+          <ul class="dropdown-menu">
+            <<li><a href="./mailing_list.html">Mailing Lists</a></li>
+            <li><a target=_blank href="https://www.atlassian.com/software/views/open-source-license-request">Development (Issues and Tracking)</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+<header class="marketing-hero">
+  <h1 class="hero-main-header">Mobility First</h1>
+  <h4 class="tagline-hero-main-header">The next gen initiative towards mobility and credibility</h4>
+  <ul class="marketing-subnav nav nav-pills">
+  <li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
+  <li><a data-toggle="tab" href="#menu1">Motivation</a></li>
+  <li><a data-toggle="tab" href="#menu2">Design Principles</a></li>
+  <!-- 
+  <li class=""><a href="../get-involved/support.html" class="is-active">Connect</a></li>
+  <li><a href="../get-involved/premium-support.html" class="lower-case">PLZ Halp</a></li>
+  <li><a href="http://foundation.zurb.com/forum/">Forum</a></li>
+  <li><a href="../learn/events.html">Events</a></li>
+  <li><a href="../get-involved/faq.html">FAQs</a></li>
+  <li><a href="../get-involved/contribute.html">Contribute</a></li>
+  <li><a href="../get-involved/yetinauts.html">Yetinauts</a></li>
+  <li><a href="../get-involved/partners.html">Partners</a></li> -->
+  </ul>
+</header>  
+<div class="container text-center">    
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+
+      <div class="col-sm-12 text-left"> 
+        <div id="wikipage" class="trac-content"><h3 id="ArchitectureHighlights">Architecture Highlights</h3>
+<p>
+The MobilityFirst project is founded on the premise that the Internet is approaching an historic inflection point, with mobile platforms and applications poised to replace the fixed-host/server model that has dominated the Internet since its inception. This predictable, yet fundamental, shift presents a unique opportunity to design a next generation Internet in which mobile devices, and applications, and the consequent changes in service, trustworthiness, and management are primary drivers of a new architecture. The goal of MobilityFirst is to better accommodate mobile entities on the Internet in a scalable, trustworthy, and useable manner. Inherently a clean-slate project, MobilityFirst takes a radical approach to redesigning the Internet including rethinking end-point naming, such as through IP, and connection-oriented protocols, such as TCP. At a high level, MobilityFirst allows applications to securely interact with abstract, mobile entities in a connectionless fashion, providing connectivity and minimal user-disruption in the presence of mobility. In order to realize this goal, the MobilityFirst team is engaged in a three-pronged, parallel effort on architectural design, protocol design, and implementation. Making use of the Rutgers-based ORBIT test as well as the national GENI infrastructure, MobilityFirst protocols are currently being implemented and tested on a nationwide scale. The source code at the base of this implementation has been released and is available for testing to other research groups.
+</p>
+<p>
+The following subsections will introduce some of the core architectural concepts.
+</p>
+<h4 id="Name-basedNetworking">Name-based Networking</h4>
+<p>
+The MobilityFirst architecture which emerged over the past 2-3 years is centered around a new name-based service layer which services as the “narrow-waist” of the protocol – this name-based service layer makes it possible to build advanced mobility-centric services in a flexible manner while also improving security and privacy properties.
+</p>
+<p>
+The name-based service layer uses the concept of “flat” globally unique identifiers (GUIDs) for network attached objects, a single abstraction which covers a broad range of communicating objects from a simple device such as a smartphone, a person, a group of devices/people, content or even context.
+</p>
+<h6 id="GUIDisthenewnarrowwaist">GUID is the new <em>narrow waist</em></h6>
+<p>
+<img style="margin-right:auto; display:block; margin-left:auto" src="http://mobilityfirst.orbit-lab.org/raw-attachment/wiki/WikiStart/narrow.png" width="15%">
+</p>
+<p>
+A name-based service layer serves as the "narrow waist" of MobilityFirst protocol stack. All the traffic in MobilityFirst internet architecture runs over GUID namespace addressing. GUIDs are public key assigned by a name certification service (NCS) and are long lasting network-level names for objects. The GUID-based communication is assisted by GNRS (Global Name Resolution Service) and is sufficiently flexible to accommodate a variety of endpoint principals including interfaces, devices, users, services, content, context-aware descriptors and location-independent communication primitives such as device-to-device, device-to-service, content retrieval, context-aware delivery, multicast, anycast, and more.
+</p>
+<h4 id="NamedBasedServices">Named Based Services</h4>
+<p>
+<img style="margin-right:auto; display:block; margin-left:auto" src="http://mobilityfirst.orbit-lab.org/raw-attachment/wiki/WikiStart/namedAPI.png" width="800">
+</p>
+<p>
+At the core of the architecture is a name-based networking abstraction that contrasts with the name-address conflated communication interface associated with Berkeley sockets and the TCP/IP stack. All network-attached objects in the MobilityFirst architecture enjoy direct addressability through long lasting unique network names or identifiers (we use GUIDs). This new GUID-centric network service API, first presented in offers network primitives for basic messaging (send, recv) and content operations (get and post) while supporting several delivery modes innately supported by the MF network such as multihoming, multicast, anycast and DTN delivery. Combined with the GUID indirection and group- ing (GUID mapped to one or more other GUIDs) concepts supported by the naming services, the new communication API can produce novel addressing and delivery capabilities only indirectly possible (and with certain in-efficiency) in today’s IP architecture. Supporting the variety of services that are introduced in this API are then fundamental towards the validation of the architecture design.
+</p>
+<h4 id="HybridGUIDNARoutingandForwarding">Hybrid GUID/NA Routing and Forwarding</h4>
+<p>
+<img style="margin-right:auto; display:block; margin-left:auto" src="http://mobilityfirst.orbit-lab.org/raw-attachment/wiki/WikiStart/hybrid-guid-na.png" width="800">
+</p>
+<p>
+MobilityFirst naming involves three layers: User level descriptor, such as Joe's car or John's mobile is  first translated into a network level identifier. This is the globally unique identifier (GUID) that is a long lasting identifier at the network level. Next, in order to deliver packet to the end points, a GUID needs to be mapped to the current location of the GUID in the network. The mapping of the identifier to its routable network address (NA) is maintained by the global name resolution service (GNRS).
+As seen from the packet structure:
+</p>
+<p>
+<a style="padding:0; border:none" href="./images/packet_structure.png"><img src="./images/packet_structure.png" width="300"></a>
+</p>
+<p>
+data for an end-host is addressed both by its GUID and the NA it is currently attached to. Address can be resolved incrementally as the packet progresses through the network. 
+</p>
+<p>
+<a style="padding:0; border:none" href="./images/multihoming_scenario.png"><img style="margin-right:auto; display:block; margin-left:auto" src="./images/multihoming_scenario.png" width="500"></a>
+</p>
+<p>
+The figure shows a multihomed vehicle receiving data from a back-end server and highlights three types of binding of GUID to NA. At the source the GUID of Joe's car is resolved into the set of NAs it is currently attached to, through an early or at-source binding. However, while the data is in transit, if the end-host moves an attaches to a new location, a re-resolution occurs on failure, which is referred to as late binding. The hybrid GUID/NA naming also facilitates progressive binding by the network, which means the GUID is not directly bound to the exact port number attachment of the end point, but only to the network the end-point its is currently located in. When the data reaches that network, another lookup is performed that binds it to a local port within that network itself.
+</p>
+</div>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="col-sm-12 text-left"> 
+            <h3>Vision</h3>
+            <p>This MobilityFirst proposal is founded on the premise that the Internet is approaching an historic inflection point, with mobile platforms and applications poised to replace the fixed-host/server model that has dominated the Internet since its inception.  With over 4 billion cellular mobile devices in worldwide use today, it is anticipated that by 2015, mobile data devices will significantly outnumber fixed hosts on the Internet.  This predictable, yet fundamental, shift presents a unique opportunity to design and develop a next generation Internet architecture in which mobile devices, mobile applications, and the consequent changes in service, trustworthiness, and management are primary drivers of a new architecture. Our MobilityFirst architecture, while inspired by this historic shift, is nonetheless informed by research and experience with today’s Internet architecture, and offers significant benefits to wired networks and users as well.  </p>
+
+            <p>Why should mobility come “first” as we contemplate a clean-slate redesign of the Internet architecture? The simple answer to this is the fact that the number of mobile devices and their traffic are growing at a remarkable exponential rate and are poised to surpass all other Internet traffic in just a few years.  To quote from a recent Cisco white paper, “Mobile data traffic will grow from 1 petabyte per month to 1 exabyte per month in half the time it took fixed data traffic to do so. In the 7 years from 2005 to 2012, mobile data traffic will have increased a thousand-fold. The Internet grew from 1 petabyte per month to 1 exabyte per month in 14 years:” These numbers confirm the emergence of what is popularly known as the “mobile Internet”, along with an expectation that mobile user traffic volume worldwide will cross that of fixed broadband in less than 5 years.  This will inevitably drive a gradual convergence of cellular networks with the Internet both in terms of business models and technical standards.  The challenge for network architects is to effectively merge two very different network design into a unified network architecture that efficiently supports billions of portable devices running new classes of mobility applications in a trustworthy manner.  Looking ahead another 5 years to ~2020, the mobile Internet will not be limited to cellular, but will also include a variety of wireless sensor, machine-to-machine (M2M), smart grid and vehicular (V2V) scenarios associated with integration of physical world awareness and control into Internet applications.  Such “pervasive” or “ubiquitous” wireless scenarios pose additional architectural challenges, for example dealing with frequent disconnections, energy constraints or providing strong security for real-time control applications. </p>
+
+            <p>Our vision for a clean-slate redesign of the Internet is not to simply “fix” the current Internet Protocol (IP) with a better and more secure design, but to use this opportunity to fundamentally re-evaluate the purpose, functionality and trustworthiness of the network in the all-important context of mobility everywhere. Although the current Internet protocol suite has been remarkably successful for several decades, it was designed for end-user services and technology assumptions that are not well-matched to mobile devices. For example, IP address assignments are designed to be relatively static and TCP assumes a contemporaneous end-to-end path - assumptions often violated in mobile scenarios.  Consequently, the cellular network has become the first point of attachment for many mobile devices. However, this access network is based on an addressing and transport architecture derived from circuit-switched technologies, requiring the use of service gateways for bridging cellular services to the Internet.  While gateways may be a workable solution in the short run, there are significant scalability, performance, management, and security problems when bridging two architecturally different networks. Also, new services (such as multi-hop relay, geographic multicast, or intermittent sensor connectivity) that are not well matched to today’s architecture generally require custom overlays and/or protocol gateways.  Widespread use of overlays can fragment the Internet into multiple application-specific domains, reducing network-effect benefits for both developers and end-users alike.  Therefore, we envision a future Internet architecture that supports mobile devices as “first-class” objects (without gateways or overlays), thus enabling a variety of new services and applications to be operated efficiently, securely, and at scale.</p>
+      </div>
+    </div>
+
+    <div id="menu2" class="tab-pane fade in">
+
+      <div class="col-sm-12 text-left"> 
+        <h3>Technical Approach Summary</h3>
+                    
+            <p class="lab_css" style="margin-top: 0;">The <em>MobilityFirst </em>architecture is based on the following high-level requirements:&nbsp;&nbsp; </p>
+            <ul>
+              <li class="lab_css"><span class="style4">Mobility as the norm:</span> Seamless host and network  mobility at scale; multi-provider mobile network access; heterogeneous wireless  technologies. </li>
+              <li class="lab_css"><span class="style4">Robustness:</span> with respect to intrinsic  properties of wireless medium (disconnection, varying bandwidth, high error  rates, scarce spectrum).</li>
+              <li class="lab_css"><span class="style4">Trustworthiness:</span> Enhanced security for mobile  networks and wired infrastructure (strong authentication, enhanced trust models,  privacy, DDoS resistance, secure routing). </li>
+              <li class="lab_css"><span class="style4">Usability: </span>Architectural support for  context-aware pervasive mobile services; evolvable core network services;  network manageability; economic viability, regulability and universal access. </li>
+            </ul>
+            <p class="lab_css" style="text-align:justify;">Our design is also informed by strategic core technology  trends that determine the feasibility of implementation during the target  period in which the network is to be used.&nbsp;  These include:</p>
+            <ul>
+              <li class="lab_css"><span class="style4">Edge/core disparity:</span> Radio spectrum scarcity  (implying the need for efficiency in wireless access networks) and wired bandwidth abundance (that can be traded off against  usability objectives).&nbsp;&nbsp; </li>
+              <li class="lab_css"><span class="style4">Moore’s law: </span>Rapidly declining costs of  memory (for large routing tables),  storage (for in-network caching), and computing (for increased in-network  programmability).</li>
+              <li class="lab_css"><span class="style4">Energy:</span> Energy constraints in mobile  and sensor devices, motivating  power-aware network protocol design (disconnected operation, power-saving  modes, network mobility)</li>
+            </ul>
+            <p class="lab_css" style="text-align:justify;"> The network architecture  resulting from these considerations is summarized in the <strong><a href="documents/MobilityFirst_summary_11.10.pdf">MobilityFirst Summary Presentation</a></strong>.&nbsp; Because the design is aimed at supporting  billions of mobile users, a central feature is a <em>fast global naming service</em> that dynamically maps device names to  network addresses while providing strong authentication. This allows end-users  to have a permanent name and receive dynamic addresses as they move from one  attachment point to another, or reconnect after a period of disconnection.&nbsp; For strong security, we use <em>self-certifying public key network addresses</em> and associated flat label (or hybrid flat/topological) routing in the core. Data transport is based on the  concept of a class of <em>routers with  in-network storage </em>and <em>connectionless  transport</em> of application-level blocks over path segments between such  storage-capable routers as the norm.&nbsp;&nbsp;  Coupled with <em>generalized delay-tolerant  network (GDTN) routing</em> in the access network, this provides significant  robustness in presence of link/network disconnections, as well as a foundation  for adding <em>programmable computing  services</em> such as enhanced security or content/context-sensitive delivery.  Other features include a cleanly <em>separated  control and management plane</em> for enhanced trustworthiness and improved  visibility across the network.&nbsp; In  addition, the computing layer can be used with virtualization to provide  commonly-used services within the network, including <em>location and optional privacy</em> modes. </p>
+<p class="Newsclips" style="text-align:justify;"><strong>ARCHITECTURAL CONSIDERATIONS:</strong></p>
+<p class="lab_css" style="text-align:justify;">Our position is that a credible FIA effort must be driven  by compelling design goals that satisfy two properties: (1) Each design goal must  be precise enough so that it is possible to validate or refute the claim that a  given architectural realization satisfies that goal. (2) The current Internet  fails to satisfy that design goal. &nbsp; Architecture is part science and part  art, so we cannot expect black-or-white design goals alone to simply dictate  the realization of the architecture. Thus, we postulate additional <em>design principles </em>that guide the  transition from design goals to realization. Unlike a design goal, a design  principle is a philosophical stance that is informed by our collective  experience and expertise, so it is both subjective and subject to debate. For  example, a design principle that the current Internet embodies well is  "minimalism" [3] or the "end-to-end principle" [4]. A  design principle that the current Internet does not embody well is  "isolation of control and data". The next three sections describe the  design goals, design principles, and realization of the proposed architecture.</p>
+<p style="text-align:justify;"><span class="style2">Design goals: </span><span class="lab_css">We  postulate the following design goals for an FIA. As with the current Internet,  an implicit top-level design goal is that the architecture must enable  multiplexed utilization of existing interconnected networks [5] <em>- see link in left column of this page for the reference list</em>. Unlike the  current Internet however, mobility and trustworthiness form the starting point  for these design goals.</span></p>
+<ul>
+  <li><span class="style4">Host  and network mobility (G1): </span><span class="lab_css">End-to-end communication must continue (i)  despite frequent mobility of end-hosts or networks; (ii) despite the absence of  a contemporaneous end-to-end path.</span></li>
+  <li><span class="style4">No  global root of trust (G2):</span> <span class="lab_css">Correct network behavior must not depend on a  single root of trust.&nbsp;</span></li>
+  <li><span class="style4">Intentional  data receipt (G3):</span> <span class="lab_css">An end-host must receive data only if the  transmission is consistent with its receipt policy.</span></li>
+  <li><span class="style4">Byzantine  robustness (G4):</span> <span class="lab_css">End-to-end communication must continue  despite the compromise of (a small fraction of) end-hosts or infrastructural  nodes.</span></li>
+  <li><span class="style4">Content  addressability (G5): </span><span class="lab_css">The network should assist with content  retrieval in addition to enabling host-to-host communication. </span></li>
+  <li><span class="style4">Evolvable  network services (G6):</span> <span class="lab_css">The architecture should allow for the  co-existence or rapid creation of new and different network services. </span></li>
+</ul>
+<p class="lab_css" style="text-align:justify;">Next, we discuss the ways in which the current Internet fails to meet  these design goals. The current Internet does not satisfy G1, as the assumption  that end-hosts and networks are mostly stationary is deeply embedded in its  architecture. This is evident in three fundamental aspects of its architecture:</p>
+<ul>
+  <li><span class="side_content"><em>Naming and  addressing: </em></span><span class="lab_css">The current Internet relies on DNS to bind a host name to an IP  address. DNS is designed to be queried frequently but updated slowly, as evidenced  by its heavy reliance on caching, which enables scalability at the cost of  update-propagation delay. </span></li>
+  <li><span class="side_content"><em>Routing</em>:</span> <span class="lab_css">aggregation of local IP  addresses into prefixes is central to routing scalability. Host mobility is  assumed to be infrequent enough to be relegated to an indirect routing approach  that is inefficient and requires additional infrastructure not universally  available. Network mobility (e.g., mobile networks of vehicles, planes, or VMs)  scales poorly with the Internet's interdomain routing&nbsp;protocol. </span></li>
+  <li><span class="side_content"><em>Disruption-tolerance</em>: </span><span class="lab_css">The TCP/IP  stack assumes that hosts and routers are stationary long enough so that the  routing protocol can compute a contemporaneous end-to-end path and the  transport protocol can respond to end-to-end loss and congestion signals along  that path. Consequently, the TCP/IP stack falls short in emerging wireless scenarios  such as vehicular, sensor, or deep space networks.</span></li>
+</ul>
+<p class="lab_css" style="text-align:justify;">The current Internet fails to satisfy G2 as it relies  on ICANN as a single root of global trust for assigning names and IP addresses.  This centralized control over naming stifles open competition and innovation in  name services, creates political discord [19,20,21], delays deployment of security&nbsp;and privacy  mechanisms, [18],  and leads to abuse of naming services [7-16]. </p>
+<p class="lab_css" style="text-align:justify;">The Internet also falls short of meeting design goal G3 as it generally  treats receivers as passive devices. The network responds to senders by  delivering sent packets. &nbsp;However, except  in special cases (e.g.,&nbsp; multicast) a  receiver does not exert control over the data it receives, making it vulnerable  to denial-of-service attacks. The lack of support for intentional data receipt  goes beyond DoS. The architecture makes it difficult for multi-homed end-hosts  or networks to engineer incoming traffic. The architecture does not permit a  receiver to defer receipt to a future point in time, or otherwise customize  receipt based on its <em>context</em> such as  its resource constraints or environment characteristics.</p>
+<p class="lab_css" style="text-align:justify;">The existing Internet architecture does not satisfy G4 as a legacy of an  original design aimed at tolerating failures but not malicious behavior. For  example, a single benignly misconfigured router [6] has on several occasions  rendered large portions of the Internet unreachable. Denial-of-service (DDoS)  is another example--a botnet with hundreds or thousands of nodes can render a  server unavailable to large numbers of legitimate users, thus violating G4. </p>
+<p class="lab_css" style="text-align:justify;">The Internet also fails to satisfy G5 as the network enables a host to  send data to another host but does not help a host retrieve named content  without specifying a host location. Although peer-to-peer and other overlay  content distribution services enable location diversity, the network itself  remains content-unaware thereby missing opportunities for in-network caching  and traffic engineering.</p>
+<p class="lab_css" style="text-align:justify;">The Internet Protocol does not achieve G6 as the network service model is  limited to basic best-effort packet delivery without the provision for adding  new service extensions.&nbsp; While this was a  reasonable approach at the time IP was first designed, rapid advances in  computing power now make it possible to consider adding some level of  programmability and virtualization into the network layer in order to add new  services (e.g.,&nbsp; geolocation, anonymous  routing) or to support multiple virtual networks for some degree of  evolvability and backwards compatibility. </p>
+<p style="text-align:justify;"><span class="style2">Design principles:</span> &nbsp;<span class="lab_css">Beyond design goals, our architectural  realization is informed by the following design principles which are more  subjective in nature, but are also important considerations:.</span></p>
+<ul>
+  <li><span class="style2"><em>Visibility and  choice (P1):</em></span><span class="lab_css"> Networks and end-users should have visibility and choice in  determining what resources are available and how they are used. </span></li>
+  <li><span class="side_content"><em>Usability  (P2): </em></span><span class="lab_css">The architecture should be easy to use for end-users, operators and app  developers, suggesting plug-and-play interfaces and socket APIs that simplify  app development. </span></li>
+  <li><span class="side_content"><em>Manageability  (P3): </em></span><span class="lab_css">Networks should be easy to manage. This principle suggests a well-instrumented  management plane that provides necessary aggregate views to operators.</span></li>
+  <li><span class="side_content"><em>Simplicity  (P4):</em></span> <span class="lab_css">As a general principle, the design should favor simple methods that do  not involve significant control complexity or maintain per-flow or per-packet state  in the network.</span></li>
+  <li><span class="style4">Regulability  (P5):</span><strong>&nbsp;</strong><span class="lab_css">The architecture should confirm to specifiable public policies and laws. </span></li>
+  <li> <span class="side_content"><em>Commercializability (P6):</em></span><strong>&nbsp;</strong><span class="lab_css">The  architecture must be economically viable.</span></li>
+  <li><span class="style2"><em>Technology-awareness  (P7):</em></span> <span class="lab_css">The architecture should be cognizant of foreseeable technology  trends. </span></li>
+</ul>
+<p style="text-align:justify;"><span class="style2">Architecture Realization:&nbsp;</span><span class="lab_css">Figure 2 summarizes  how key design goals and principles were taken into account during our design  process.&nbsp; Each major component of the  architecture is described below:</span></p>
+<p style="text-align:justify; margin-bottom: 0;" align="center">&nbsp;</p>
+<div align="center">
+  <table border="1" width="104">
+    <tbody><tr valign="top">
+      <td width="100"><span style="text-align:justify; margin-top: 0; margin-bottom: 0;"><img src="http://mobilityfirst.winlab.rutgers.edu/images/clip_image002_000.gif" align="left" height="260" width="320"></span></td>
+      </tr>
+    <tr valign="top">
+      <td><div align="center"><span style="margin-top:0; margin-bottom: 0;"><strong>Fig 2: Overview of      Architecture Realization</strong></span></div></td>
+      </tr>
+  </tbody></table>
+</div>
+<p style="margin-top: 0;">&nbsp;</p>
+<p style="text-align:justify;" align="center"><span class="style2">A Decentralized Naming  Service:</span> <span class="lab_css">The proposed naming service dynamically maps names (users, devices,  content names, context labels, etc.) to network addresses with real-time  response latencies.&nbsp; Such a service is  feasible with current processing power, storage and bandwidth and is the key to  supporting mobility requirement G1. &nbsp;A  name service that can map arbitrary names to network addresses also helps  achieve content and context addressability (G5). As explained later, the  service also provides strong authentication of network users as a default  service. </span></p>
+<p class="lab_css" style="text-align:justify;">A key feature  of our name service design is to move away from centralized control over name and  address ownership which forms a single root of global trust.  The opportunities for competition in naming are evident from the abuses with  which the current name resolution system (DNS) is plagued. Today’s name  resolution system is a vehicle for activities ranging from fraud and exposure  to malware via typosquatting [7-12] and homograph attacks [13,14], shady  profiteering through domain speculation (e.g., tasting and frontrunning [15]),  and overtly criminal activity and evasion (e.g., botnets employing DNS fluxing,  such as Torpig [16]). We believe that competition will lead to innovation in  defending against such abuses, in contrast to the current situation with a  single DNS service. Competition in naming also paves the way for new types of  services such as private resolution of names [17].<strong>&nbsp; </strong></p>
+<p class="lab_css" style="text-align:justify;">It  is for these reasons that we believe that decentralizing control over name and  address ownership is a necessary, albeit radical, departure from today’s  Internet. Fortunately, public key cryptography provides the means by which  addresses can be claimed and ownership proved without relying on others to  assign those addresses, provided that the public key itself (or a  collision-resistant hash thereof) is used as the address. To decentralize  control of naming, however, seemingly requires permitting multiple, indeed  arbitrarily many, naming authorities, each of which defines its own namespace.  Users can choose to utilize any resolution service, or many such services.  Services can compete on the basis of their speed, robustness, or, as discussed  above, abuse defenses or the attributes of the parties whose addresses (public  keys) they serve, and the rigor with which they verify those attributes. &nbsp;The proposed naming service consists of the  following elements:</p>
+<ul>
+  <li><span class="style2"><em>Name  certification service (NCS):</em></span>&nbsp; <span class="lab_css">The name certification service maps a human  readable name, e.g., www.cnn.com, to a self-certifying host identifier GID that  is its public key. Unlike ICANN, which has a single root of trust, the NCS has  a decentralized trust model. For example, each country could have its own NCS  for its citizen or Google and Yahoo could provide this service to their  customers.&nbsp; Note that the NCS also  includes strong user/device authentication as a baseline capability.</span></li>
+  <li><span class="side_content"><em>Addressing:</em></span>  <span class="lab_css">Packet  headers by default carry a self-certifying global identifier (GID) which can be thought of as the "meta-level" network address.&nbsp; Packet headers will carry the GID and optionally may also include a second level of topologically significant network addresses.&nbsp; GID's and network addresses will be protected by public key cryptography as required to maintain security against a variety of spoofing and DOS attacks.</span></li>
+  <li><span class="side_content"><em>Location  service:</em></span>&nbsp; <span class="lab_css">A location (or GID to network address) service maps a network object's GID to a complete network address (NA) used for routing.&nbsp; The specific structures of the GID and NA to be used in the proposed approach are still under consideration to be determined during the first phase of the project.</span></li>
+</ul>
+<p class="lab_css" style="text-align:justify;">Mobility is handled using two mechanisms: (1) updating the location  service to reflect the new network address (NA), or (2) using a home agent in a designated  primary NA to redirect (using direct or indirect routing) traffic to the new  NA. The former option is sufficient when nodes are slow moving, and the latter  option could optionally be used to enable seamless mobility during the course  of an ongoing session.&nbsp;Multihoming is  handled by having the location service map GID's to multiple NAs, e.g., NA1,HA,  NA2,HA, NA3,P, and so on.&nbsp; Besides node mobility, explicit support for  network mobility through mechanisms such as routing state partition within an  AS and scoped updates across ASes is provided as discussed in the next section.</p>
+<p class="lab_css" style="text-align:justify;">The  above naming and related routing achieves design goal G3 as it eliminates a  single root of global trust in ownership of names and addresses. It also  prevents problems with IP addressing such as hijacking or spoofing by using  self-certifying addresses: merely by claiming a public key, an entity owns that  as its address as no other entity possesses the corresponding private key.</p>
+<p style="text-align:justify;"><span class="style2">Disruption-tolerant Routing  and Transport:</span> <span class="lab_css"><em>MobilityFirst </em>generalizes  routing and transport in the current Internet in two fundamental ways: (1)  disruption-tolerance, and (2) path and location diversity. The core network  layer is based on best-effort packet switching with support for a small number  of globally supported service classes. We envision the following  classes--control and management traffic, real-time traffic, and elastic  traffic--that that can be served in priority order or (in the case of control  and management) may be carried over a logically separate network. Our position  is that best-effort packet switching with prioritized service classes and good  traffic engineering is simple and sufficiently general. We adopt this position  informed both by the phenomenal success of packet switching and difficulties in  adding QoS to IP networks (even more difficult in heterogeneous, varying-capacity  wireless networks) – see design principle P4. </span></p>
+<p style="text-align:justify;"><span class="style2">Disruption tolerance:</span> <span class="lab_css">Enabling  disruption tolerant communication requires that packets make forward progress  despite the absence of a contemporaneous end-to-end route to the destination.  This requires us to rethink the clean separation of functionality in the TCP/IP  stack, where the routing protocol computes an end-to-end route and a  connection-oriented transport protocol delivers a reliable, in-order data  stream based on end-to-end loss and delay feedback along that route, i.e., it  essentially requires us to rethink the end-to-end principle. Although wireless  and mobile scenarios make the most compelling case for rethinking the  end-to-end principle [4, 22], the resulting architectural mechanisms are  valuable for wired networks as well. The <em>MobilityFirst</em> design ensures that disruption tolerant routing and transport protocols perform  well in wired network scenarios, and can support fast switching in the core as  a special case. </span></p>
+<p style="text-align:justify; margin-bottom: 0;"><span class="lab_css">Enabling disruption-tolerance requires the following key components:  (1) storage at network intermediaries, (2) forwarding with uncertain path  information, (3) a large forwarding unit of data (variously referred to as  bundles [23], blocks [24], or files [25]) to amortize overhead and efficiently           utilize  forwarding opportunities. To synthesize these components into a holistic  routing and transport approach for both wired and wireless regimes, we propose  a "segmented" forwarding approach. A segment is  a sequence of adjacent links terminated by a router with storage. A large unit  of elastic data or "block" is reliably transported across and cached  at the end of each segment. An end-to-end path consists of one or more segments  and each segment may use a different protocol (e.g., TCP) to transport a block.  A well-connected and provisioned wired end-to-end path can be treated as a  single segment, while end-to-end paths
+spanning  heterogeneous or disruption-prone wireless links consist of multiple segments.  Congestion is controlled by propagating backpressure at each segment while  reliability is achieved using end-to-end acknowledgments. &nbsp;[We note that  the use of in-network storage taking advantage of remarkable declines in $/GB  unit memory costs corresponds to design principle P7.]
+</span>
+</p><p style="text-align:justify;"><span class="style2">Generalized DTN routing (GDTN):</span> <span class="lab_css">Routing algorithms used in <em>MobilityFirst</em> are based on a  generalization of DTN and on-demand routing protocol concepts, and that  seamlessly scale across the range of well-connected wired environments to varying-capacity  wireless scenarios with occasional disconnection.&nbsp; The cache-and-forward (CNF) approach  considered in [25,26,27] involves the use of two-dimensional routing metrics  corresponding to “short-term” and “long-term” path quality/cost and using these  to create a decision region for storing and forwarding.&nbsp; The basic idea is to switch/forward when  short- and long-term path quality are roughly equal, to store when short-term  quality is poor and long-term is good, and to push opportunistically when  short-term is good and long term is poor. This type of <em>storage-aware routing metric</em> will also be applied to inter-domain  routing scenarios by exchanging path-quality information in addition to  reachability.&nbsp; An open design issue is  that of aggregating such path metrics across AS boundaries. A related  research issue to be considered in this project is that of interfacing the <em>MobilityFirst </em>network layer efficiently  with an optical core network.</span></p>
+<p style="text-align:justify;"><span class="style2">Path and location diversity: </span><span class="lab_css">Path  diversity improves utilization of network capacity as well as resilience to  failures. Although the current Internet's datagram service model allows  different packets to take different paths, the network does not expose this  diversity to end-hosts, so different applications have to independently  engineer support for path diversity [28,29,30]. Enabling path diversity is  especially important in resource-constrained and time-varying mobile and  wireless environments. The proposed architecture provides support for path  diversity through two mechanisms: (1) detour routers, and (2) content  addressability. To enable detour routing, a small fraction of routers advertise  themselves as one-hop detour routers. End-hosts can request packets to be routed  to a destination via a specified detour router. In mobile and wireless  environments, an access point or base station can provide this detouring  service. End-hosts can use multiple detour paths in parallel in conjunction  with a multipath transport protocol. To enable content addressability, the  location service translates content or service names to one or more locations.  The transport protocol supports a multipoint-to-point interface enabling an  end-host to receive blocks of data from multiple locations. </span></p>
+<p style="text-align:justify;"><span class="style2">Network mobility:</span> <span class="lab_css">To  effectively support a group of nodes moving together, e.g., from a bus or a  plane, the proposed architecture makes the distinction between mobility within  a domain and across domains to realize fast convergence to the routing state.  To support the former, aggregation routers, which scalably partition the  routing state within an AS, capture the routing change.&nbsp; For the latter, we investigate mechanisms  based on our existing work of the WINMO protocol [31], a simple, systematic  solution for wide-area IP network mobility using techniques including route  aggregation, scoped update propagation, and packet mobility states.&nbsp; This solution generates minimal global  routing overhead to prevent global instability, ensures good location privacy [32,33],  and helps to defend against denial-of-service attacks. We expect to adapt the  protocol to accommodate the new addressing scheme by identifying the  aggregation points, which are routers that contain more detailed routing state  and the mobility information of the mobile networks.</span></p>
+<p style="text-align:justify;"><span class="style2">Intentional data receipt:</span><strong>&nbsp; </strong><span class="lab_css">A critical limitation of the  current Internet is that receivers are passive entities, i.e., the network  responds to send actions but a receiver cannot specify whether or how it wishes  to receive sent data. This limitation is at the heart of the denial-of-service  (DoS) problem [32 - 46]. However, the lack of receiver control also hurts in  other ways. For example, a mobile device with multiple wireless interfaces and  providers may wish to engineer incoming traffic across those interfaces to  optimize cost, performance, or power consumption. However, engineering incoming  traffic is difficult today, as a receiver lacks a mechanism to specify receipt  policies to the network. </span></p>
+<p class="lab_css" style="text-align:justify;">The proposed architecture will enable a receiving host to specify  "intentional' receipt policies to the network via its immediately adjacent  routers. The policy may install filters, whitelists, or blacklists of senders  to thwart DoS attacks; or specify which senders are allowed to send data via  which interface; or adapt such policies based on context or content attributes.  Routers adjacent to the receiver may propagate parts of these policies deeper  inside the network as necessary. Our view is that intentional data receipt is a  powerful and general approach to alleviate the DoS problem through network  layer mechanisms. DoS attacks happen today because (1) receivers can not refuse  data, and (2) malicious senders can drown out legitimate senders by not abiding  by congestion control. Existing DoS defense schemes are based on blacklists  (e.g., filtering and pushback [46-50]) or whitelists (e.g., network  capabilities [41-44,50]), dynamic end-host-based authentication and admission  control ([51]) with varying levels of network support. Intentional data receipt  subsumes the power of all of these approaches by enabling receivers to specify  sophisticated receipt policies. For example, a receiver could specify a  congestion policing policy that limits congestion misbehavior, or it could  limit rate from unauthenticated senders.</p>
+<p style="text-align:justify;"><span class="style2">Management plane: </span><span class="lab_css">The proposed  architecture includes the possibility of a separate control and management  plane that can be used to provide visibility and manageability across the  network (design principles P1,P2,P3).&nbsp; For  wireless access networks, there are several advantages to be realized by  separating the management/control and data planes including: (i) expanded  geographic reach for management and control messages allowing for more efficient  MAC and handoff protocols [52], and inter-BS coordination; (ii) dedicated  signaling channel(s) that are always available for control, even when the  characteristics and availability of data channel(s) may vary due to  interference.&nbsp; Additional advantages for  both wired and wireless scenarios are (iii) hardened signaling channels more  trustworthy than data channels via over-provisioning, stronger encryption, and authentication,  and (iv) avoiding performance-related control-plane problems resulting from  poor data plane performance [53, 54]. Along these lines, the 4D project has  also argued the importance of separating the “decision logic” from the  “protocols that govern the interactions among network elements” [55]. </span></p>
+<p style="text-align:justify;"><span class="style2">Client-assisted management:</span> <span class="lab_css">One of the  challenges in designing an effective management strategy is to provide an  appropriate level of <em>visibility. </em>In the current Internet architecture, events  are often “invisible” since there is no infrastructure to measure or observe  them. At the wireless edge, the problem is further exacerbated because many  performance characteristics have location-specific properties — <em>what is  observable at a specific location is not necessarily observable from even a  nearby location.</em> Without access to  such observations, effective management of the wireless and mobile edge is  particularly difficult [56]. To address these limitations, we propose the  notion of client-assisted management, where some form of client  participation or assistance, in addition to infrastructural support, can be  provided.</span></p>
+<p style="text-align:justify;"><span class="style2">Signaling support in core networks: </span><span class="lab_css">We further propose  that the management plane of the proposed network architecture offer the  following two basic functionalities: signaling support for resource queries and  allocation; and mechanism for routers to provide feedback on network conditions.  For example, the management plane could directly expose the current network  status to the extent satisfying privacy concerns to influence route selection,  especially for multi-path routing based on diverse performance metrics to reroute  around performance disruptions.&nbsp; We plan  to extend the design guidelines proposed by Sollins [57] in designing support  for network management. These include a signaling protocol that allows  end-hosts and networks to dynamically query or request resources, and a  feedback mechanism to allow network elements to provide feedback on network conditions.</span></p>
+<p style="text-align:justify;"><span class="style2">Computing and storage layer: </span><span class="lab_css">The <em>MobilityFirst</em> architecture incorporates  a programmable computing layer inside the network that includes access to computing  and storage resources. A <em>MobilityFirst </em>router includes not  only packet forwarding and routing, but also a computing layer that uses  virtualization [58-61] to host various network services. Upper-level service  providers called virtual service providers may lease slices of the computing  layer to offer a rich set of network services, such as geolocation [62], DDoS  protection [33,45,46], and anonymous routing [63]. Unlike previous proposals that bring programmability  to the network layer [115-117], the computing and storage layer in the  MobilityFirst architecture runs only trusted code (not arbitrary code carried  by packets) from virtual service providers, is located on a packet’s forwarding  path, and supports upper-layer services as well as enhanced network-layer  services. This design enables the <em>MobilityFirst</em> architecture to provide services to end systems that need them without imposing  costs to those that do not. Today’s IP adopts a minimalist design, with the  network layer providing only a best-effort forwarding service. This design  keeps the network substrate simple, but has the downside of lacking many needed  functions [5,59]. With the <em>MobilityFirst</em> design, ISPs can add new services at the network layer in an evolutionary  manner. &nbsp;In contrast to overlays, virtual  services co-located with routers can obtain necessary information about network  conditions (such as link load or loss rates) and use that to better engineer  performance [64-66]. New ISP services are important for revenue generation, and  hence overall economic viability (design principle P6).</span></p>
+<p style="text-align:justify;"><span class="style2">Context-Aware Pervasive/Mobile Services:</span> &nbsp;<span class="lab_css">Architectural support for context-aware  services [67,71] can significantly improve the quality of mobile applications. For  example, downloading of a large content file may be deferred if the user is  predicted to move into a high bandwidth coverage area.&nbsp; Another example is that of geographically  constrained delivery of messages to nearby cars on a highway, or connecting to  a local sensor with certain attributes. The <em>MobilityFirst </em>architecture presented above enables such context-aware services with the  following approach. First, the naming and location service (2.3.1) can support  attributes other than a self-certifying address NA, HA, e.g., it can return  NA:P where P represents the device's geographic location or other context  information. Second, intentional data receipt policies can be used by a  mobile device to leverage network support to filter or transcode content or  engineer traffic across diverse wireless access technologies based on context  information. Third, the computing and storage layer can cache and reuse content  of geographically local interest. Fourth, the support for disruption-tolerant  routing and transport naturally incorporates infrastructure-less  mobile-to-mobile network communication without requiring a separate protocol  stack. </span></p>
+<p style="text-align:justify; margin-bottom: 0;"><span class="style2">Economics and policy:</span> &nbsp;<span class="lab_css">Future Internet designs will need to reflect  greater attention to economic and public governance (policy/regulatory) issues  both because the Internet has become essential social/economic infrastructure  and because components of the Internet are increasingly capable of acting  strategically, like economic agents in their own right, which is a direct  consequence of the wider distribution of intelligence across the Internet. We  take this proposition to be self-evident, and hence, as applicable to our <em>MobilityFirst</em> architecture.&nbsp; Protocol support needed to enable this kind  of decentralized economic activity is thus an important capability for the  proposed architecture (design principle P6).&nbsp;  Our design includes two types of mechanisms: the management layer  discussed earlier which enables visibility of resources across the  network, and the computing layer which enables construction of new services  which can be programmed to automate different kinds of barter, cooperation and  monetary exchanges.&nbsp;</span>          </p>
+
+      </div>
+    </div>
+  </div>
+<!--   <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div> -->
+
+      
+      
+    <!-- <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div> -->
+</div>
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div> -->
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Recent Events </h3>
+                    <ul>
+                        <li> <a href="#"> Testing Geodistributed Locations </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Quick Links </h3>
+                    <ul>
+                        <li> <a href="http://mobilityfirst.orbit-lab.org/"> Project Prototype Wiki </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Community </h3>
+                    <ul >
+                        <li><a href="#"><i class="fa fa-stack-overflow"></i>Stack Overflow </a> </li>
+                        <!-- <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li> -->
+                        <!-- <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li> -->
+                        <li> <a href="#"><i class="fa fa-github"></i>Github </a> </li>
+                        <li> <a href="#"><i class="fa fa-youtube"></i>YouTube </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Mailing Lists </h3>
+                    <p>Subscribe to the MobilityFirst-Interest list to post questions and comments, or review all available mailing lists for more options</p>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button"> Subscribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> MobilityFirst project is supported in part by the US National Science Foundation Awards </p>
+            <!-- <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                  <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div> -->
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+<!-- <footer class="container-fluid text-center">
+  <p>MobilityFirst project is supported in part by the US National Science Foundation Awards</p>
+</footer> -->
+
+</body>
+</html>
+
+

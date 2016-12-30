@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mobility First</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse nav-custom-styles">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Mobility First</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+        <li><a href="./project.html">Project</a></li>
+        <li><a href="./arch.html">Architecture</a></li>
+        <li><a href="https://github.com/MobilityFirst/">CodeBase</a></li>
+        <li><a href="./publications.html">Publications</a></li>
+        <li><a href="./prototype.html">Prototype</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discussion</a>
+          <ul class="dropdown-menu">
+            <li><a href="./mailing_list.html">Mailing Lists</a></li>
+            <li><a target=_blank href="https://www.atlassian.com/software/views/open-source-license-request">Development (Issues and Tracking)</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+<header class="marketing-hero">
+  <h1 class="hero-main-header">Mobility First</h1>
+  <h4 class="tagline-hero-main-header">The next gen initiative towards mobility and credibility</h4>
+  <ul class="marketing-subnav nav nav-pills">
+  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+  <li><a data-toggle="tab" href="#menu1">Vision</a></li>
+  <!-- 
+  <li class=""><a href="../get-involved/support.html" class="is-active">Connect</a></li>
+  <li><a href="../get-involved/premium-support.html" class="lower-case">PLZ Halp</a></li>
+  <li><a href="http://foundation.zurb.com/forum/">Forum</a></li>
+  <li><a href="../learn/events.html">Events</a></li>
+  <li><a href="../get-involved/faq.html">FAQs</a></li>
+  <li><a href="../get-involved/contribute.html">Contribute</a></li>
+  <li><a href="../get-involved/yetinauts.html">Yetinauts</a></li>
+  <li><a href="../get-involved/partners.html">Partners</a></li> -->
+  </ul>
+</header>  
+<div class="container text-center">     
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+        <h2>Mobility First - A Mobility-Centric and Trustworthy Future Internet Architecture</h2>
+        <p class="page-intro">MobilityFirst is a future Internet architecture with mobility and trustworthiness as central design goals. MobilityFirst enhances mobility by cleanly separating names or identifiers from addresses or network locations, and enhances security by representing both in an intrinsically verifiable manner, relying upon a massively scalable, distributed, global name service to bind names and addresses, and to facilitate services including device-to-service, multicast, anycast, and context-aware communication, content retrieval, and much more. </p>
+        <div class="row">
+          <hr class="dotted"/>
+        </div>
+        <div class="container featurettes">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 featurette">
+              <h2>Global Name Service</h2>
+              <p>The massively scalable global name service (GNS) empowers the Mobility First project to dynamically bind names and addresses,  enables seamless mobility. This separation enhances security, as it allows names and addresses to be defined as globally unique identifiers (GUIDs) that are verifiably derived from public keys and are robust to hijacking or spoofing and helps prevent DDoS vulnerabilities.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 featurette">
+              <h2>Communication Abstraction</h2>
+              <p>Mobility First enables an application to invoke <span class="gray-bg">connect(service_name)</span> or <span class="gray-bg">get(content_name)</span> or <span class="gray-bg">message(group_name)</span> to communicate with the named arguments and you dont have to worry about their changing location's or impersonation by malicious entities.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 featurette">
+              <h2>Enhanced Network Functions</h2>
+              <p>Endpoint mobility, Scalable routing, Context-awareness, Content Retrieval and evolvability enabled by the use of Global Name Service(GNS).</p>
+            </div>
+
+            
+          </div>
+        </div>
+        <div class="row">
+          <hr class="dotted"/>
+        </div>
+        <div class="row">
+          <div class="content-a">
+            <div class="col-sm-6 text-left">
+              <h2>Endpoint Mobility</h2>
+              <p class="page-intro">MobilityFirst can hanlde all four types of mobility - prelookup mobility, connect-time mobility, induvidual mobility, simultaneous mobility. Simultaneous mobility can be pretty common in disruption-tolerant mobile app scenarios and does not require both endpoints to change their addresses simultaneously, e.g., A mobile user stops watching a video on her phone using the cellular network and then resumes watching it after a few hours using a WiFi network, by which time the virtual machines hosting the video server in the cloud has been migrated for load balancing.</p>
+            </div>
+            <div class="col-sm-6 text-left">
+              <img src="./images/endptmob.png"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="content-b">
+              <div class="col-sm-6 text-left">
+                <h2>Scalable Routing and Network Mobility</h2>
+                <p class="page-intro">As the number of Network Addresses(NA) may grow significantly over time (e.g., home networks, vehicular networks, body area net- works, etc.), MobilityFirst internetwork routing protocol is designed to support a small number of levels of hierarchy so as to trade off packet header space against forwarding table size. Our candidate internetwork routing design, core-edge routing supports a two-level hierarchy with networks explicitly designated as core or edge networks. Like endpoint mobility, the GNS also facilitates network mobility wherein a network as a whole moves across locations</p>
+              </div>
+              <div class="col-sm-6 text-left">
+                <h2>Content Retrieval and Storage Aware routing</h2>
+                <p class="page-intro">Content in MobilityFirst is a first-class endpoint principal and is named using self-certifying GUIDs like other end-points. In this case the routable content address is a two-tuple [PID, CID], wherein CID is the content GUID and PID is the publisher's GUID.  Storage-aware routers support opportunistic caching and retrieval of content that helps contain demand for popular content close to the edge. A storage-aware router can intercept a request for a CID if it has a copy of that content stored locally and serve the content to the requesting endpoint.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="content-b">
+              <div class="col-sm-6 text-left">
+                <h2>Context Aware Communication</h2>
+                <p class="page-intro"> GNS enables MobilityFirst to support context-aware communication, or the ability to communicate with endpoint principles identified by sophisticated, attribute-based description. For example, in MobilityFirst, an application can invoke <span class="gray-bg">send(message, "Taxis near TimesSquare")</span> or even bind a socket to such attribute-based descriptors.</p>
+              </div>
+              <div class="col-sm-6 text-left">
+                <h2>Evolvable Compute Layer</h2>
+                <p class="page-intro"> MobilityFirst supports a computing layer for evolvability, wherein network service providers either themselves provide value-added services to their end-users, or enable an open platform where third-party services (e.g., transcoding, onion routing, etc.) validated by the network provider can register and be co-deployed at designated provider PoPs. </p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="content-b">
+              <div class="col-sm-6 text-left">
+                <h2>High Availability and Low Time to Connect</h2>
+                <p class="page-intro"> MobilityFirst is resilient to failures including disasters impacting an entire datacenter, and (by consequence) also prevent crippling load hotspots. MobilityFirst ensures low latencies for name lookups to return up-to-date values because of the geodistribution of GNS.</p>
+              </div>
+              <div class="col-sm-6 text-left">
+                <img src="./images/av.png"/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="content-b">
+              <div class="col-sm-12 text-left">
+                <h2>Trust Worthiness</h2>
+                <p class="page-intro">  Unlike IP addresses, GUIDs and NAs can not be hijacked or spoofed and can be verified in a purely bilateral manner. The GNS itself further fortifies security and privacy through the use of  flexible ACLs and support for pseudonyms for anonymous online transactions. The massive replication and federation of name certification as well as name resolution in the GNS implies a very high resource cost for an adversary to exhaust GNS resources through DDoS attacks. The support for in-network content storage and retrieval means that static (named) content is resistant to  flash floods. Intrinsic support for disruption-tolerance through block transport means that end-to-end communication will continue despite the absence of a contemporaneously connected path. At the interdomain level, self-certifying NAs achieve similar security guarantees as S-BGP but without relying on a PKI in the common case.Verifiable identifiers also simplify the deployment of many proposals based on filtering and/or capabilities to alleviate network-layer DDoS attacks in MobilityFirst compared to the current Internet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="col-sm-12 text-left"> 
+            <h3>Vision</h3>
+            <p>This MobilityFirst proposal is founded on the premise that the Internet is approaching an historic inflection point, with mobile platforms and applications poised to replace the fixed-host/server model that has dominated the Internet since its inception.  With over 4 billion cellular mobile devices in worldwide use today, it is anticipated that by 2015, mobile data devices will significantly outnumber fixed hosts on the Internet.  This predictable, yet fundamental, shift presents a unique opportunity to design and develop a next generation Internet architecture in which mobile devices, mobile applications, and the consequent changes in service, trustworthiness, and management are primary drivers of a new architecture. Our MobilityFirst architecture, while inspired by this historic shift, is nonetheless informed by research and experience with today’s Internet architecture, and offers significant benefits to wired networks and users as well.  </p>
+
+            <p>Why should mobility come “first” as we contemplate a clean-slate redesign of the Internet architecture? The simple answer to this is the fact that the number of mobile devices and their traffic are growing at a remarkable exponential rate and are poised to surpass all other Internet traffic in just a few years.  To quote from a recent Cisco white paper, “Mobile data traffic will grow from 1 petabyte per month to 1 exabyte per month in half the time it took fixed data traffic to do so. In the 7 years from 2005 to 2012, mobile data traffic will have increased a thousand-fold. The Internet grew from 1 petabyte per month to 1 exabyte per month in 14 years:” These numbers confirm the emergence of what is popularly known as the “mobile Internet”, along with an expectation that mobile user traffic volume worldwide will cross that of fixed broadband in less than 5 years.  This will inevitably drive a gradual convergence of cellular networks with the Internet both in terms of business models and technical standards.  The challenge for network architects is to effectively merge two very different network design into a unified network architecture that efficiently supports billions of portable devices running new classes of mobility applications in a trustworthy manner.  Looking ahead another 5 years to ~2020, the mobile Internet will not be limited to cellular, but will also include a variety of wireless sensor, machine-to-machine (M2M), smart grid and vehicular (V2V) scenarios associated with integration of physical world awareness and control into Internet applications.  Such “pervasive” or “ubiquitous” wireless scenarios pose additional architectural challenges, for example dealing with frequent disconnections, energy constraints or providing strong security for real-time control applications. </p>
+
+            <p>Our vision for a clean-slate redesign of the Internet is not to simply “fix” the current Internet Protocol (IP) with a better and more secure design, but to use this opportunity to fundamentally re-evaluate the purpose, functionality and trustworthiness of the network in the all-important context of mobility everywhere. Although the current Internet protocol suite has been remarkably successful for several decades, it was designed for end-user services and technology assumptions that are not well-matched to mobile devices. For example, IP address assignments are designed to be relatively static and TCP assumes a contemporaneous end-to-end path - assumptions often violated in mobile scenarios.  Consequently, the cellular network has become the first point of attachment for many mobile devices. However, this access network is based on an addressing and transport architecture derived from circuit-switched technologies, requiring the use of service gateways for bridging cellular services to the Internet.  While gateways may be a workable solution in the short run, there are significant scalability, performance, management, and security problems when bridging two architecturally different networks. Also, new services (such as multi-hop relay, geographic multicast, or intermittent sensor connectivity) that are not well matched to today’s architecture generally require custom overlays and/or protocol gateways.  Widespread use of overlays can fragment the Internet into multiple application-specific domains, reducing network-effect benefits for both developers and end-users alike.  Therefore, we envision a future Internet architecture that supports mobile devices as “first-class” objects (without gateways or overlays), thus enabling a variety of new services and applications to be operated efficiently, securely, and at scale.</p>
+      </div>
+    </div>
+  </div>
+<!--   <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div> -->
+
+      
+      
+    <!-- <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div> -->
+</div>
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div> -->
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Recent Events </h3>
+                    <ul>
+                        <li> <a href="#"> Testing Geodistributed Locations </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Quick Links </h3>
+                    <ul>
+                        <li> <a href="http://mobilityfirst.orbit-lab.org/"> Project Prototype Wiki </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Community </h3>
+                    <ul >
+                        <li><a href="#"><i class="fa fa-stack-overflow"></i>Stack Overflow </a> </li>
+                        <!-- <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li> -->
+                        <!-- <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li> -->
+                        <li> <a href="#"><i class="fa fa-github"></i>Github </a> </li>
+                        <li> <a href="#"><i class="fa fa-youtube"></i>YouTube </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Mailing Lists </h3>
+                    <p>Subscribe to the MobilityFirst-Interest list to post questions and comments, or review all available mailing lists for more options</p>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button"> Subscribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> MobilityFirst project is supported in part by the US National Science Foundation Awards </p>
+            <!-- <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                  <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div> -->
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+<!-- <footer class="container-fluid text-center">
+  <p>MobilityFirst project is supported in part by the US National Science Foundation Awards</p>
+</footer> -->
+
+</body>
+</html>
+
+

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mobility First</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse nav-custom-styles">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Mobility First</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./project.html">Project</a></li>
+        <li><a href="./arch.html">Architecture</a></li>
+        <li><a href="https://github.com/MobilityFirst/">CodeBase</a></li>
+        <li><a href="./publications.html">Publications</a></li>
+        <li><a href="./prototype.html">Prototype</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Discussion</a>
+          <ul class="dropdown-menu">
+            <li><a href="./mailing_list.html">Mailing Lists</a></li>
+            <li><a target=_blank href="https://www.atlassian.com/software/views/open-source-license-request">Development (Issues and Tracking)</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+  </div>
+</nav>
+<header class="marketing-hero">
+  <h1 class="hero-main-header">Mobility First</h1>
+  <h4 class="tagline-hero-main-header">The next gen initiative towards mobility and credibility</h4>
+  <ul class="marketing-subnav nav nav-pills">
+  <li class="active"><a data-toggle="tab" href="#home">Overview</a></li>
+  <li><a data-toggle="tab" href="#menu1">Summary</a></li>
+  <li><a data-toggle="tab" href="#menu2">Related Projects</a></li>
+  <!-- 
+  <li class=""><a href="../get-involved/support.html" class="is-active">Connect</a></li>
+  <li><a href="../get-involved/premium-support.html" class="lower-case">PLZ Halp</a></li>
+  <li><a href="http://foundation.zurb.com/forum/">Forum</a></li>
+  <li><a href="../learn/events.html">Events</a></li>
+  <li><a href="../get-involved/faq.html">FAQs</a></li>
+  <li><a href="../get-involved/contribute.html">Contribute</a></li>
+  <li><a href="../get-involved/yetinauts.html">Yetinauts</a></li>
+  <li><a href="../get-involved/partners.html">Partners</a></li> -->
+  </ul>
+</header>  
+<div class="container text-center">     
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+
+      <div class="col-sm-12 text-left"> 
+        <h3>Overview</h3>
+        <p> The MobilityFirst project was started in 2010 with funding from the National Science Foundation's Future Internet Architecture (FIA) program.  The first phase of the FIA project was carried out from 2010-14 and resulted in a new clean-slate mobility-centric architecture called MobilityFirst (MF) along with a prototype realization of the protocol stack.  The MobilityFirst project moved to the second stage with a $5M grant under NSF's Future Internet Architecture - Next Phase (FIA-NP) program announced in May 2014.  The FIA-NP project is aimed at design and evaluation of enchanced network services using the MobilityFirst protocol stack with a particular focus on the mobile data, content and internet-of-things use cases.  Another focus for the FIA-NP project is cellular-Internet convergence, with the goal of having a single unified Internet architecture which supports the needs of cellular systems including both 4G hetnet and 5G.  The project also aims to move from experimental testbed evaluation to technology trials with real-world users and applications. </p>
+        <p class="lab_css" style="margin-top: 0;">  The Mobility First project was funded by NSF in September 2010 as one of the four projects under <a href="http://www.nets-fia.net/">NSF’s Future Internet Architecture Program.</a></p>
+      </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="col-sm-12 text-left"> 
+      <h3>Summary</h3>
+      <p>The MobilityFirst project is founded on the premise that the Internet is approaching an historic inflection point, with mobile platforms and applications poised to replace the fixed-host/server model that has dominated the Internet since its inception. This predictable, yet fundamental, shift presents a unique opportunity to design a next generation Internet in which mobile devices, and applications, and the consequent changes in service, trustworthiness, and management are primary drivers of a new architecture. The major design goals of our proposed architecture are: mobility as the norm with dynamic host and network mobility at scale; robustness with respect to intrinsic properties of wireless medium; trustworthiness in the form of enhanced security and privacy for both mobile networks and wired infrastructure; usability features such as support for context-aware pervasive mobile services, evolvable network services, manageability and economic viability. The design is also informed by technology factors such as radio spectrum scarcity, wired bandwidth abundance, continuing Moore’s law improvements to computing, and energy constraints in mobile and sensor devices.</p> 
+      <img src="http://mobilityfirst.winlab.rutgers.edu/images/clip_image002_001.gif" height="351" width="599"><br/>
+      <h3>Key components of the MobilityFirst network architecture:</h3> 
+      <ol>
+        <li> separation of naming and addressing, implemented via a   fast global dynamic name resolution service </li>
+        <li> self-certifying public key   network addresses to support strong authentication and security;</li>
+        <li> generalized   delay-tolerant routing with in-network storage for packets in transit;</li>
+        <li> flat-label internetwork routing with public key addresses; </li>
+        <li> hop-by-hop   transport protocols operating over path segments rather than an end-end path;</li>
+        <li> a separate network management plane that provides enhanced visibility; </li>
+        <li> optional privacy features for user and location data; </li>
+        <li> an integrated   computing and storage layer at routers to support programmability and evolution   of enhanced network services. The architecture as a whole has been designed to   be implementable with reasonable complexity, and to offer good scalability and   performance. Although the proposed design has its “sweet spot” in large-scale   mobile networking, its innovations and benefits will be enjoyed within the wired   core as well, via enhanced security and robustness.</li>
+      </ol> 
+      <h3> Collaborators:</h3>
+        <p class="lab_css" style="margin-bottom: 0;" align="justify">The FIA-NP project is a collaborative effort involving Rutgers, UMass, MIT, Duke, U 
+  Michigan, U Wisconsin, and U Nebraska with interaction with several 
+  industrial research partners.</p>
+      <h3> Tasks and Trails</h3>
+   <p>The project is organized into&nbsp;a set of research tasks and a set of technology trial&nbsp;tasks&nbsp;as summarized below:</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; Research Tasks:</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp; &nbsp;R1.&nbsp; Advanced GNS-based services</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp; &nbsp;R2.&nbsp; Security and privacy</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp; &nbsp;R3. Content services</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; R4. Next-generation mobile cloud services</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; R5. Context aware services</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; R6. Cellular-Internet convergence</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; R7. SDN ready protocol design</p>
+        <p class="lab_css" style="margin-top: 0;" align="justify">&nbsp;&nbsp; R8. Technology platforms and deployment strategies</p>
+        <p class="lab_css" style="margin-bottom: 0;" align="justify">&nbsp;&nbsp; Technology Trial Tasks:</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; T1. MF protocol updates and benchmarking on research testbeds including ORBIT and GENI</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; T2. NE1: Network Environment 1, mobile data and cloud services in heterogeneous access networks</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; T3. NE2: Network Environment 2, content networking for broadcast production and distribution</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;&nbsp; T4. NE3. Network Environment 3, context-aware services for emergency warning applications</p>
+        <p class="lab_css" style="margin-top: 0; margin-bottom: 0;" align="justify">&nbsp;</p>
+
+      </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <div class="col-sm-12 text-left"> 
+      <h3>Related Projects</h3>
+              <div class="post-entry">
+
+                    <h4>Other Research Projects under NSF Future Internet Architecture Program</h4>
+        <ul>
+        <li><a href="https://named-data.net">Named Data Networking</a></li>
+        <li><a href="http://nebula.cis.upenn.edu/">NEBULA</a></li>
+        <li><a href="http://www.cs.cmu.edu/~xia/">eXpressive Internet Architecture</a></li>
+        <li><a href="https://code.renci.org/gf/project/choicenet/">Network Innovation through Choice (Choicenet)</a></li>
+        </ul>
+        <h4>Data-Centric Research Projects in Europe</h4>
+        <ul>
+        <li><a href="http://www.psirp.org/">PSIRP: Publish-Subscribe Internet Routing Paradigm</a></li>
+        <li><a href="http://www.fp7-pursuit.eu/">PURSUIT</a></li>
+        <li><a href="http://www.netinf.org/home/home/">NetInf: Network of Information</a></li>
+        <li><a href="http://www.sail-project.eu/">SAIL: Scalable and Adaptive Internet Solutions</a></li>
+        <li><a href="http://www.comet-project.org/">COMET: COntent mediator architecture for content-aware nETworks</a></li>
+        <li><a href="http://www.ict-convergence.eu/">CONVERGENCE</a></li>
+        </ul>
+        <h4>Other Related Projects</h4>
+        <ul>
+        <li><a href="http://freenetproject.org/">The Freenet Project</a></li>
+        </ul>
+        
+                    <div class="clear"></div>
+                                
+                  </div> 
+      </div>
+    </div>
+  </div>
+<!--   <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div> -->
+
+      
+      
+    <!-- <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div> -->
+</div>
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Lorem Ipsum </h3>
+                    <ul>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div> -->
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Recent Events </h3>
+                    <ul>
+                        <li> <a href="#"> Testing Geodistributed Locations </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Quick Links </h3>
+                    <ul>
+                        <li> <a href="http://mobilityfirst.orbit-lab.org/"> Project Prototype Wiki </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                        <li> <a href="#"> Lorem Ipsum </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Community </h3>
+                    <ul >
+                        <li><a href="#"><i class="fa fa-stack-overflow"></i>Stack Overflow </a> </li>
+                        <!-- <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li> -->
+                        <!-- <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li> -->
+                        <li> <a href="#"><i class="fa fa-github"></i>Github </a> </li>
+                        <li> <a href="#"><i class="fa fa-youtube"></i>YouTube </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Mailing Lists </h3>
+                    <p>Subscribe to the MobilityFirst-Interest list to post questions and comments, or review all available mailing lists for more options</p>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button"> Subscribe <i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> MobilityFirst project is supported in part by the US National Science Foundation Awards </p>
+            <!-- <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                  <li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div> -->
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+<!-- <footer class="container-fluid text-center">
+  <p>MobilityFirst project is supported in part by the US National Science Foundation Awards</p>
+</footer> -->
+
+</body>
+</html>
+
+

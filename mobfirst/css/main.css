@@ -1,0 +1,370 @@
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+/*UNCOMMENT IF U REMOVE THE NEW FOOTER*/
+/*footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}*/
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;} 
+}
+.nav-custom-styles{
+  background: #2C3840 none repeat scroll 0% 0% !important;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: white;
+}
+
+#myNavbar li:not(:last-child) {
+    border-right: 1px solid #3B4951;
+}
+
+.navbar-right ul{
+border-left: 1px solid #3B4951;
+}
+
+#myNavbar a:focus {
+    background: #41525E none repeat scroll 0% 0%;
+}
+
+body{
+  font-family: "Proxima Nova","proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+.marketing-hero .hero-main-header {
+    font-size: 4.875rem;
+    text-align: center;
+    color: #FEFEFE;
+    margin: 0px;
+    font-weight: 200;
+}
+
+.tagline-hero-main-header{
+    font-size: 1.575rem;
+    text-align: center;
+    color: #FEFEFE;
+    margin: 0px;
+    font-weight: 200;
+
+}
+
+.marketing-hero {
+    background: #074E68 none repeat scroll 0% 0%;
+    position: relative;
+    padding: 3.5rem 0px 8.5rem;
+    text-align: center;
+    overflow: visible;
+}
+.marketing-subnav {
+    float: none;
+    position: absolute;
+    text-align: center;
+    margin: 0px auto;
+    bottom: 0px;
+    width: 100%;
+}
+ul {
+    margin-left: 0em;
+}
+ul {
+    list-style-type: disc;
+    margin-left: 1.25rem;
+}
+ul, ol, dl {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    list-style-position: outside;
+}
+.marketing-subnav li {
+    float: none;
+    display: inline-block;
+}
+
+.marketing-subnav li.active a {
+    background: rgba(250, 250, 250, 0.15) none repeat scroll 0% 0%;
+}
+
+.marketing-subnav li a {
+    padding: 0.9rem 1rem 0.75rem;
+    font-size: 12px;
+    color: #FFF;
+    font-family: "Proxima Nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.dropdown-menu{
+  background: #2C3840 none repeat scroll 0% 0% !important;
+}
+.dropdown-menu a{
+  font-size: 1.125rem;
+  font-weight: bold !important;
+  color: white !important;
+}
+.dropdown-menu a:hover{
+  background: #41525E none repeat scroll 0% 0% !important;
+  color: white !important;
+}
+
+
+
+
+
+/*Footer CODE*/
+.full {
+    width: 100%;  
+}
+.gap {
+  height: 30px;
+  width: 100%;
+  clear: both;
+  display: block;
+}
+.footer {
+  background: #EDEFF1;
+  height: auto;
+  padding-bottom: 30px;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+  border-top: 1px solid #DDDDDD;
+}
+.footer p {
+  margin: 0;
+}
+.footer img {
+  max-width: 100%;
+}
+.footer h3 {
+  border-bottom: 1px solid #BAC1C8;
+  color: #54697E;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  padding: 40px 0 10px;
+  text-transform: uppercase;
+}
+.footer ul {
+  font-size: 13px;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 15px;
+  color: #7F8C8D;
+}
+.footer ul li a {
+  padding: 0 0 5px 0;
+  display: block;
+}
+.footer a {
+  color: #78828D
+}
+.supportLi h4 {
+  font-size: 20px;
+  font-weight: lighter;
+  line-height: normal;
+  margin-bottom: 0 !important;
+  padding-bottom: 0;
+}
+.newsletter-box input#appendedInputButton {
+  background: #FFFFFF;
+  display: inline-block;
+  float: left;
+  height: 30px;
+  clear: both;
+  width: 100%;
+}
+.newsletter-box .btn {
+  border: medium none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  height: 40px;
+  padding: 0;
+  width: 100%;
+  color: #fff;
+}
+.newsletter-box {
+  overflow: hidden;
+}
+.bg-gray {
+  background: #074E68 none repeat scroll 0% 0%;
+/*  background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
+*/  box-shadow: 0 1px 0 #B4B3B3;
+}
+.social li {
+  background: none repeat scroll 0 0 #B5B5B5;
+  border: 2px solid #B5B5B5;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 8px 0 0;
+  padding: 0;
+  text-align: center;
+  width: 36px;
+ /* transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+*/}
+.social li:hover {
+/*  transform: scale(1.15) rotate(360deg);
+  -webkit-transform: scale(1.1) rotate(360deg);
+  -moz-transform: scale(1.1) rotate(360deg);
+  -ms-transform: scale(1.1) rotate(360deg);
+  -o-transform: scale(1.1) rotate(360deg);
+*/}
+.social li a {
+  color: #EDEFF1;
+}
+.social li:hover {
+  border: 2px solid #2c3e50;
+  background: #2c3e50;
+}
+.social li a i {
+  font-size: 16px;
+  margin: 0 0 0 5px;
+  color: #EDEFF1 !important;
+}
+.footer-bottom {
+  background: #E3E3E3;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.footer-bottom p.pull-left {
+  padding-top: 6px;
+}
+.payments {
+  font-size: 1.5em; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ ACCORDION*/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+}
+
+.panel-heading [data-toggle="collapse"]:after {
+    font-family: 'FontAwesome';
+    content: "\f078"; /* "play" icon */
+    float: right;
+    color: #F58723;
+    font-size: 18px;
+    line-height: 22px;
+    /* rotate "play" icon from > (right arrow) to down arrow */
+/*    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); */
+}
+
+.panel-heading [data-toggle="collapse"].collapsed:after {
+    /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+/*    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); */
+    color: #454
+}
+
+hr.dotted {
+    border-style: dashed;
+    margin: 3rem 0px;
+}
+
+span.gray-bg{
+  font-style: italic;
+  font-size: 1.3rem;
+  /*background: gray;*/
+}
+
+div.container.text-center{
+  padding-bottom: 10px;
+}
+
+.page-intro{
+text-align: justify;
+font-size: 1.725rem;
+line-height: 1.6;
+color: #777
+}
+
+.featurette h2 {
+    color: #464A4C;
+    font-weight: 300;
+}
+.featurette p {
+    color: #6D767D;
+    font-weight: 300;
+    font-size: 1.71rem;
+    text-align: justify;
+
+}
+p{
+  font-size: 1.2em;
+}
+.tab-content li{
+
+  font-size: 1.2em;
+}
+
+.abstract_show_hide,.bib_tex_show_hide{
+  font-size: 14px;
+}
+
+.bibtexentry,.ab_entry{
+  font-size: 14px;
+  margin-left: 20px;
+}

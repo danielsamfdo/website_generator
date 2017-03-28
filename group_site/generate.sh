@@ -84,6 +84,7 @@ generate_entire_website (){
     INNER_CONTENT="${header##*:}"
     template2 "$top_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
   done
+  zip -r group_site.zip images/ css/ js/ *.html *.css *.js
 }
 
 generate_single_webpage (){

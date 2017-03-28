@@ -518,7 +518,7 @@ def generate_publications_content(target_file):
   target.close()
 
 def assert_years_entries(yr, year_entry):
-  check_entries = { 2016: ['msocket: System support for mobile, multipath, and middlebox-agnostic applications','Identifying and Addressing Reachability and Policy Attacks in \"Secure\" BGP'],
+  check_entries = { 2016: ['Identifying and Addressing Reachability and Policy Attacks in \"Secure\" BGP', 'msocket: System support for mobile, multipath, and middlebox- agnostic applications'],
                     2015: ['Measurement and modeling of user transitioning among networks'],
                     2014: ['MobilityFirst: a mobility-centric and trustworthy internet architecture','Pros \\&amp; cons of model-based bandwidth control for client- assisted content delivery','VMShadow: optimizing the performance of latency-sensitive virtual desktops in distributed clouds','A global name service for a highly mobile internetwork','Towards a quantitative comparison of location-independent network architectures','CDN Pricing and Investment Strategies under Competition'],
                     2013: ['Content Availability and Bundling in Swarming Systems','VMShadow: optimizing the performance of virtual desktops in distributed clouds','Design requirements of a global name service for a mobility- centric, trustworthy internetwork','Identifying and Addressing Protocol Manipulation Attacks in "Secure" BGP','On the CDN pricing game','Distributing content simplifies ISP traffic engineering'],
@@ -537,12 +537,21 @@ def assert_years_entries(yr, year_entry):
                     2000: [],
                     1999: ['Conformance Testing of Protocols Represented as Communicating Finite State Machines'],
   }
-  # print check_entries[yr]
   titles = [pub.title for pub in year_entry]
   assert len(check_entries[yr]) == len(year_entry), "%s has more than the expected entries, please check and update this test"%(yr)
   for pub_entry_item in check_entries[yr]:
     # print pub_entry_item==year_entry[0].title
-    assert pub_entry_item in titles, "%s not present in the list for year : %d in %s"%(pub_entry_item, yr, str(titles))
+    # print pub_entry_item, titles
+    # print check_entries[2016][0]
+    # print titles
+    found = False
+    for entry in titles:
+      print entry
+      print pub_entry_item
+      if(entry == pub_entry_item):
+        found = True
+        break;
+    assert found, "%s not present in the list for year : %d in %s"%(pub_entry_item, yr, str(titles))
 
 if(len(sys.argv)>1 and sys.argv[1] == "fetch_gs"):
   save_publications_from_google_scholar()

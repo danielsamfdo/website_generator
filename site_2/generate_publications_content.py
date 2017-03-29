@@ -504,7 +504,7 @@ def generate_publications_content(target_file):
   target = open(target_file,"w")
   nav_tabs = ""
   nav_tab_content = ""
-  config = {'Year':"select_new.html",'Conference':"conference_publications.txt"}
+  config = {'Year':"year_publications.html",'Conference':"conference_publications.txt"}
   active_tab = "active"
   for key in config:
     nav_tabs += "<li><a data-toggle='tab' href='#%s'>%s</a></li>" %(key,key)
@@ -683,7 +683,7 @@ for year_entry in years_entries:
         s = "<li>%s</li>" %((entry.print_publication()))
         target.write(s)
 target.close()
-target = open("select_new.html", 'w')
+target = open("year_publications.html", 'w')
 
 yr = max_year
 for year_entry in years_entries:

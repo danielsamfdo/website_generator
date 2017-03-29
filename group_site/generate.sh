@@ -4,7 +4,7 @@ TITLE_PREFIX="ANSR "
 
 STUDENTS_CONTENT="students_content.txt"
 CV_CONTENT="bio_content.txt"
-PUB_CONTENT="publications_content.html"
+PUB_CONTENT="year_publications.html"
 PROJ_CONTENT="projects_content.txt"
 ABOUT_CONTENT="about_content.txt"
 JOB_CONTENT="jobs_content.txt"
@@ -84,7 +84,7 @@ generate_entire_website (){
     INNER_CONTENT="${header##*:}"
     template2 "$top_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
   done
-  zip -r group_site.zip images/ css/ js/ *.html *.css *.js
+  zip -r group_site.zip images/ css/ js/ index.html publications.html projects.html people.html jobs.html news.html style.css *.js
 }
 
 generate_single_webpage (){

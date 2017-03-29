@@ -4,7 +4,7 @@
 TITLE_PREFIX="Prof.Arun " 
 STUDENTS_CONTENT="students_content.txt"
 CV_CONTENT="bio_content.txt"
-PUB_CONTENT="publications_content.html"
+PUB_CONTENT="year_publications.html"
 RES_CONTENT="research_content.txt"
 ABOUT_CONTENT="about_content.txt"
 CONTACT_CONTENT="contact_content.txt"
@@ -88,7 +88,7 @@ generate_entire_website (){
       INNER_CONTENT="${header##*:}"
       template2 "$side_content" "$nav_content" "$(cat $INNER_CONTENT)" "$title_value" > $URL_FILE_NAME
   done
-  zip -r personal_site.zip assets/ *.html *.css *.js
+  zip -r personal_site.zip assets/ index.html research.html publications.html cv.html students.html contact.html *.css *.js
 }
 
 generate_single_webpage (){

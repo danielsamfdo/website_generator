@@ -93,13 +93,13 @@ def generate_about_page(file_name):
   
 def main():
   if(sys.argv[1] == "students"):
-    generate_students_page("students_content.txt")
+    generate_students_page("students_content.html")
   elif(sys.argv[1] == "contact"):
-    generate_contact_page("contact_content.txt")
+    generate_contact_page("contact_content.html")
   elif(sys.argv[1] == "bio"):
-    generate_bio_page("bio_content.txt")
+    generate_bio_page("bio_content.html")
   elif(sys.argv[1] == "home"):
-    generate_about_page("about_content.txt")
+    generate_about_page("about_content.html")
   else:
     print "UNKNOWN OPTION USED"
 

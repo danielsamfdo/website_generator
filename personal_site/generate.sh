@@ -2,12 +2,12 @@
  
 
 TITLE_PREFIX="Prof.Arun " 
-STUDENTS_CONTENT="students_content.txt"
-CV_CONTENT="bio_content.txt"
+STUDENTS_CONTENT="students_content.html"
+CV_CONTENT="bio_content.html"
 PUB_CONTENT="year_publications.html"
 RES_CONTENT="research_content.txt"
-ABOUT_CONTENT="about_content.txt"
-CONTACT_CONTENT="contact_content.txt"
+ABOUT_CONTENT="about_content.html"
+CONTACT_CONTENT="contact_content.html"
 # Array pretending to be a Pythonic dictionary
 ARRAY=( "about:$ABOUT_CONTENT"
         "research:$RES_CONTENT"

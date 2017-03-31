@@ -101,9 +101,9 @@ def generate_news_page(file_name):
 
 def main():
   if(sys.argv[1] == "students"):
-    generate_students_page("students_content.txt")
+    generate_students_page("students_content.html")
   elif(sys.argv[1] == "news"):
-    generate_news_page("news_content_tmp.txt")
+    generate_news_page("news_content.html")
   else:
     print "UNKNOWN OPTION USED"
 

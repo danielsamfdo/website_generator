@@ -2,13 +2,13 @@
 
 TITLE_PREFIX="ANSR " 
 
-STUDENTS_CONTENT="students_content.txt"
+STUDENTS_CONTENT="students_content.html"
 CV_CONTENT="bio_content.txt"
 PUB_CONTENT="year_publications.html"
 PROJ_CONTENT="projects_content.txt"
 ABOUT_CONTENT="about_content.txt"
 JOB_CONTENT="jobs_content.txt"
-NEWS_CONTENT="news_content_tmp.txt"
+NEWS_CONTENT="news_content.html"
 
 # Array pretending to be a Pythonic dictionary
 ARRAY=( "home:$ABOUT_CONTENT"
